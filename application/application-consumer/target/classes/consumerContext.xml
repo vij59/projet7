@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    
+    <bean id="abstractDao" abstract="true">
+        <property name="dataSource" ref="dataSourceRomain"/>
+    </bean>
+
+    <bean id="userDao" class="org.application.consumer.impl.UserDAOImpl" parent="abstractDao"/>
+
+    <!-- ===== DaoFactoryImpl ===== -->
+    <bean id="daoFactory" class="org.application.consumer.impl.DaoFactoryImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+
+    <!--<bean id="dataSourceCliffhangout" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/db_cliffhangout" />
+        <property name="username" value="" />
+        <property name="password" value="" />
+    </bean>-->
+</beans>
