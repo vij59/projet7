@@ -1,6 +1,0 @@
-org\application\consumer\impl\UserDAOImpl$1.class
-org\application\consumer\contract\UserDAO.class
-org\application\consumer\impl\DaoFactoryImpl.class
-org\application\consumer\impl\UserDAOImpl.class
-org\application\consumer\impl\AbstractDAO.class
-org\application\consumer\contract\DaoFactory.class

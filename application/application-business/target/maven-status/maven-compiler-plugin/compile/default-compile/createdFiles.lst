@@ -1,5 +1,0 @@
-org\application\business\contract\ManagerFactory.class
-org\application\business\contract\UserManager.class
-org\application\business\impl\UserManagerImpl.class
-org\application\business\impl\AbstractManager.class
-org\application\business\impl\ManagerFactoryImpl.class
