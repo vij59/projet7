@@ -27,33 +27,6 @@ public interface UtilisateurWebservice {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns org.webservice.services.Utilisateur
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findUtilisateurByEmail", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.FindUtilisateurByEmail")
-    @ResponseWrapper(localName = "findUtilisateurByEmailResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.FindUtilisateurByEmailResponse")
-    @Action(input = "http://services.webservice.org/UtilisateurWebservice/findUtilisateurByEmailRequest", output = "http://services.webservice.org/UtilisateurWebservice/findUtilisateurByEmailResponse")
-    public Utilisateur findUtilisateurByEmail(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "actualiserUtilisateur", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ActualiserUtilisateur")
-    @ResponseWrapper(localName = "actualiserUtilisateurResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ActualiserUtilisateurResponse")
-    @Action(input = "http://services.webservice.org/UtilisateurWebservice/actualiserUtilisateurRequest", output = "http://services.webservice.org/UtilisateurWebservice/actualiserUtilisateurResponse")
-    public void actualiserUtilisateur(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Utilisateur arg0);
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -69,6 +42,33 @@ public interface UtilisateurWebservice {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "actualiserUtilisateur", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ActualiserUtilisateur")
+    @ResponseWrapper(localName = "actualiserUtilisateurResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ActualiserUtilisateurResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/actualiserUtilisateurRequest", output = "http://services.webservice.org/UtilisateurWebservice/actualiserUtilisateurResponse")
+    public void actualiserUtilisateur(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Utilisateur arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.webservice.services.Utilisateur
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findUtilisateurByEmail", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.FindUtilisateurByEmail")
+    @ResponseWrapper(localName = "findUtilisateurByEmailResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.FindUtilisateurByEmailResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/findUtilisateurByEmailRequest", output = "http://services.webservice.org/UtilisateurWebservice/findUtilisateurByEmailResponse")
+    public Utilisateur findUtilisateurByEmail(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 

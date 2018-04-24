@@ -32,17 +32,16 @@
 				</executions>
 				<configuration>
 					<sourceDestDir>${project.basedir}/src/main/java</sourceDestDir>
-					<wsdlUrls>
+				<wsdlUrls>
 						<wsdlUrl>
-							http://vij-pc:8080/webservice2396852418528692936/Utilisateur?wsdl</wsdlUrl>
+							http://localhost:8080/webservice2396852418528692936/Utilisateur?wsdl</wsdlUrl>
 						<wsdlUrl>
-							http://vij-pc:8080/webservice2396852418528692936/Auteur?wsdl</wsdlUrl>
+							http://localhost:8080/webservice2396852418528692936/Auteur?wsdl</wsdlUrl>
 						<wsdlUrl>
-							http://vij-pc:8080/webservice2396852418528692936/Emprunt?wsdl</wsdlUrl>
+							http://localhost:8080/webservice2396852418528692936/Emprunt?wsdl</wsdlUrl>
 						<wsdlUrl>
-							
-							http://vij-pc:8080/webservice2396852418528692936/Livre?wsdl</wsdlUrl>
-					</wsdlUrls>
+							http://localhost:8080/webservice2396852418528692936/Livre?wsdl</wsdlUrl>
+</wsdlUrls>
 				</configuration>
 			</plugin>
 		</plugins>
