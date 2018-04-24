@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="utilisateurDao"
+		class="org.application.consumer.impl.UtilisateurDAOImpl" />
+	<bean id="livreDao"
+		class="org.application.consumer.impl.LivreDAOImpl" />
+	<bean id="auteurDao"
+		class="org.application.consumer.impl.AuteurDAOImpl" />
+	<bean id="empruntDao"
+		class="org.application.consumer.impl.EmpruntDAOImpl" /> 
+
+	<!-- ===== DaoFactoryImpl ===== -->
+	<bean id="daoFactory"
+		class="org.application.consumer.impl.DaoFactoryImpl">
+		<property name="utilisateurDao" ref="utilisateurDao" />
+		<property name="livreDao" ref="livreDao" />
+		<property name="auteurDao" ref="auteurDao" />
+	    <property name="empruntDao" ref="empruntDao" /> 
+	</bean>
+
+</beans>

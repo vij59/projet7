@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="abstractDao" abstract="true">
+		<property name="dataSource" ref="dataSourceEdouard" />
+	</bean>
+
+	<!-- ===== Déclaration des DAO ===== -->
+
+	<bean id="auteurDao"
+		class="org.application.consumer.impl.AuteurDaoImpl"
+		parent="abstractDao">
+		<property name="auteurRM" ref="auteurRM" />
+	</bean>
+
+
+	<bean id="livreDao"
+		class="org.application.consumer.impl.LivreDaoImpl"
+		parent="abstractDao">
+		<property name="livreRM" ref="livreRM" />
+	</bean>
+
+
+	<bean id="empruntDao"
+		class="org.application.consumer.impl.EmpruntDaoImpl"
+		parent="abstractDao">
+		<property name="empruntRM" ref="empruntRM" />
+	</bean>
+
+
+	<bean id="utilisateurDao"
+		class="org.application.consumer.impl.UtilisateurDaoImpl"
+		parent="abstractDao">
+		<property name="utilisateurRM" ref="utilisateurRM" />
+	</bean>
+
+	<!-- ===== DaoFactory ===== -->
+	<bean id="daoFactory"
+		class="org.application.consumer.impl.DaoFactoryImpl">
+		<property name="auteurDAO" ref="auteurDao" />
+		<property name="livreDAO" ref="livreDao" />
+		<property name="empruntDAO" ref="empruntDao" />
+		<property name="utilisateurDAO" ref="utilisateurDao" />
+
+	</bean>
+
+	<!-- ===== Déclaration RowMappers ===== -->
+
+	<bean id="auteurRM"
+		class="org.application.consumer.rowmapper.AuteurRM" />
+	<bean id="livreRM"
+		class="org.application.consumer.rowmapper.LivreRM" />
+	<bean id="empruntRM"
+		class="org.application.consumer.rowmapper.EmpruntRM" />
+	<bean id="utilisateurRM"
+		class="org.application.consumer.rowmapper.UtilisateurRM" />
+</beans>

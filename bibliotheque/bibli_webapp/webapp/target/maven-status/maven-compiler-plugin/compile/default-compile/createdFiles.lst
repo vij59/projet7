@@ -1,0 +1,12 @@
+org\webapp\resource\AbstractRessource.class
+org\webapp\action\Profile.class
+org\webapp\action\AuthentificationInterceptor.class
+org\webapp\action\HomeAction.class
+org\webapp\action\Login.class
+org\webapp\action\ListerEmprunts.class
+org\webapp\action\ListeLivres.class
+org\webapp\action\ListeAuteurs.class
+org\webapp\method\AuteurComparator.class
+org\webapp\action\ListerUtilisateurs.class
+org\webapp\method\TitreComparateur.class
+org\webapp\action\Recherche.class

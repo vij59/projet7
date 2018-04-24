@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="abstractManager" abstract="true">
+		<property name="daoFactory" ref="daoFactory" />
+	</bean>
+
+	<bean id="utilisateurManager"
+		class="org.application.business.impl.UtilisateurManagerImpl"
+		parent="abstractManager" />
+	<bean id="livreManager"
+		class="org.application.business.impl.LivreManagerImpl"
+		parent="abstractManager" />
+	<bean id="auteurManager"
+		class="org.application.business.impl.AuteurManagerImpl"
+		parent="abstractManager" />
+	<bean id="empruntManager"
+		class="org.application.business.impl.EmpruntManagerImpl"
+		parent="abstractManager" />
+
+	<bean id="managerFactory"
+		class="org.application.business.impl.ManagerFactoryImpl">
+		<property name="utilisateurManager" ref="utilisateurManager" />
+		<property name="livreManager" ref="livreManager" />
+		<property name="auteurManager" ref="auteurManager" />
+		<property name="empruntManager" ref="empruntManager" />
+	</bean>
+
+
+</beans>

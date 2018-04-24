@@ -1,0 +1,11 @@
+org\application\business\contract\ManagerFactory.class
+org\application\business\contract\UtilisateurManager.class
+org\application\business\impl\UtilisateurManagerImpl.class
+org\application\business\impl\ManagerFactoryImpl.class
+org\application\business\contract\AuteurManager.class
+org\application\business\impl\AuteurManagerImpl.class
+org\application\business\impl\LivreManagerImpl.class
+org\application\business\impl\EmpruntManagerImpl.class
+org\application\business\contract\LivreManager.class
+org\application\business\impl\AbstractManager.class
+org\application\business\contract\EmpruntManager.class
