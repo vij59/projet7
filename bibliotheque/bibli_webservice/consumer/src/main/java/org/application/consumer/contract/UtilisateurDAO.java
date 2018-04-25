@@ -10,6 +10,6 @@ public interface UtilisateurDAO {
 	 void creerUtilisateur(Utilisateur utilisateur);
 	    void actualiserUtilisateur(Utilisateur utilisateur);
 	    boolean validerLogin (Utilisateur utilisateur, String password);
-	    Utilisateur afficherUtilisateur(String mail);
+	    Utilisateur getUtilisateurByEmail(String mail);
 
 }

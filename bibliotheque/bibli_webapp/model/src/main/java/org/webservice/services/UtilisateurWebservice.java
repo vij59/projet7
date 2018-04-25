@@ -109,4 +109,19 @@ public interface UtilisateurWebservice {
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
 
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.webservice.services.Utilisateur
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getUtilisateurByMail", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurByMail")
+    @ResponseWrapper(localName = "getUtilisateurByMailResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurByMailResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/getUtilisateurByMailRequest", output = "http://services.webservice.org/UtilisateurWebservice/getUtilisateurByMailResponse")
+    public Utilisateur getUtilisateurByMail(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
 }

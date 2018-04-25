@@ -8,6 +8,7 @@ public interface UtilisateurDAO {
 	
 	public List<Utilisateur> getUtilisateurs();
 	public boolean validerLogin(String mail, String mdp);
+	Utilisateur getUtilisateurByMail(String mail);
 
 }
 

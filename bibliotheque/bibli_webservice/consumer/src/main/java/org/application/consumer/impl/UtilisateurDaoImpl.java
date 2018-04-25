@@ -9,10 +9,14 @@ import javax.inject.Inject;
 import org.application.consumer.contract.AbstractDAO;
 import org.application.consumer.contract.UtilisateurDAO;
 import org.application.consumer.rowmapper.UtilisateurRM;
+import org.application.model.Livre;
 import org.application.model.Utilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 public class UtilisateurDaoImpl extends AbstractDAO implements UtilisateurDAO {
 
@@ -68,10 +72,26 @@ public class UtilisateurDaoImpl extends AbstractDAO implements UtilisateurDAO {
 		return false;
 	}
 
+
 	@Override
-	public Utilisateur afficherUtilisateur(String mail) {
+	public Utilisateur getUtilisateurByEmail(String mail) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		String vSQL = "SELECT * FROM utilisateur where mail = :mail";
+		 NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+	        MapSqlParameterSource vParams = new MapSqlParameterSource("mail", mail);
+	        
+
+	        try {
+	            Utilisateur utilisateur = vJdbcTemplate.queryForObject(vSQL, vParams, utilisateurRM);
+	            return utilisateur;
+	        } catch (EmptyResultDataAccessException vEx) {
+	            return null;
+	        }
+		
+		
+	        
+	
 	}
 
 }

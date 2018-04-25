@@ -52,5 +52,11 @@ import org.application.model.Utilisateur;
         return getManagerFactory().getUtilisateurManager().validerLogin(utilisateur, mdp);
     }
     
+    @WebMethod
+    public Utilisateur getUtilisateurByMail(String mail)
+    {
+        return getManagerFactory().getUtilisateurManager().getUtilisateurByEmail(mail);
+    }
+    
 
 }

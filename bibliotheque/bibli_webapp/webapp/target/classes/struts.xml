@@ -6,15 +6,17 @@
 	<package name="default" extends="struts-default">
 		<!-- Action par défaut -->
 
- 
-		<interceptors>
-			<interceptor name="auth"
-				class="org.webapp.action.AuthentificationInterceptor" />
-			<interceptor-stack name="authenticatedStack">
-				<interceptor-ref name="auth" />
-				<interceptor-ref name="defaultStack" />
-			</interceptor-stack>
-		</interceptors>
+
+		 <interceptors>	
+	<interceptor name="auth" 
+	class="org.webapp.action.AuthentificationInterceptor"></interceptor>
+        	
+      <!--    <interceptor-stack name="authenticatedStack">
+     		<interceptor-ref name="auth"/>
+		<interceptor-ref name="defaultStack" />
+          </interceptor-stack> -->
+			
+    </interceptors>
 
 
 		<default-action-ref name="index" />
@@ -27,13 +29,14 @@
 
 		<action name="liste" class="org.webapp.action.ListeLivres"
 			method="execute">
-
+			
 			<result name="success">/jsp/utilisateur/liste.jsp</result>
 			<result name="error">/jsp/index.jsp</result>
 		</action>
 		
 		<action name="listeByAuteur"
 			class="org.webapp.action.ListeLivres" method="execute">
+			
 			<result>/jsp/utilisateur/listeByAuteur.jsp</result>
 		</action>
 		<action name="listeByTitre"
@@ -43,7 +46,7 @@
 
 		<action name="monCompte"
 			class="org.webapp.action.ListerEmprunts" method="execute">
-
+			<interceptor-ref name="auth" />
 			<result name="success">/jsp/utilisateur/monCompte.jsp</result>
 			<result name="error">/jsp/index.jsp</result>
 

@@ -1,5 +1,6 @@
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\Emprunt.java
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\Emprunt_Service.java
+C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\GetUtilisateurByMail.java
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\GetUtilisateursResponse.java
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\CreerUtilisateur.java
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\GetLateEmpruntsResponse.java
@@ -15,6 +16,7 @@ C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\GetLivreByRechercheResponse.java
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\MarkEmpruntAsExtendedResponse.java
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\SaveNewEmprunt.java
+C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\GetUtilisateurByMailResponse.java
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\SaveNewEmpruntResponse.java
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\AuteurWebservice.java
 C:\Users\edvigier\Desktop\projet4\bibliotheque\bibli_webapp\model\src\main\java\org\webservice\services\GetAllEmprunts.java

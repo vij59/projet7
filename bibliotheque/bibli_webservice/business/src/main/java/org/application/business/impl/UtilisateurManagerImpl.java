@@ -72,5 +72,10 @@ public class UtilisateurManagerImpl extends AbstractManager implements Utilisate
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	@Override
+	public Utilisateur getUtilisateurByEmail(String mail) {
+		return getDaoFactory().getUtilisateurDAO().getUtilisateurByEmail(mail);
+	}
 
 }

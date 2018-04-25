@@ -24,6 +24,14 @@
 						</tr>
 					</thead>
 					<s:iterator var="emprunts" value="mesEmprunts">
+					
+					
+	
+id utilisateur = <s:property value="idUtilisateur" />
+#session.userId = <s:property value="#session.userId" />
+session.userId = <s:property value="session.userId" />
+
+<s:if test="%{idUtilisateur == session.userId}">
 						<tbody>
 							<tr>
 								<td><s:property value="id" /></td>
@@ -36,6 +44,7 @@
 							</tr>
 
 						</tbody>
+						</s:if>
 					</s:iterator>
 				</table>
 			</div>

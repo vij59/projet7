@@ -2,6 +2,7 @@ org\webservice\services\GetAuteurByNameResponse.class
 org\webservice\services\UpdateEmprunt.class
 org\webservice\services\CreateAuteurResponse.class
 org\webservice\services\UtilisateurWebservice.class
+org\webservice\services\GetUtilisateurByMailResponse.class
 org\webservice\services\Livre_Service.class
 org\webservice\services\MarkEmpruntAsExtendedResponse.class
 org\webservice\services\GetAllEmpruntsResponse.class
@@ -31,6 +32,7 @@ org\webservice\services\UpdateEmpruntResponse.class
 org\webservice\services\ActualiserUtilisateur.class
 org\webservice\services\Emprunt_Service.class
 org\webservice\services\GetEmpruntByUserIdResponse.class
+org\webservice\services\GetUtilisateurByMail.class
 org\webservice\services\Auteur_Service.class
 org\webservice\services\GetAuteurByName.class
 org\webservice\services\GetByNomResponse.class

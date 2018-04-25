@@ -47,7 +47,11 @@ public void setListeUtilisateurs(List<Utilisateur> listeUtilisateurs) {
 }
 
 public String execute(){  
-    if(validate(username, userpass)){  
+    if(validate(username, userpass)){ 
+    	sessionmap.put("userMail", username);
+    	Utilisateur user = getManagerFactory().getUtilisateurManager().getUtilisateurByMail(username);
+    	String userId = ""+user.getId();
+    	sessionmap.put("userId", userId);
         return "success";  
     }  
     else{  
@@ -63,6 +67,7 @@ public boolean validate(String mail, String mdp) {
 public void setSession(Map map) {  
     sessionmap=(SessionMap)map;  
     sessionmap.put("login","true");  
+    
 }  
   
 public String logout(){  

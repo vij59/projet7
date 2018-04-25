@@ -83,8 +83,12 @@ public class App
 			List<Livre> listeLi = managerFactory.getLivreManager().getLivreByRecherche("","eric");
 			System.out.println(listeLi);
 			for(Livre  livr : listeLi) {
-				System.out.println(livr.getTitre());
+				System.out.println(livr.getId());
 			}
+			
+			Utilisateur util = managerFactory.getUtilisateurManager().getUtilisateurByEmail("joo");
+			System.out.println(util.getMail() + "biteenbois");
+			
 			
 			
 //			List<Emprunt> emprunts  = managerFactory.getEmpruntManager().getAllEmprunts();

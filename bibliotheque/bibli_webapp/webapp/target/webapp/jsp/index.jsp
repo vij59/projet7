@@ -24,12 +24,7 @@
     <h2>Bienvenue sur l'intranet de votre bibliothèque</h2>
     
     <hr/>  
-<a href="login">login</a>|  
-<a href="logout">logout</a>|  
-<a href="profile">profile</a>  
-<a href="liste">liste</a> 
-<a href="monCompte">Mon compte</a>
-<a href="recherche">Rechercher</a>
+<jsp:include page="/jsp/others/banner.jsp"></jsp:include> 
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

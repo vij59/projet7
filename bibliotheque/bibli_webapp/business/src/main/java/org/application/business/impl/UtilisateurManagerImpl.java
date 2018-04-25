@@ -19,5 +19,11 @@ public class UtilisateurManagerImpl extends AbstractManager implements Utilisate
 		
 	}
 	
+	@Override
+	public Utilisateur getUtilisateurByMail(String mail) {
+		return getDaoFactory().getUtilisateurDao().getUtilisateurByMail(mail);
+		
+	}
+	
 
 }

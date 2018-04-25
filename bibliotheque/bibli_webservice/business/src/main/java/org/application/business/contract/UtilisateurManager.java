@@ -12,4 +12,5 @@ public interface UtilisateurManager {
 	    boolean validerLogin (Utilisateur utilisateur, String password);
 	    Utilisateur afficherUtilisateur(String mail);
 		boolean validerLogin(String mail, String password);
+		Utilisateur getUtilisateurByEmail(String mail);
 }

@@ -14,6 +14,7 @@ import org.webservice.services.Emprunt_Service;
 import org.webservice.services.Livre;
 import org.webservice.services.LivreWebservice;
 import org.webservice.services.Livre_Service;
+import org.webservice.services.Utilisateur;
 
 /**
  * Hello world!
@@ -79,6 +80,9 @@ public class App
         else System.out.println("pas bon");
     	
         System.out.println("bite");
+        
+        Utilisateur userrr = managerFactory.getUtilisateurManager().getUtilisateurByMail("joo");
+        System.out.println(userrr.getNom()+userrr.getId());
         
         
     }

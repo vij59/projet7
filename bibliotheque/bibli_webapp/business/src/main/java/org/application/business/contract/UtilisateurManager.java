@@ -8,5 +8,6 @@ public interface UtilisateurManager {
 
 	public List<Utilisateur> getUtilisateurs();
 	public boolean validerLogin(String mail, String mdp);
+	Utilisateur getUtilisateurByMail(String mail);
 	
 }

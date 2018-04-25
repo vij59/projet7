@@ -26,6 +26,13 @@ public class UtilisateurDAOImpl implements UtilisateurDAO{
 		
 	}
 	
+	@Override
+	public Utilisateur getUtilisateurByMail(String mail) {
+		Utilisateur_Service utilisateurService = new Utilisateur_Service();
+		UtilisateurWebservice utilisateurWebService = utilisateurService.getUtilisateurWebservicePort();
+		return utilisateurWebService.getUtilisateurByMail(mail);
+	}
+	
 	
 }
 
