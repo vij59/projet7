@@ -81,9 +81,20 @@ public class App
     	
         System.out.println("bite");
         
+        List<Emprunt> emprunts3 = managerFactory.getEmpruntManager().getEmpruntByUserId(2);
+        for(Emprunt emprunt : emprunts3) {
+      	System.out.println("livre" +emprunt.getIdLivre()+ " = "+ emprunt.getId());
+       }
+        
         Utilisateur userrr = managerFactory.getUtilisateurManager().getUtilisateurByMail("joo");
         System.out.println(userrr.getNom()+userrr.getId());
         
+//        List<Emprunt> emprunts2 = managerFactory.getEmpruntManager().getEmpruntByUserId(userrr.getId());
+//        for(Emprunt emprunt : emprunts2) {
+//        	System.out.println("livre" +emprunt.getIdLivre()+ " = "+ emprunt.getId());
+//        }
         
+        
+       
     }
 }

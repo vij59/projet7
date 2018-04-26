@@ -108,13 +108,13 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 	}
 	
 	 @Override
-	    public Emprunt getEmpruntByUserId(int idUser) {
+	    public List<Emprunt> getEmpruntByUserId(int idUser) {
 		 String vSQL = "SELECT * FROM emprunt WHERE id_utilisateur = :id";
 	        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
 	        MapSqlParameterSource vParams = new MapSqlParameterSource("id", idUser);
 	        try {
-	            Emprunt emprunt = vJdbcTemplate.queryForObject(vSQL, vParams, empruntRM);
-	            return emprunt;
+	            List<Emprunt> emprunts = vJdbcTemplate.query(vSQL, vParams, empruntRM);
+	            return emprunts;
 	        } catch (EmptyResultDataAccessException vEx) {
 	            return null;
 	        }

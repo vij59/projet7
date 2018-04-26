@@ -83,7 +83,7 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 	}
 	
 	@Override
-    public Emprunt getEmpruntByUserId(int idUser) {
+    public List<Emprunt> getEmpruntByUserId(int idUser) {
 		return getDaoFactory().getEmpruntDAO().getEmpruntByUserId(idUser);
 	}
 }

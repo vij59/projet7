@@ -22,7 +22,7 @@ import org.application.model.Emprunt;
 	    }
 	    
 	    @WebMethod
-	    public Emprunt getEmpruntByUserId(int idUser) {
+	    public List<Emprunt> getEmpruntByUserId(int idUser) {
 	        return getManagerFactory().getEmpruntManager().getEmpruntByUserId(idUser);
 	    }
 	    

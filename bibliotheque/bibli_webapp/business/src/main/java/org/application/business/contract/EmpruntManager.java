@@ -9,6 +9,6 @@ public interface EmpruntManager {
 
 	void prolongerEmprunt(Emprunt emprunt);
 
-	Emprunt getEmpruntByUserId(int idUser);
+	public List<Emprunt>getEmpruntByUserId(int idUser);
 
 }

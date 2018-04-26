@@ -17,4 +17,6 @@ public interface LivreManager {
 	Livre getLivreById(int id);
 
 	List<Livre>  getLivreByRecherche(String titre, String auteur);
+
+	List<Livre> getByAuteur(Auteur auteur);
 }

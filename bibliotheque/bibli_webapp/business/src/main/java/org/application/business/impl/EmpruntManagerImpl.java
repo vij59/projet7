@@ -20,7 +20,7 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 		}
 	
 	@Override
-	public Emprunt getEmpruntByUserId(int idUser) {
+	public List<Emprunt>getEmpruntByUserId(int idUser) {
 		// TODO Auto-generated method stub
 		return getDaoFactory().getEmpruntDao().getEmpruntByUserId(idUser);	
 		}

@@ -43,6 +43,13 @@ public class LivreManagerImpl extends AbstractManager implements LivreManager {
 	    }
 	    
 	    @Override
+	    public List<Livre> getByAuteur(Auteur auteur){
+	    	List<Livre> livre = getDaoFactory().getLivreDAO().getByAuteur(auteur);
+
+		        return livre;
+		    }
+	    
+	    @Override
 	    public List<Livre> getLivreByRecherche(String titre, String auteur) {
 	    	List<Livre> liste = getDaoFactory().getLivreDAO().getLivreByRecherche( titre,  auteur);
 

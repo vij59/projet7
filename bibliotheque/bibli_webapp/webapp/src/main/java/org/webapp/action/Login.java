@@ -10,7 +10,7 @@ import org.webservice.services.Utilisateur;
   
 public class Login extends AbstractRessource implements SessionAware{  
 private String username,userpass;  
-SessionMap<String,String> sessionmap; 
+SessionMap<String,Object> sessionmap; 
 private Utilisateur utilisateur;
 private List<Utilisateur> listeUtilisateurs;
   
@@ -50,6 +50,7 @@ public String execute(){
     if(validate(username, userpass)){ 
     	sessionmap.put("userMail", username);
     	Utilisateur user = getManagerFactory().getUtilisateurManager().getUtilisateurByMail(username);
+    	sessionmap.put("user",user);
     	String userId = ""+user.getId();
     	sessionmap.put("userId", userId);
         return "success";  

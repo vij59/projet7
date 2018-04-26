@@ -14,7 +14,7 @@ public interface EmpruntManager {
     List<Emprunt> getLateEmprunts();
 	boolean empruntPossible(int id);
 	void empruntProlonge(Emprunt emprunt);
-	Emprunt getEmpruntByUserId(int idUser);
+	 List<Emprunt> getEmpruntByUserId(int idUser);
 	
 
 

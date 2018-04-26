@@ -14,6 +14,7 @@ public class UtilisateurRM implements RowMapper<Utilisateur> {
 
         Utilisateur utilisateur = new Utilisateur();
 
+        utilisateur.setId(resultSet.getInt("id"));
         utilisateur.setNom(resultSet.getString("nom"));
         utilisateur.setPrenom(resultSet.getString("prenom"));
         utilisateur.setMail(resultSet.getString("mail"));

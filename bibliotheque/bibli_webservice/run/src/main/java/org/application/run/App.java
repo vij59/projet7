@@ -87,9 +87,13 @@ public class App
 			}
 			
 			Utilisateur util = managerFactory.getUtilisateurManager().getUtilisateurByEmail("joo");
-			System.out.println(util.getMail() + "biteenbois");
+			System.out.println(util.getMail() + "biteenbois" + util.getId());
 			
 			
+			List<Emprunt> emprunts  = managerFactory.getEmpruntManager().getEmpruntByUserId(2);
+			for(Emprunt emp : emprunts) {
+				System.out.println(emp.getDateFin());
+			}
 			
 //			List<Emprunt> emprunts  = managerFactory.getEmpruntManager().getAllEmprunts();
 //			for(Emprunt  empr : emprunts) {

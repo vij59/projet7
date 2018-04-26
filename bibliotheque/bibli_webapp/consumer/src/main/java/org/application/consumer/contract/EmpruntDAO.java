@@ -10,5 +10,5 @@ public interface EmpruntDAO {
 
 	void prolongerEmprunt(Emprunt emprunt);
 
-	Emprunt getEmpruntByUserId(int idUser);
+	public List<Emprunt>getEmpruntByUserId(int idUser);
 }

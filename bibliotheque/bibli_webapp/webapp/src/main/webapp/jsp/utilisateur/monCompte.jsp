@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<jsp:include page="/jsp/others/banner.jsp"></jsp:include> 
+	<jsp:include page="/jsp/others/banner.jsp"></jsp:include>
 
 	<div class="container-fluid">
 		<div class="row">
@@ -23,33 +23,37 @@
 							<th>date retour</th>
 						</tr>
 					</thead>
+				
 					<s:iterator var="emprunts" value="mesEmprunts">
-					
-					
-	
-id utilisateur = <s:property value="idUtilisateur" />
-#session.userId = <s:property value="#session.userId" />
-session.userId = <s:property value="session.userId" />
 
-<s:if test="%{idUtilisateur == session.userId}">
+
 						<tbody>
 							<tr>
 								<td><s:property value="id" /></td>
-								<td><s:property value="dateDebut" /></td>
+								<td><s:property value="dateDebut"/></td>
 
 
 
-								<td><s:property value="dateFin" />&nbsp; </td>
+								<td><s:property value="dateFin" />&nbsp;</td>
 
 							</tr>
 
 						</tbody>
-						</s:if>
+
 					</s:iterator>
 				</table>
 			</div>
 		</div>
 	</div>
+	
+	#session.userId <s:property value="#session.userId" />
+	#sessionmap.userId <s:property value="#sessionmap.userId" />
+	
+	session.userId <s:property value="session.userId" />
+	sessionmap.userId <s:property value="sessionmap.userId" />
+	
+	username <s:property value="username"/>
+	userMail <s:property value="userMail"/>
 
 
 </body>

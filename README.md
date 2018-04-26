@@ -22,3 +22,11 @@
 						<wsdlUrl>
 							http://vij-pc:8080/webservice2396852418528692936/Livre?wsdl</wsdlUrl>
 </wsdlUrls>
+
+allonger emprunt    
+objet livre dans emprunt
+
+get Date order By en cours, id
+
+Date debut , date fin dans struts, reformater
+pkoi pas convertir les dates en Integer

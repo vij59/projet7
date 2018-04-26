@@ -27,7 +27,7 @@ public class EmpruntDAOImpl implements EmpruntDAO {
 	
 	
 	@Override
-	public Emprunt getEmpruntByUserId(int idUser) {
+	public List<Emprunt>getEmpruntByUserId(int idUser) {
 		Emprunt_Service empruntService = new Emprunt_Service();
 		EmpruntWebservice empruntWebService = empruntService.getEmpruntWebservicePort();
 		return empruntWebService.getEmpruntByUserId(idUser);
