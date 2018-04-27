@@ -45,7 +45,15 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 	@Override
 	public List<Emprunt> getAllEmprunts() {
 		// TODO Auto-generated method stub
-		return getDaoFactory().getEmpruntDAO().getListeEmprunts();
+		List<Emprunt> liste = getDaoFactory().getEmpruntDAO().getListeEmprunts();
+		
+		for (Emprunt emprunt : liste) {
+			
+			Livre livre = getDaoFactory().getLivreDAO().getById(emprunt.getIdLivre());
+			emprunt.setLivre(livre);
+		
+		}
+		return liste;
 	}
 	
 	@Override
@@ -78,12 +86,22 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 	}
 	
 	@Override
-	public void empruntProlonge(Emprunt emprunt) {
-		 getDaoFactory().getEmpruntDAO().empruntProlonge(emprunt);
+	public void empruntProlonge(int idEmprunt) {
+		 getDaoFactory().getEmpruntDAO().empruntProlonge(idEmprunt);
 	}
 	
 	@Override
     public List<Emprunt> getEmpruntByUserId(int idUser) {
-		return getDaoFactory().getEmpruntDAO().getEmpruntByUserId(idUser);
+		
+List<Emprunt> liste = getDaoFactory().getEmpruntDAO().getEmpruntByUserId(idUser);
+		
+		for (Emprunt emprunt : liste) {
+			
+			Livre livre = getDaoFactory().getLivreDAO().getById(emprunt.getIdLivre());
+			emprunt.setLivre(livre);
+		
+		}
+		return liste;
+		
 	}
 }

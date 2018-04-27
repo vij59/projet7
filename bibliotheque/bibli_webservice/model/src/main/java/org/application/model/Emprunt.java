@@ -11,6 +11,7 @@ public class Emprunt {
 	private int idLivre;
 	private int idUtilisateur;
 	private boolean dejaRepousse;
+	private Livre livre;
 
 	public Integer getId() {
 		return id;
@@ -66,6 +67,14 @@ public class Emprunt {
 
 	public void setDejaRepousse(boolean dejaRepousse) {
 		this.dejaRepousse = dejaRepousse;
+	}
+
+	public Livre getLivre() {
+		return livre;
+	}
+
+	public void setLivre(Livre livre) {
+		this.livre = livre;
 	}
 	
 

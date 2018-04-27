@@ -39,6 +39,7 @@ public class ListerEmprunts extends AbstractRessource  {
     	  	   
     	    
    	mesEmprunts =  getManagerFactory().getEmpruntManager().getEmpruntByUserId(user.getId());
+   	
         return "success";
     }
 

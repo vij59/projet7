@@ -95,12 +95,18 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
     }
 
 	@Override
-	public void empruntProlonge(Emprunt emprunt) {
+	public void empruntProlonge(int idEmprunt) {
 		 String vSQL = "UPDATE emprunt SET  date_retour=:dateFin, repousse=true WHERE id=:id";
-
+		 Date dateFin = null;
+		 List<Emprunt> listeEmprunts = getListeEmprunts();
+		 for(Emprunt emp : listeEmprunts) {
+			 if (emp.getId() == idEmprunt) {
+				 dateFin = emp.getDateFin();
+			 }
+		 }
 	        MapSqlParameterSource vParams = new MapSqlParameterSource();
-	        vParams.addValue("id", emprunt.getId(), Types.INTEGER);
-	        Date newDate = DateUtils.addMonths(emprunt.getDateFin(), 1);
+	        vParams.addValue("id", idEmprunt, Types.INTEGER);
+	        Date newDate = DateUtils.addMonths(dateFin, 1);
 	        vParams.addValue("dateFin", newDate, Types.DATE);
 	       	        
 	        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
@@ -109,7 +115,7 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 	
 	 @Override
 	    public List<Emprunt> getEmpruntByUserId(int idUser) {
-		 String vSQL = "SELECT * FROM emprunt WHERE id_utilisateur = :id";
+		 String vSQL = "SELECT * FROM emprunt WHERE id_utilisateur = :id order by en_cours desc, repousse desc, date_retour asc ";
 	        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
 	        MapSqlParameterSource vParams = new MapSqlParameterSource("id", idUser);
 	        try {

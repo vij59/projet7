@@ -62,6 +62,6 @@ public interface EmpruntWebservice {
     @Action(input = "http://services.webservice.org/EmpruntWebservice/empruntProlongeRequest", output = "http://services.webservice.org/EmpruntWebservice/empruntProlongeResponse")
     public void empruntProlonge(
         @WebParam(name = "arg0", targetNamespace = "")
-        Emprunt arg0);
+        int arg0);
 
 }

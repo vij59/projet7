@@ -14,7 +14,7 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 		}
 	
 	@Override
-	public void prolongerEmprunt(Emprunt emprunt) {
+	public void prolongerEmprunt(int emprunt) {
 		// TODO Auto-generated method stub
 		 getDaoFactory().getEmpruntDao().prolongerEmprunt(emprunt);	
 		}

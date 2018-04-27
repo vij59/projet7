@@ -9,7 +9,7 @@ public interface EmpruntDAO {
 
 	void actualiser(Emprunt emprunt);
 
-	void empruntProlonge(Emprunt emprunt);
+	void empruntProlonge(int idEmprunt);
 
 	List<Emprunt> getLateReturns();
 

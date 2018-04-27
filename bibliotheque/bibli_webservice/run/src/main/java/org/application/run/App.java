@@ -92,7 +92,13 @@ public class App
 			
 			List<Emprunt> emprunts  = managerFactory.getEmpruntManager().getEmpruntByUserId(2);
 			for(Emprunt emp : emprunts) {
+				if(emp.getId() == 10)
+				{
 				System.out.println(emp.getDateFin());
+				System.out.println("on allonge l'emprunt");
+				//managerFactory.getEmpruntManager().empruntProlonge(emp.getId());
+				System.out.println("on a  allongé l'emprunt");
+				}
 			}
 			
 //			List<Emprunt> emprunts  = managerFactory.getEmpruntManager().getAllEmprunts();
@@ -103,6 +109,8 @@ public class App
 //				System.out.println(empr.getId());
 //				
 //			}
+			
+			
 			
 			
     }

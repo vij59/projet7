@@ -44,14 +44,6 @@
 			<result>/jsp/utilisateur/listeByTitre.jsp</result>
 		</action>
 
-		<action name="monCompte"
-			class="org.webapp.action.ListerEmprunts" method="execute">
-			<interceptor-ref name="auth" />
-			<result name="success">/jsp/utilisateur/monCompte.jsp</result>
-			<result name="error">/jsp/index.jsp</result>
-
-		</action>
-
                              
 		<action name="login">
 			<!-- <interceptor-ref name="secureStack"/> -->
@@ -83,6 +75,18 @@
 			<result name="error">/jsp/utilisateur/rechercheerror.jsp</result>
 		</action>
 
+		<action name="monCompte"
+			class="org.webapp.action.ListerEmprunts" method="execute">
+			<interceptor-ref name="auth" />
+			<result name="success">/jsp/utilisateur/monCompte.jsp</result>
+			<result name="error" type="redirectAction">login</result>
+		</action>
+		
+		<action name="repousseProcess" class="org.webapp.action.Repousse" method="execute">
+			<result name="input" type="redirectAction">monCompte</result>
+			<result name="success" type="redirectAction">monCompte</result>
+			<result name="error">/jsp/utilisateur/index.jsp</result>
+		</action>
 
 	</package>
 </struts>

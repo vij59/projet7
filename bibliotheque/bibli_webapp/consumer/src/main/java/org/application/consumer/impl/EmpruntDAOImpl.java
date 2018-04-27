@@ -15,13 +15,17 @@ public class EmpruntDAOImpl implements EmpruntDAO {
 	public List<Emprunt> getEmprunts() {
 		Emprunt_Service empruntService = new Emprunt_Service();
 		EmpruntWebservice empruntWebService = empruntService.getEmpruntWebservicePort();
+		System.out.println("emprunt fonctionne");
 		return empruntWebService.getAllEmprunts();
 	}
 	
 	@Override
-	public void prolongerEmprunt(Emprunt emprunt) {
+	public void prolongerEmprunt(int emprunt) {
 		Emprunt_Service empruntService = new Emprunt_Service();
 		EmpruntWebservice empruntWebService = empruntService.getEmpruntWebservicePort();
+		
+		System.out.println("prolonger fonctionne");
+		
 		 empruntWebService.empruntProlonge(emprunt);
 	}
 	
@@ -30,6 +34,7 @@ public class EmpruntDAOImpl implements EmpruntDAO {
 	public List<Emprunt>getEmpruntByUserId(int idUser) {
 		Emprunt_Service empruntService = new Emprunt_Service();
 		EmpruntWebservice empruntWebService = empruntService.getEmpruntWebservicePort();
+		System.out.println("emprunt by udser id fonctionne");
 		return empruntWebService.getEmpruntByUserId(idUser);
 	}
 

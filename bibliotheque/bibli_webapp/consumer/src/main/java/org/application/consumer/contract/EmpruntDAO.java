@@ -8,7 +8,7 @@ public interface EmpruntDAO {
 
 	public List<Emprunt> getEmprunts();
 
-	void prolongerEmprunt(Emprunt emprunt);
+	void prolongerEmprunt(int emprunt);
 
 	public List<Emprunt>getEmpruntByUserId(int idUser);
 }

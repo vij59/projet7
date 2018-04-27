@@ -17,8 +17,8 @@ import org.application.model.Emprunt;
 	    }
 
 	    @WebMethod
-	    public void empruntProlonge(Emprunt emprunt) {
-	        getManagerFactory().getEmpruntManager().empruntProlonge(emprunt);
+	    public void empruntProlonge(int idEmprunt) {
+	        getManagerFactory().getEmpruntManager().empruntProlonge(idEmprunt);
 	    }
 	    
 	    @WebMethod

@@ -13,7 +13,7 @@ public interface EmpruntManager {
     void updateEmprunt(Emprunt emprunt);
     List<Emprunt> getLateEmprunts();
 	boolean empruntPossible(int id);
-	void empruntProlonge(Emprunt emprunt);
+	 void empruntProlonge(int idEmprunt);
 	 List<Emprunt> getEmpruntByUserId(int idUser);
 	
 

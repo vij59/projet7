@@ -18,23 +18,55 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th>idLivre</th>
+							<th>id emprunt</th>
 							<th>date emprunt</th>
 							<th>date retour</th>
+							<th>état</th>
+							<th>repoussé ?</th>
 						</tr>
 					</thead>
-				
+
 					<s:iterator var="emprunts" value="mesEmprunts">
 
 
 						<tbody>
 							<tr>
 								<td><s:property value="id" /></td>
-								<td><s:property value="dateDebut"/></td>
+
+								<td><s:date name="dateDebut.toGregorianCalendar()"
+										format="dd/MM/yyyy" /></td>
 
 
 
-								<td><s:property value="dateFin" />&nbsp;</td>
+								<td><s:date name="dateFin.toGregorianCalendar()"
+										format="dd/MM/yyyy" />&nbsp;</td>
+
+								<s:if test="%{enCours==true}">
+									<td>En cours&nbsp;</td>
+								</s:if>
+								<s:else>
+									<td>Archivé&nbsp;</td>
+								</s:else>
+
+								<%-- <td><s:property value="enCours" />&nbsp;</td> --%>
+
+								<s:if test="%{dejaRepousse==false}">
+									<td><s:url action="repousseProcess" var="helloLink">
+									<s:param name="id_emprunt"><s:property value='id' /></s:param>
+								</s:url>
+								<p>
+									<a href="${helloLink}">Repousser</a>
+								</p></td>
+								</s:if>
+								<s:else>
+									<td>Déjà repoussé&nbsp;</td>
+								</s:else>
+
+							
+
+								
+
+								<%-- <td><s:property value="dejaRepousse" />&nbsp;</td> --%>
 
 							</tr>
 
@@ -45,15 +77,7 @@
 			</div>
 		</div>
 	</div>
-	
-	#session.userId <s:property value="#session.userId" />
-	#sessionmap.userId <s:property value="#sessionmap.userId" />
-	
-	session.userId <s:property value="session.userId" />
-	sessionmap.userId <s:property value="sessionmap.userId" />
-	
-	username <s:property value="username"/>
-	userMail <s:property value="userMail"/>
+
 
 
 </body>

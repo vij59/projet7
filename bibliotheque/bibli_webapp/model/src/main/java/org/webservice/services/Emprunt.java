@@ -25,6 +25,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="idLivre" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="idUtilisateur" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="livre" type="{http://services.webservice.org/}livre" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -41,7 +42,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "enCours",
     "id",
     "idLivre",
-    "idUtilisateur"
+    "idUtilisateur",
+    "livre"
 })
 public class Emprunt {
 
@@ -54,6 +56,7 @@ public class Emprunt {
     protected Integer id;
     protected int idLivre;
     protected int idUtilisateur;
+    protected Livre livre;
 
     /**
      * Obtient la valeur de la propriété dateDebut.
@@ -189,6 +192,30 @@ public class Emprunt {
      */
     public void setIdUtilisateur(int value) {
         this.idUtilisateur = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété livre.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Livre }
+     *     
+     */
+    public Livre getLivre() {
+        return livre;
+    }
+
+    /**
+     * Définit la valeur de la propriété livre.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Livre }
+     *     
+     */
+    public void setLivre(Livre value) {
+        this.livre = value;
     }
 
 }

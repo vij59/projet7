@@ -1,5 +1,6 @@
 package org.application.run;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.application.business.contract.ManagerFactory;
@@ -81,19 +82,30 @@ public class App
     	
         System.out.println("bite");
         
-        List<Emprunt> emprunts3 = managerFactory.getEmpruntManager().getEmpruntByUserId(2);
+        List<Emprunt> emprunts3 = managerFactory.getEmpruntManager().getEmprunts();
         for(Emprunt emprunt : emprunts3) {
-      	System.out.println("livre" +emprunt.getIdLivre()+ " = "+ emprunt.getId());
+        	System.out.println(emprunt.getDateDebut());
+        	if(emprunt.getId()==10) {
+        		managerFactory.getEmpruntManager().prolongerEmprunt(emprunt.getId());
+        	}
+        	System.out.println(emprunt.getDateFin());
+        		//managerFactory.getEmpruntManager().prolongerEmprunt(emprunt);
+        		 System.out.println("fini");
+        	
+      	//System.out.println("livre" +emprunt.getIdLivre()+ " = "+ emprunt.getId());
        }
+        System.out.println("fini total");
         
-        Utilisateur userrr = managerFactory.getUtilisateurManager().getUtilisateurByMail("joo");
-        System.out.println(userrr.getNom()+userrr.getId());
+//        Utilisateur userrr = managerFactory.getUtilisateurManager().getUtilisateurByMail("joo");
+//        System.out.println(userrr.getNom()+userrr.getId());
         
 //        List<Emprunt> emprunts2 = managerFactory.getEmpruntManager().getEmpruntByUserId(userrr.getId());
 //        for(Emprunt emprunt : emprunts2) {
 //        	System.out.println("livre" +emprunt.getIdLivre()+ " = "+ emprunt.getId());
 //        }
         
+        
+       
         
        
     }

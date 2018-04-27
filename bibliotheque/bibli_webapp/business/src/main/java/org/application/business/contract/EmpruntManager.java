@@ -7,7 +7,7 @@ import org.webservice.services.Emprunt;
 public interface EmpruntManager {
 	public List<Emprunt> getEmprunts();
 
-	void prolongerEmprunt(Emprunt emprunt);
+	void prolongerEmprunt(int emprunt);
 
 	public List<Emprunt>getEmpruntByUserId(int idUser);
 
