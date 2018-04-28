@@ -30,3 +30,5 @@ get Date order By en cours, id
 
 Date debut , date fin dans struts, reformater
 pkoi pas convertir les dates en Integer
+
+https://docs.spring.io/spring-batch/trunk/reference/html/configureStep.html
