@@ -27,6 +27,18 @@ public interface AuteurWebservice {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<org.webservice.services.Auteur>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listAuteurs", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ListAuteurs")
+    @ResponseWrapper(localName = "listAuteursResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ListAuteursResponse")
+    @Action(input = "http://services.webservice.org/AuteurWebservice/listAuteursRequest", output = "http://services.webservice.org/AuteurWebservice/listAuteursResponse")
+    public List<Auteur> listAuteurs();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns java.util.List<org.webservice.services.Auteur>
@@ -39,18 +51,6 @@ public interface AuteurWebservice {
     public List<Auteur> getAuteurByName(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<org.webservice.services.Auteur>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listAuteurs", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ListAuteurs")
-    @ResponseWrapper(localName = "listAuteursResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ListAuteursResponse")
-    @Action(input = "http://services.webservice.org/AuteurWebservice/listAuteursRequest", output = "http://services.webservice.org/AuteurWebservice/listAuteursResponse")
-    public List<Auteur> listAuteurs();
 
     /**
      * 

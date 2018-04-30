@@ -1,1 +1,3 @@
+org\batch\MailSender.class
 org\batch\App.class
+org\batch\SpringBootSendingMailApplication.class
