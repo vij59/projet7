@@ -90,16 +90,16 @@ public class App
 			System.out.println(util.getMail() + "biteenbois" + util.getId());
 			
 			
-			List<Emprunt> emprunts  = managerFactory.getEmpruntManager().getEmpruntByUserId(2);
+			List<Emprunt> emprunts  = managerFactory.getEmpruntManager().getEmpruntsEnCours();
 			for(Emprunt emp : emprunts) {
-				if(emp.getId() == 10)
-				{
+				
 				System.out.println(emp.getDateFin());
+				System.out.println(emp.getLivre().getTitre());
 				System.out.println("on allonge l'emprunt");
 				//managerFactory.getEmpruntManager().empruntProlonge(emp.getId());
 				System.out.println("on a  allongé l'emprunt");
 				}
-			}
+			
 			
 //			List<Emprunt> emprunts  = managerFactory.getEmpruntManager().getAllEmprunts();
 //			for(Emprunt  empr : emprunts) {

@@ -26,6 +26,12 @@ import org.application.model.Emprunt;
 	        return getManagerFactory().getEmpruntManager().getEmpruntByUserId(idUser);
 	    }
 	    
+	    @WebMethod
+	    public List<Emprunt> getEmpruntsEnCours() {
+	        return getManagerFactory().getEmpruntManager().getEmpruntsEnCours();
+	    }
+	    
+
 //
 //	    @WebMethod
 //	    public void saveNewEmprunt(Emprunt emprunt)

@@ -29,6 +29,7 @@ org\webservice\services\GetEmpruntByUserId.class
 org\webservice\services\Utilisateur_Service.class
 org\webservice\services\ActualiserUtilisateurResponse.class
 org\webservice\services\UpdateEmpruntResponse.class
+org\webservice\services\GetEmpruntsEnCours.class
 org\webservice\services\ActualiserUtilisateur.class
 org\webservice\services\Emprunt_Service.class
 org\webservice\services\GetEmpruntByUserIdResponse.class
@@ -53,6 +54,7 @@ org\webservice\services\Auteur.class
 org\webservice\services\CreerUtilisateur.class
 org\webservice\services\ValiderLogin.class
 org\webservice\services\CreateAuteur.class
+org\webservice\services\GetEmpruntsEnCoursResponse.class
 org\webservice\services\GetByIdResponse.class
 org\webservice\services\SaveNewEmprunt.class
 org\webservice\services\CreerUtilisateurResponse.class

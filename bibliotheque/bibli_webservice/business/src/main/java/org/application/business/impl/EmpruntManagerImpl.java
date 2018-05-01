@@ -104,4 +104,17 @@ List<Emprunt> liste = getDaoFactory().getEmpruntDAO().getEmpruntByUserId(idUser)
 		return liste;
 		
 	}
+
+	@Override
+	public List<Emprunt> getEmpruntsEnCours() {
+List<Emprunt> liste = getDaoFactory().getEmpruntDAO().getEmpruntsEnCours();
+		
+		for (Emprunt emprunt : liste) {
+			
+			Livre livre = getDaoFactory().getLivreDAO().getById(emprunt.getIdLivre());
+			emprunt.setLivre(livre);
+		
+		}
+		return liste;
+	}
 }

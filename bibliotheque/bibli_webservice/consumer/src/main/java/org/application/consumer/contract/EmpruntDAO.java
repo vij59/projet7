@@ -17,5 +17,7 @@ public interface EmpruntDAO {
 
 	 List<Emprunt> getEmpruntByUserId(int idUser);
 
+	List<Emprunt> getEmpruntsEnCours();
+
 
 }

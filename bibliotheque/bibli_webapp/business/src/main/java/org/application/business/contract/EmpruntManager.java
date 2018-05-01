@@ -11,4 +11,5 @@ public interface EmpruntManager {
 
 	public List<Emprunt>getEmpruntByUserId(int idUser);
 
+	public List<Emprunt> getEmpruntsEnCours();
 }

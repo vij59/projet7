@@ -11,4 +11,6 @@ public interface EmpruntDAO {
 	void prolongerEmprunt(int emprunt);
 
 	public List<Emprunt>getEmpruntByUserId(int idUser);
+	
+	public List<Emprunt>getEmpruntsEnCours();
 }

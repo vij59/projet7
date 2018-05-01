@@ -125,6 +125,16 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 	            return null;
 	        }
 	 }
+	 
+	 @Override
+	    public List<Emprunt> getEmpruntsEnCours() {
+		 JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+
+	        String sql = "SELECT * FROM emprunt WHERE en_cours = true";
+
+	        List<Emprunt> vList = vJdbcTemplate.query(sql,empruntRM);
+	        return vList;
+	 }
 	
 	
 	

@@ -11,18 +11,18 @@ import org.webservice.services.Livre_Service;
 
 public class EmpruntDAOImpl implements EmpruntDAO {
 
+	Emprunt_Service empruntService = new Emprunt_Service();
+	EmpruntWebservice empruntWebService = empruntService.getEmpruntWebservicePort();
+	
 	@Override
 	public List<Emprunt> getEmprunts() {
-		Emprunt_Service empruntService = new Emprunt_Service();
-		EmpruntWebservice empruntWebService = empruntService.getEmpruntWebservicePort();
+		
 		System.out.println("emprunt fonctionne");
 		return empruntWebService.getAllEmprunts();
 	}
 	
 	@Override
 	public void prolongerEmprunt(int emprunt) {
-		Emprunt_Service empruntService = new Emprunt_Service();
-		EmpruntWebservice empruntWebService = empruntService.getEmpruntWebservicePort();
 		
 		System.out.println("prolonger fonctionne");
 		
@@ -32,10 +32,14 @@ public class EmpruntDAOImpl implements EmpruntDAO {
 	
 	@Override
 	public List<Emprunt>getEmpruntByUserId(int idUser) {
-		Emprunt_Service empruntService = new Emprunt_Service();
-		EmpruntWebservice empruntWebService = empruntService.getEmpruntWebservicePort();
 		System.out.println("emprunt by udser id fonctionne");
 		return empruntWebService.getEmpruntByUserId(idUser);
+	}
+
+	@Override
+	public List<Emprunt> getEmpruntsEnCours() {
+		// TODO Auto-generated method stub
+		return empruntWebService.getEmpruntsEnCours();
 	}
 
 }

@@ -28,17 +28,41 @@ public interface UtilisateurWebservice {
     /**
      * 
      * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "creerUtilisateur", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerUtilisateur")
+    @ResponseWrapper(localName = "creerUtilisateurResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerUtilisateurResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/creerUtilisateurRequest", output = "http://services.webservice.org/UtilisateurWebservice/creerUtilisateurResponse")
+    public void creerUtilisateur(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Utilisateur arg0);
+
+    /**
+     * 
      * @return
-     *     returns org.webservice.services.Utilisateur
+     *     returns java.util.List<org.webservice.services.Utilisateur>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUtilisateurByMail", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurByMail")
-    @ResponseWrapper(localName = "getUtilisateurByMailResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurByMailResponse")
-    @Action(input = "http://services.webservice.org/UtilisateurWebservice/getUtilisateurByMailRequest", output = "http://services.webservice.org/UtilisateurWebservice/getUtilisateurByMailResponse")
-    public Utilisateur getUtilisateurByMail(
+    @RequestWrapper(localName = "getUtilisateurs", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurs")
+    @ResponseWrapper(localName = "getUtilisateursResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateursResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/getUtilisateursRequest", output = "http://services.webservice.org/UtilisateurWebservice/getUtilisateursResponse")
+    public List<Utilisateur> getUtilisateurs();
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "validerLogin", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ValiderLogin")
+    @ResponseWrapper(localName = "validerLoginResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ValiderLoginResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/validerLoginRequest", output = "http://services.webservice.org/UtilisateurWebservice/validerLoginResponse")
+    public void validerLogin(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        Utilisateur arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
@@ -87,41 +111,17 @@ public interface UtilisateurWebservice {
 
     /**
      * 
+     * @param arg0
      * @return
-     *     returns java.util.List<org.webservice.services.Utilisateur>
+     *     returns org.webservice.services.Utilisateur
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUtilisateurs", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurs")
-    @ResponseWrapper(localName = "getUtilisateursResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateursResponse")
-    @Action(input = "http://services.webservice.org/UtilisateurWebservice/getUtilisateursRequest", output = "http://services.webservice.org/UtilisateurWebservice/getUtilisateursResponse")
-    public List<Utilisateur> getUtilisateurs();
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "creerUtilisateur", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerUtilisateur")
-    @ResponseWrapper(localName = "creerUtilisateurResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerUtilisateurResponse")
-    @Action(input = "http://services.webservice.org/UtilisateurWebservice/creerUtilisateurRequest", output = "http://services.webservice.org/UtilisateurWebservice/creerUtilisateurResponse")
-    public void creerUtilisateur(
+    @RequestWrapper(localName = "getUtilisateurByMail", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurByMail")
+    @ResponseWrapper(localName = "getUtilisateurByMailResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurByMailResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/getUtilisateurByMailRequest", output = "http://services.webservice.org/UtilisateurWebservice/getUtilisateurByMailResponse")
+    public Utilisateur getUtilisateurByMail(
         @WebParam(name = "arg0", targetNamespace = "")
-        Utilisateur arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "validerLogin", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ValiderLogin")
-    @ResponseWrapper(localName = "validerLoginResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ValiderLoginResponse")
-    @Action(input = "http://services.webservice.org/UtilisateurWebservice/validerLoginRequest", output = "http://services.webservice.org/UtilisateurWebservice/validerLoginResponse")
-    public void validerLogin(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Utilisateur arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
+        String arg0);
 
 }
