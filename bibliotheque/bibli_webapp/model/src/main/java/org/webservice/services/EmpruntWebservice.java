@@ -32,6 +32,18 @@ public interface EmpruntWebservice {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getEmpruntsEnCours", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntsEnCours")
+    @ResponseWrapper(localName = "getEmpruntsEnCoursResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntsEnCoursResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/getEmpruntsEnCoursRequest", output = "http://services.webservice.org/EmpruntWebservice/getEmpruntsEnCoursResponse")
+    public List<Emprunt> getEmpruntsEnCours();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<org.webservice.services.Emprunt>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "getAllEmprunts", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetAllEmprunts")
     @ResponseWrapper(localName = "getAllEmpruntsResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetAllEmpruntsResponse")
     @Action(input = "http://services.webservice.org/EmpruntWebservice/getAllEmpruntsRequest", output = "http://services.webservice.org/EmpruntWebservice/getAllEmpruntsResponse")
@@ -63,17 +75,5 @@ public interface EmpruntWebservice {
     public List<Emprunt> getEmpruntByUserId(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<org.webservice.services.Emprunt>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getEmpruntsEnCours", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntsEnCours")
-    @ResponseWrapper(localName = "getEmpruntsEnCoursResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntsEnCoursResponse")
-    @Action(input = "http://services.webservice.org/EmpruntWebservice/getEmpruntsEnCoursRequest", output = "http://services.webservice.org/EmpruntWebservice/getEmpruntsEnCoursResponse")
-    public List<Emprunt> getEmpruntsEnCours();
 
 }

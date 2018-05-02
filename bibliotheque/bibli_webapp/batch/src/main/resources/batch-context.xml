@@ -14,8 +14,8 @@
         http://www.springframework.org/schema/task/spring-task-3.2.xsd
 	">
 
-
-    <!-- Inclusion d'autres fichiers de contexte Spring -->
+<!-- 
+    Inclusion d'autres fichiers de contexte Spring
    
     <import resource="classpath:/consumerContext.xml" />
     <import resource="classpath:/businessContext.xml" />
@@ -23,15 +23,16 @@
 
   <context:component-scan base-package="com.edouard" />
 
- 
-  <bean id="runScheduler" class="org.batch.SpringBootSendingMailApplication" />
+ <bean id="mailMail" class="org.batch.MailMail"/>
+  <bean id="app" class="org.batch.App" />
 
-  <!-- Run every 5 seconds -->
+
+  Run every 5 seconds
   <task:scheduled-tasks>
-    <!-- 
+    
 	<task:scheduled ref="runScheduler" method="run" fixed-delay="5000" /> 
-    -->
-	<task:scheduled ref="runScheduler" method="run" cron="*/5 * * * * *" />
+   
+	<task:scheduled ref="app" method="main" cron="*/5 * * * * *" />
    </task:scheduled-tasks>
-
+ -->
 </beans>
