@@ -42,18 +42,6 @@ public interface AuteurWebservice {
 
     /**
      * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "createAuteur", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreateAuteur")
-    @ResponseWrapper(localName = "createAuteurResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreateAuteurResponse")
-    @Action(input = "http://services.webservice.org/AuteurWebservice/createAuteurRequest", output = "http://services.webservice.org/AuteurWebservice/createAuteurResponse")
-    public void createAuteur(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Auteur arg0);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<org.webservice.services.Auteur>
      */
@@ -63,5 +51,17 @@ public interface AuteurWebservice {
     @ResponseWrapper(localName = "listAuteursResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.ListAuteursResponse")
     @Action(input = "http://services.webservice.org/AuteurWebservice/listAuteursRequest", output = "http://services.webservice.org/AuteurWebservice/listAuteursResponse")
     public List<Auteur> listAuteurs();
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "createAuteur", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreateAuteur")
+    @ResponseWrapper(localName = "createAuteurResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreateAuteurResponse")
+    @Action(input = "http://services.webservice.org/AuteurWebservice/createAuteurRequest", output = "http://services.webservice.org/AuteurWebservice/createAuteurResponse")
+    public void createAuteur(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Auteur arg0);
 
 }

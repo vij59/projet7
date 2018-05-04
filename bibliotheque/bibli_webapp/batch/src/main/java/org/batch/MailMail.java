@@ -1,44 +1,36 @@
 package org.batch;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
 
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.mail.MailParseException;
+import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Service;
 
-public class MailMail
-{
-	private JavaMailSender mailSender;
-	private SimpleMailMessage simpleMailMessage;
-	
-	public void setSimpleMailMessage(SimpleMailMessage simpleMailMessage) {
-		this.simpleMailMessage = simpleMailMessage;
-	}
+@Service
+public class MailMail {
 
-	public void setMailSender(JavaMailSender mailSender) {
-		this.mailSender = mailSender;
-	}
-	
-	public void sendMail(String to, String nom, String content) {
-	
-	   MimeMessage message = mailSender.createMimeMessage();
-		
-	   try{
-		MimeMessageHelper helper = new MimeMessageHelper(message, true);
-			
-		helper.setFrom(simpleMailMessage.getFrom());
-		helper.setTo(to);
-		helper.setSubject(simpleMailMessage.getSubject());
-		helper.setText(String.format(
-			simpleMailMessage.getText(), nom, content));
-	
+    private MailSender mailSender;
 
-	     }catch (MessagingException e) {
-		throw new MailParseException(e);
-	     }
-	     mailSender.send(message);
-         }
+    public MailSender getMailSender() {
+        return mailSender;
+    }
+
+    public void setMailSender(MailSender mailSender) {
+        this.mailSender = mailSender;
+    }
+
+    /**
+     * This method will send compose and send the message
+     * */
+    public void sendMail(String to, String subject, String body)
+    {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(to);
+        message.setSubject(subject);
+        message.setText(body);
+        mailSender.send(message);
+    }
+
+
+
+
 }

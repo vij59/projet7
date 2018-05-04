@@ -1,3 +1,4 @@
-org\batch\App.class
 org\batch\Scheduler.class
+org\batch\MyTasklet.class
+org\batch\App.class
 org\batch\MailMail.class

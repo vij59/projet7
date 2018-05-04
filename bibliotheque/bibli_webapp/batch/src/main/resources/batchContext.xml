@@ -5,8 +5,10 @@
        xmlns:batch="http://www.springframework.org/schema/batch" xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
-    <context:component-scan base-package="com.edouard" />
+    <context:component-scan base-package="org.batch" />
 
+    <!-- ==== AbstractManager ===== -->
+   
 
     <!-- SET default mail properties -->
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
@@ -42,14 +44,12 @@
     </bean>
 
     <bean id="runScheduler" class="org.batch.Scheduler"/>
-    <bean id="mailTasklet" class="org.batch.MailTasklet"/>
-   
+    <bean id="myTasklet" class="org.batch.MyTasklet"/>
 
-    </bean>
 
     <batch:job id="scheduledJob">
         <batch:step id="jobStep">
-            <batch:tasklet ref="mailTasklet" />
+            <batch:tasklet ref="myTasklet" />
         </batch:step>
     </batch:job>
 
