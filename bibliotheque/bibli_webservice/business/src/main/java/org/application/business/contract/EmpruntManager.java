@@ -6,17 +6,16 @@ import org.application.model.Emprunt;
 
 public interface EmpruntManager {
 
+	List<Emprunt> getListeEmprunts();
 
-    List<Emprunt> getEmpruntByUserEmail(String email);
-    List<Emprunt> getAllEmprunts();
-    void newEmprunt(Emprunt emprunt);
-    void updateEmprunt(Emprunt emprunt);
-    List<Emprunt> getLateEmprunts();
+	void creerEmprunt(Emprunt emprunt);
+
 	boolean empruntPossible(int id);
-	 void empruntProlonge(int idEmprunt);
-	 List<Emprunt> getEmpruntByUserId(int idUser);
-	 List<Emprunt> getEmpruntsEnCours();
 
+	void empruntProlonge(int idEmprunt);
 
+	List<Emprunt> getEmpruntByUserId(int idUser);
+
+	List<Emprunt> getEmpruntsEnCours();
 
 }

@@ -20,7 +20,7 @@ public class LivreManagerImpl extends AbstractManager implements LivreManager {
 	}
 	
 	@Override
-	public Livre getById(int id) {
-		return getDaoFactory().getLivreDao().getById( id) ;
+	public Livre getLivreById(int id) {
+		return getDaoFactory().getLivreDao().getLivreById( id) ;
 	}
 }

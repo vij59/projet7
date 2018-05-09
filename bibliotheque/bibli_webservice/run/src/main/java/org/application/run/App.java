@@ -86,7 +86,7 @@ public class App
 				System.out.println(livr.getId());
 			}
 			
-			Utilisateur util = managerFactory.getUtilisateurManager().getUtilisateurByEmail("joo");
+			Utilisateur util = managerFactory.getUtilisateurManager().getUtilisateurByMail("joo");
 			System.out.println(util.getMail() + "biteenbois" + util.getId());
 			
 			

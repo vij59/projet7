@@ -45,15 +45,18 @@ public interface LivreWebservice {
 
     /**
      * 
+     * @param arg0
      * @return
-     *     returns java.util.List<org.webservice.services.Livre>
+     *     returns org.webservice.services.Livre
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getLivres", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivres")
-    @ResponseWrapper(localName = "getLivresResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivresResponse")
-    @Action(input = "http://services.webservice.org/LivreWebservice/getLivresRequest", output = "http://services.webservice.org/LivreWebservice/getLivresResponse")
-    public List<Livre> getLivres();
+    @RequestWrapper(localName = "getLivreById", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivreById")
+    @ResponseWrapper(localName = "getLivreByIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivreByIdResponse")
+    @Action(input = "http://services.webservice.org/LivreWebservice/getLivreByIdRequest", output = "http://services.webservice.org/LivreWebservice/getLivreByIdResponse")
+    public Livre getLivreById(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
     /**
      * 
@@ -72,17 +75,14 @@ public interface LivreWebservice {
 
     /**
      * 
-     * @param arg0
      * @return
-     *     returns org.webservice.services.Livre
+     *     returns java.util.List<org.webservice.services.Livre>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getById", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetById")
-    @ResponseWrapper(localName = "getByIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetByIdResponse")
-    @Action(input = "http://services.webservice.org/LivreWebservice/getByIdRequest", output = "http://services.webservice.org/LivreWebservice/getByIdResponse")
-    public Livre getById(
-        @WebParam(name = "arg0", targetNamespace = "")
-        long arg0);
+    @RequestWrapper(localName = "getLivres", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivres")
+    @ResponseWrapper(localName = "getLivresResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivresResponse")
+    @Action(input = "http://services.webservice.org/LivreWebservice/getLivresRequest", output = "http://services.webservice.org/LivreWebservice/getLivresResponse")
+    public List<Livre> getLivres();
 
 }

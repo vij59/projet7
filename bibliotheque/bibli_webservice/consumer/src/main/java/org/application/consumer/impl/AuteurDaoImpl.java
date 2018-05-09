@@ -1,10 +1,6 @@
 package org.application.consumer.impl;
 
-
-import java.sql.Types;
 import java.util.List;
-
-import javax.inject.Inject;
 
 import org.application.consumer.contract.AbstractDAO;
 import org.application.consumer.contract.AuteurDAO;
@@ -18,75 +14,56 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 public class AuteurDaoImpl extends AbstractDAO implements AuteurDAO {
 
-    @Autowired
-    private AuteurRM auteurRM;
+	@Autowired
+	private AuteurRM auteurRM;
 
-    public AuteurRM getAuteurRM() {
-        return auteurRM;
-    }
+	public AuteurRM getAuteurRM() {
+		return auteurRM;
+	}
 
-    public void setAuteurRM(AuteurRM auteurRM) {
-        this.auteurRM = auteurRM;
-    }
+	public void setAuteurRM(AuteurRM auteurRM) {
+		this.auteurRM = auteurRM;
+	}
 
-    @Override
-    public void creer(Auteur auteur) {
+	@Override
+	public List<Auteur> getAuteurs() {
 
-        String vSQL = "INSERT INTO auteur (nom, prenom) VALUES(:nom, :prenom)";
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 
-        MapSqlParameterSource vParams = new MapSqlParameterSource();
-        vParams.addValue("nom", auteur.getNom(), Types.VARCHAR);
-        vParams.addValue("prenom", auteur.getPrenom(), Types.VARCHAR);
+		String sql = "SELECT * FROM auteur";
 
-        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
-        vJdbcTemplate.update(vSQL, vParams);
+		return vJdbcTemplate.query(sql, auteurRM);
+	}
 
-    }
+	@Override
+	public List<Auteur> getAuteurByNom(String nom) {
 
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 
-    @Override
-    public List<Auteur> getAuteurs() {
+		String var = "'" + nom + "'";
+		String vSQL = "SELECT * FROM auteur WHERE nom = " + var;
 
-        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		try {
+			List<Auteur> auteurs = vJdbcTemplate.query(vSQL, auteurRM);
+			return auteurs;
+		} catch (EmptyResultDataAccessException vEx) {
+			return null;
+		}
+	}
 
-        String sql = "SELECT * FROM auteur";
+	@Override
+	public Auteur getAuteurById(int id) {
 
-        return vJdbcTemplate.query(sql,auteurRM);
-    }
+		String vSQL = "SELECT * FROM auteur WHERE id = :id";
+		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+		MapSqlParameterSource vParams = new MapSqlParameterSource("id", id);
 
-    @Override
-    public List<Auteur> getByNom(String nom) {
+		try {
+			Auteur auteur = vJdbcTemplate.queryForObject(vSQL, vParams, auteurRM);
+			return auteur;
+		} catch (EmptyResultDataAccessException vEx) {
+			return null;
+		}
+	}
 
-        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
-
-        String var = "'"+nom+"'";
-        String vSQL = "SELECT * FROM auteur WHERE nom = "+var;
-
-        try {
-            List<Auteur> auteurs = vJdbcTemplate.query(vSQL,auteurRM);
-            return auteurs;
-        } catch (EmptyResultDataAccessException vEx) {
-            return null;
-        }
-    }
-
-
-    @Override
-    public Auteur getAuteurById(int id) {
-
-       // JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
-
-        
-        String vSQL = "SELECT * FROM auteur WHERE id = :id";
-        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
-        MapSqlParameterSource vParams = new MapSqlParameterSource("id", id);
-
-        try {
-            Auteur auteur = vJdbcTemplate.queryForObject(vSQL, vParams, auteurRM);
-            return auteur;
-        } catch (EmptyResultDataAccessException vEx) {
-            return null;
-        }
-    }
-    
 }

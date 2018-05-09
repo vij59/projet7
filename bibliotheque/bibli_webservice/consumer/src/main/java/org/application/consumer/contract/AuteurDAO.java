@@ -6,10 +6,10 @@ import org.application.model.Auteur;
 
 public interface AuteurDAO {
 
-    void creer(Auteur author);
-   public  List<Auteur> getAuteurs();
-	public List<Auteur> getByNom(String nom);
-	public Auteur getAuteurById(int id);
+	public List<Auteur> getAuteurs();
 
+	public List<Auteur> getAuteurByNom(String nom);
+
+	public Auteur getAuteurById(int id);
 
 }

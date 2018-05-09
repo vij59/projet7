@@ -9,11 +9,10 @@ import org.application.model.Livre;
 public interface LivreDAO {
 
     void creer(Livre livre);
-    Livre getById(int id);
+    Livre getLivreById(int id);
     List<Livre> getLivres();
-    List<Livre> getByNom(String nom);
-    List<Livre> getByAuteur(Auteur auteur);
-	Livre getById(long id);
+    List<Livre> getLivreByTitre(String titre);
+    List<Livre> getLivreByAuteur(Auteur auteur);
 	List<Livre> getLivreByRecherche(String titre, String auteur);
 
 

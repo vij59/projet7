@@ -25,10 +25,10 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetLivreByRecherche_QNAME = new QName("http://services.webservice.org/", "getLivreByRecherche");
-    private final static QName _GetByIdResponse_QNAME = new QName("http://services.webservice.org/", "getByIdResponse");
-    private final static QName _GetById_QNAME = new QName("http://services.webservice.org/", "getById");
     private final static QName _GetByNom_QNAME = new QName("http://services.webservice.org/", "getByNom");
+    private final static QName _GetLivreByIdResponse_QNAME = new QName("http://services.webservice.org/", "getLivreByIdResponse");
     private final static QName _GetLivresResponse_QNAME = new QName("http://services.webservice.org/", "getLivresResponse");
+    private final static QName _GetLivreById_QNAME = new QName("http://services.webservice.org/", "getLivreById");
     private final static QName _GetLivreByRechercheResponse_QNAME = new QName("http://services.webservice.org/", "getLivreByRechercheResponse");
     private final static QName _GetByNomResponse_QNAME = new QName("http://services.webservice.org/", "getByNomResponse");
     private final static QName _GetLivres_QNAME = new QName("http://services.webservice.org/", "getLivres");
@@ -49,19 +49,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetByIdResponse }
+     * Create an instance of {@link GetLivreByIdResponse }
      * 
      */
-    public GetByIdResponse createGetByIdResponse() {
-        return new GetByIdResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetById }
-     * 
-     */
-    public GetById createGetById() {
-        return new GetById();
+    public GetLivreByIdResponse createGetLivreByIdResponse() {
+        return new GetLivreByIdResponse();
     }
 
     /**
@@ -70,6 +62,14 @@ public class ObjectFactory {
      */
     public GetByNom createGetByNom() {
         return new GetByNom();
+    }
+
+    /**
+     * Create an instance of {@link GetLivreById }
+     * 
+     */
+    public GetLivreById createGetLivreById() {
+        return new GetLivreById();
     }
 
     /**
@@ -138,24 +138,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetByIdResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getByIdResponse")
-    public JAXBElement<GetByIdResponse> createGetByIdResponse(GetByIdResponse value) {
-        return new JAXBElement<GetByIdResponse>(_GetByIdResponse_QNAME, GetByIdResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetById }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getById")
-    public JAXBElement<GetById> createGetById(GetById value) {
-        return new JAXBElement<GetById>(_GetById_QNAME, GetById.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetByNom }{@code >}}
      * 
      */
@@ -165,12 +147,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLivreByIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getLivreByIdResponse")
+    public JAXBElement<GetLivreByIdResponse> createGetLivreByIdResponse(GetLivreByIdResponse value) {
+        return new JAXBElement<GetLivreByIdResponse>(_GetLivreByIdResponse_QNAME, GetLivreByIdResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLivresResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getLivresResponse")
     public JAXBElement<GetLivresResponse> createGetLivresResponse(GetLivresResponse value) {
         return new JAXBElement<GetLivresResponse>(_GetLivresResponse_QNAME, GetLivresResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLivreById }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getLivreById")
+    public JAXBElement<GetLivreById> createGetLivreById(GetLivreById value) {
+        return new JAXBElement<GetLivreById>(_GetLivreById_QNAME, GetLivreById.class, null, value);
     }
 
     /**

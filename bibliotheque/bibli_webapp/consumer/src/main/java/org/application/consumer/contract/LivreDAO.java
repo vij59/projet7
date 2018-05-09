@@ -11,5 +11,5 @@ public interface LivreDAO {
 
 	List<Livre> getLivreByRecherche(String titre, String nomAuteur);
 
-	Livre getById(int id);
+	Livre getLivreById(int id);
 }

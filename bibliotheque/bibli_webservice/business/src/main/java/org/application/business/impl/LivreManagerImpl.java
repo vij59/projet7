@@ -9,51 +9,43 @@ import org.application.model.Livre;
 public class LivreManagerImpl extends AbstractManager implements LivreManager {
 
 	public List<Livre> getLivres() {
-		
+
 		return getDaoFactory().getLivreDAO().getLivres();
 	}
 
-	  @Override
-	    public Livre getLivre(long id) {
+	@Override
+	public void creerLivre(Livre livre) {
 
-	        return getDaoFactory().getLivreDAO().getById(id);
+		getDaoFactory().getLivreDAO().creer(livre);
 
-	    }
+	}
 
-	    @Override
-	    public void creerLivre(Livre livre) {
+	@Override
+	public List<Livre> getLivreByTitre(String titre) {
+		List<Livre> liste = getDaoFactory().getLivreDAO().getLivreByTitre(titre);
 
-	        getDaoFactory().getLivreDAO().creer(livre);
+		return liste;
+	}
 
-	    }
+	@Override
+	public Livre getLivreById(int id) {
+		Livre livre = getDaoFactory().getLivreDAO().getLivreById(id);
 
+		return livre;
+	}
 
-	    @Override
-	    public List<Livre> getLivreByNom(String nom) {
-	        List<Livre> liste = getDaoFactory().getLivreDAO().getByNom(nom);
+	@Override
+	public List<Livre> getLivreByAuteur(Auteur auteur) {
+		List<Livre> livre = getDaoFactory().getLivreDAO().getLivreByAuteur(auteur);
 
-	        return liste;
-	    }
-	    
-	    @Override
-	    public Livre getLivreById(int id) {
-	        Livre livre = getDaoFactory().getLivreDAO().getById(id);
+		return livre;
+	}
 
-	        return livre;
-	    }
-	    
-	    @Override
-	    public List<Livre> getByAuteur(Auteur auteur){
-	    	List<Livre> livre = getDaoFactory().getLivreDAO().getByAuteur(auteur);
+	@Override
+	public List<Livre> getLivreByRecherche(String titre, String auteur) {
+		List<Livre> liste = getDaoFactory().getLivreDAO().getLivreByRecherche(titre, auteur);
 
-		        return livre;
-		    }
-	    
-	    @Override
-	    public List<Livre> getLivreByRecherche(String titre, String auteur) {
-	    	List<Livre> liste = getDaoFactory().getLivreDAO().getLivreByRecherche( titre,  auteur);
+		return liste;
+	}
 
-	        return liste;
-	    }
-	    
 }

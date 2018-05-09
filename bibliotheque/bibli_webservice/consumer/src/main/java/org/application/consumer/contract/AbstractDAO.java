@@ -4,9 +4,11 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public abstract class AbstractDAO {
 
-    @Inject
+    @Autowired
     @Named
     private DataSource dataSource;
 
