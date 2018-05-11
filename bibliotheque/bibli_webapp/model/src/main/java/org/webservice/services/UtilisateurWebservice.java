@@ -27,6 +27,18 @@ public interface UtilisateurWebservice {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<org.webservice.services.Utilisateur>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getUtilisateurs", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurs")
+    @ResponseWrapper(localName = "getUtilisateursResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateursResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/getUtilisateursRequest", output = "http://services.webservice.org/UtilisateurWebservice/getUtilisateursResponse")
+    public List<Utilisateur> getUtilisateurs();
+
+    /**
+     * 
      * @param arg1
      * @param arg0
      * @return
@@ -57,17 +69,5 @@ public interface UtilisateurWebservice {
     public Utilisateur getUtilisateurByMail(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<org.webservice.services.Utilisateur>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUtilisateurs", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurs")
-    @ResponseWrapper(localName = "getUtilisateursResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateursResponse")
-    @Action(input = "http://services.webservice.org/UtilisateurWebservice/getUtilisateursRequest", output = "http://services.webservice.org/UtilisateurWebservice/getUtilisateursResponse")
-    public List<Utilisateur> getUtilisateurs();
 
 }
