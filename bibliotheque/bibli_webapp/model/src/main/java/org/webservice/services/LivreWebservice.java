@@ -27,6 +27,24 @@ public interface LivreWebservice {
 
     /**
      * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.webservice.services.Livre>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getLivreByRecherche", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivreByRecherche")
+    @ResponseWrapper(localName = "getLivreByRechercheResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivreByRechercheResponse")
+    @Action(input = "http://services.webservice.org/LivreWebservice/getLivreByRechercheRequest", output = "http://services.webservice.org/LivreWebservice/getLivreByRechercheResponse")
+    public List<Livre> getLivreByRecherche(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns org.webservice.services.Livre
@@ -66,23 +84,5 @@ public interface LivreWebservice {
     public List<Livre> getByNom(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns java.util.List<org.webservice.services.Livre>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getLivreByRecherche", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivreByRecherche")
-    @ResponseWrapper(localName = "getLivreByRechercheResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivreByRechercheResponse")
-    @Action(input = "http://services.webservice.org/LivreWebservice/getLivreByRechercheRequest", output = "http://services.webservice.org/LivreWebservice/getLivreByRechercheResponse")
-    public List<Livre> getLivreByRecherche(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
 
 }
