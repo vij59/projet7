@@ -24,7 +24,7 @@ public class MyTasklet implements Tasklet {
 
 
     @Autowired
-    private MailMail mail;
+    private MailMail mailMail;
 
     @Override
     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
@@ -93,7 +93,7 @@ public class MyTasklet implements Tasklet {
 // 		            mm.sendMail(from,to,nom, texte);
  					
  			      
- 			       mail.sendMail(to, nom, texte);
+ 			       mailMail.sendMail(to, nom, texte);
  				}
  			}
  		} catch (Exception e) {

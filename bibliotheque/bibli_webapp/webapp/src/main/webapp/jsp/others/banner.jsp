@@ -1,6 +1,27 @@
-<a href="login">login</a>|  
-<a href="logout">logout</a>|  
-<a href="profile">profile</a>|  
-<a href="liste">liste</a>|
-<a href="monCompte">Mon compte</a>|
-<a href="recherche">Rechercher</a>
+
+<div class="container-fluid" id ="banniere">
+	<div class="row">
+		<div class="col-md-12 bg-light text-dark">
+			<ul class="nav">
+				<li class="nav-item">
+					<a class="nav-link active" href="index">Accueil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="login">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="logout">Logout</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="liste">Liste Livres</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="monCompte">Mon compte</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="recherche">Rechercher</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

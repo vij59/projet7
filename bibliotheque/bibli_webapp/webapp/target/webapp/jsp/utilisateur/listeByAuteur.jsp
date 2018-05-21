@@ -2,14 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<jsp:include page="/jsp/index.jsp"></jsp:include> 
 
-<title>Bootstrap 4, from LayoutIt!</title>
+<title>Liste Livres par Auteur</title>
 
 <meta name="description"
 	content="Source code generated using layoutit.com">
@@ -24,8 +19,7 @@
 </head>
 <body>
 
-<jsp:include page="/jsp/others/banner.jsp"></jsp:include> 
-
+<hr/>  
 	<s:bean name="org.webapp.method.AuteurComparator"
 		var="auteurComparateur" />
 

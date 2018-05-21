@@ -41,6 +41,15 @@ public class LivreWebservice extends AbstractWebservice {
 		// if (auteur == null) {
 		// auteur = "";
 		// }
-		return getManagerFactory().getLivreManager().getLivreByRecherche(titre, auteur);
+		
+		
+		List<Livre> listeLivres = getManagerFactory().getLivreManager().getLivreByRecherche(titre, auteur);
+		for (Livre livre : listeLivres) {
+			Auteur auteur1 = getManagerFactory().getAuteurManager().getAuteurById(livre.getIdAuteur());
+			livre.setAuteur(auteur1);
+			boolean dispo = getManagerFactory().getEmpruntManager().empruntPossible(livre.getId());
+			livre.setDisponible(dispo);
+		}
+		return listeLivres;
 	}
 }
