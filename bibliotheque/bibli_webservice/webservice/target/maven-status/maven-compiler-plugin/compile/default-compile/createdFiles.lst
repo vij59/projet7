@@ -1,5 +1,0 @@
-org\webservice\services\AbstractWebservice.class
-org\webservice\services\EmpruntWebservice.class
-org\webservice\services\AuteurWebservice.class
-org\webservice\services\UtilisateurWebservice.class
-org\webservice\services\LivreWebservice.class
