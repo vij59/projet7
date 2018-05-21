@@ -1,0 +1,59 @@
+Projet 4 :Développez le nouveau système d’information de la bibliothèque d’une grande ville
+
+Ce projet a pour objet la création d'un site web à destination des bibliothèques, permettant aux usagers le suivi de l'état d'avancement de leurs prêts, d'informations sur les livres de la bibliothèques, mais également d'un web-service et d'un batch permettant l'automatisation des rappels pour les personnes arrivant au terme de leur prêt.
+
+L'application web permet d'avoir accès aux informations suivantes :
+Liste des livres disponibles ou non dans la bibliothèque.
+Authentification des utilisateurs
+recherche multi-critères de livres
+informations sur les prêts des usagers
+prolongement des prêts
+
+Le batch lui a pour mission d'envoyer un mail aux usagers dont le prêt arrive à terme, cela via une automatisation de la connexion au webservice 1 fois par jour.
+
+
+
+Application web réalisé en Java/JEE (JDK 8)
+Serveur Glassfish 5
+Base de données PostGreSQL 9.6.5
+Packagée (WAR et JAR) avec  Apache Maven
+
+Outils
+
+IDE : Eclipse for Java EE
+SQL Power Architect
+ArgoUML
+PGAdmin
+Git/GitHub
+SOAPUI
+
+Intallations
+
+
+Base de données
+installer postgreSQL : accéder au site https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows et télécharger la version 9.6.5. Lancer l'installation et suivre les instructions indiquées ici : https://www.supinfo.com/articles/single/977-creer-une-base-donnees-avec-postgresql-windows# lancer  PgAdmin 4 et créer une base de données: java_ee 
+
+Environnement de développement
+télécharger et installer le kit de développement Java 8 (JDK 8) dans le site d’Oracle : http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html une fois votre jdk téléchargé et installé, il faut ajouter ce répertoire : C:\Program Files\Java\jdk1.8.0_101\bin dans votre variable d’environnement Pour vérifier cet ajout, ouvrir votre invite de commande et taper javac, java -version ou java. Le terminal devrait vous donner la version du jdk utilisée.
+/* Pas nécessaire si vous ne souhaitez pas faire de modifications à l'application installer un environnement de développement (IDE) comme Eclipse : https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2 ou Intelli J : https://www.jetbrains.com/idea/download/#section=windows */
+
+installer Glassfish dans votre machine à partir du lien suivant: https://openclassrooms.com/courses/implementez-une-architecture-orientee-services-soa-en-java/ttreenplacelenvironnementdedveloppement#/id/r-4856330
+
+
+installer Maven : télécharger et dézipper maven depuis le site suivant : https://maven.apache.org/download.cgi placez-le dans un répertoire de votre machine, ajoutez la variable d’environnement utilisateur avec pour valeur le chemin du répertoire et lancer l'invite de commande et exécuter mvn --version pour vérifier l’installation. Pour plus de détails, voir la phase 1 de la page suivante http://www.objis.com/formation-java/tutoriel-maven-installation-phases.html
+Application :
+
+cloner le projet depuis Github à l’url https://github.com/vij59/projet4 Si vous maitrisez les commandes Git, faites un git clone dans le répertoire de votre choix. Sinon, vous pouvez choisir l'option Download ZIP en déroulant le bouton vert « Clone or Download » et dézipper le dossier.
+
+
+Pour le dossier documentation :
+
+-ouvrir PGAdmin4, sélectionner la base de données java_ee , faire un clic droit dessus et lancer Query Tool . Ouvrir le dossier base de données, et ouvrez le fichier bibli.sql , sélectionner l'intégralité du texte, copier et le coller dans la zone de Query, puis valider la requête (F5 normalement). Faire de même avec le fichier datas.sql. La base de données est remplie. Pour vous en assurer, vous pouvez insérer le texte suivant dans la zone de requête : select * from site ; Si rien ne s'affiche, ou que les tableaux ne sont pas remplis, la base et les données sont mal installés.
+
+Pour le dossier escalade :
+
+Si votre base de données possède un mot de passe, vous êtes prié de l'intégrer au fichier DaoFactory en suivant le chemin suivant :escalade\dao\src\main\java\dao Pour cela, il faut remplacer , dans la ligne 25 , ("jdbc:postgresql://localhost:5432/java_ee", "postgres", "") par ("jdbc:postgresql://localhost:5432/java_ee", "postgres", "votreMotDePasse")
+
+Ensuite, effectuez via une invite de commande l'opération suivante : , une fois dans le répertoire du dossier téléchargé, entrer dans le dossier escalade et faire un mvn clean package. Cela générera un fichier .war dans le dossier target du dossier web, suivre le chemin suivant : escalade ? web ? target ? web.war placer ce fichier dans le dossier webapps en suivant le chemin suivant Program Files ? Apache Software Foundation ? Tomcat 9.0 ? webapps
+
+Mettre en route votre serveur Tomcat, soit via le Monitor, soit en ouvrant le fichier startup situé dans le dossier bin de Tomcat. Puis entrer dans le navigateur l' url http://localhost:8080/web et ça devrait marcher.
