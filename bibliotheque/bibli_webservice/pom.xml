@@ -22,11 +22,7 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>com.edouard</groupId>
-				<artifactId>run</artifactId>
-				<version>1.0-SNAPSHOT</version>
-			</dependency>
+
 			<dependency>
 				<groupId>com.edouard</groupId>
 				<artifactId>business</artifactId>
@@ -112,7 +108,6 @@
 		<module>model</module>
 		<module>consumer</module>
 		<module>business</module>
-		<module>run</module>
 		<module>webservice</module>
 	</modules>
 </project>
