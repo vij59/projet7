@@ -1,5 +1,6 @@
 package org.application.business.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.application.business.contract.EmpruntManager;
@@ -62,10 +63,17 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 	public List<Emprunt> getEmpruntByUserId(int idUser) {
 
 		List<Emprunt> liste = getDaoFactory().getEmpruntDAO().getEmpruntByUserId(idUser);
+		Date dateDuJour = new Date();
 
 		for (Emprunt emprunt : liste) {
 
 			Livre livre = getDaoFactory().getLivreDAO().getLivreById(emprunt.getIdLivre());
+			if (emprunt.getDateFin().compareTo(dateDuJour)<0){
+				emprunt.setRepoussable(false);
+			}
+			else {
+				emprunt.setRepoussable(true);
+			}
 			emprunt.setLivre(livre);
 
 		}

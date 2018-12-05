@@ -1,5 +1,6 @@
 package org.webapp.action;
 
+import java.util.Date;
 import java.util.List;
 
 import org.webapp.resource.AbstractRessource;
@@ -17,10 +18,18 @@ public class ListerEmprunts extends AbstractRessource  {
 	public List<Emprunt> getMesEmprunts() {
 		return mesEmprunts;
 	}
-
+    public Date customDate;
 	public void setMesEmprunts(List<Emprunt> mesEmprunts) {
 		this.mesEmprunts = mesEmprunts;
 	}
+
+    public Date getCustomDate() {
+        return customDate;
+    }
+
+    public void setCustomDate(Date customDate) {
+        this.customDate = customDate;
+    }
 
 
 	// ==================== Méthodes ====================
@@ -36,9 +45,16 @@ public class ListerEmprunts extends AbstractRessource  {
     	//Utilisateur user = (Utilisateur) session.getAttribute("user");  
     	
     	//Utilisateur user = (Utilisateur) session.get("user");  
-    	  	   
-    	    
-   	mesEmprunts =  getManagerFactory().getEmpruntManager().getEmpruntByUserId(user.getId());
+
+		System.currentTimeMillis();
+
+        Date newDate;
+        newDate = new Date();
+
+        setCustomDate(newDate);
+
+        mesEmprunts =  getManagerFactory().getEmpruntManager().getEmpruntByUserId(user.getId());
+
    	
         return "success";
     }

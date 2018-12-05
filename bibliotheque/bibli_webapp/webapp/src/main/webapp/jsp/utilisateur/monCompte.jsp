@@ -34,21 +34,20 @@
 								<td><s:date name="dateDebut.toGregorianCalendar()"
 										format="dd/MM/yyyy" /></td>
 
-
-
 								<td><s:date name="dateFin.toGregorianCalendar()"
-										format="dd/MM/yyyy" />&nbsp;</td>
+										format="dd/MM/yyyy" />&nbsp;
+								</td>
 
-								<s:if test="%{enCours==true}">
+								<s:if test="%{enCours==true && repoussable==true}">
 									<td>En cours&nbsp;</td>
 								</s:if>
 								<s:else>
-									<td>Archivé&nbsp;</td>
+									<td>Terminé&nbsp;</td>
 								</s:else>
 
 								<%-- <td><s:property value="enCours" />&nbsp;</td> --%>
 
-								<s:if test="%{dejaRepousse==false}">
+								<s:if test="%{dejaRepousse==false && repoussable==true}">
 									<td><s:url action="repousseProcess" var="helloLink">
 									<s:param name="id_emprunt"><s:property value='id' /></s:param>
 								</s:url>
@@ -60,12 +59,7 @@
 									<td>Déjà repoussé&nbsp;</td>
 								</s:else>
 
-							
-
-								
-
 								<%-- <td><s:property value="dejaRepousse" />&nbsp;</td> --%>
-
 							</tr>
 
 						</tbody>

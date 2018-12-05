@@ -12,6 +12,7 @@ public class Emprunt {
 	private int idUtilisateur;
 	private boolean dejaRepousse;
 	private Livre livre;
+	private boolean repoussable;
 
 	public Integer getId() {
 		return id;
@@ -76,6 +77,15 @@ public class Emprunt {
 	public void setLivre(Livre livre) {
 		this.livre = livre;
 	}
-	
+
+	public boolean isRepoussable() {
+		return repoussable;
+	}
+
+	public void setRepoussable(boolean repoussable) {
+		this.repoussable = repoussable;
+	}
+
+
 
 }

@@ -34,13 +34,13 @@
 					<sourceDestDir>${project.basedir}/src/main/java</sourceDestDir>
 				<wsdlUrls>
 						<wsdlUrl>
-							http://localhost:8080/webservice/Utilisateur?wsdl</wsdlUrl>
+							http://localhost:8080/webserviceNew/Utilisateur?wsdl</wsdlUrl>
 						<wsdlUrl>
-							http://localhost:8080/webservice/Auteur?wsdl</wsdlUrl>
+							http://localhost:8080/webserviceNew/Auteur?wsdl</wsdlUrl>
 						<wsdlUrl>
-							http://localhost:8080/webservice/Emprunt?wsdl</wsdlUrl>
+							http://localhost:8080/webserviceNew/Emprunt?wsdl</wsdlUrl>
 						<wsdlUrl>
-							http://localhost:8080/webservice/Livre?wsdl</wsdlUrl>
+							http://localhost:8080/webserviceNew/Livre?wsdl</wsdlUrl>
 </wsdlUrls>
 				</configuration>
 			</plugin>

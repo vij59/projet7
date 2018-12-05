@@ -26,6 +26,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="idLivre" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="idUtilisateur" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="livre" type="{http://services.webservice.org/}livre" minOccurs="0"/>
+ *         &lt;element name="repoussable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -43,7 +44,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "id",
     "idLivre",
     "idUtilisateur",
-    "livre"
+    "livre",
+    "repoussable"
 })
 public class Emprunt {
 
@@ -57,6 +59,7 @@ public class Emprunt {
     protected int idLivre;
     protected int idUtilisateur;
     protected Livre livre;
+    protected boolean repoussable;
 
     /**
      * Obtient la valeur de la propriété dateDebut.
@@ -216,6 +219,22 @@ public class Emprunt {
      */
     public void setLivre(Livre value) {
         this.livre = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété repoussable.
+     * 
+     */
+    public boolean isRepoussable() {
+        return repoussable;
+    }
+
+    /**
+     * Définit la valeur de la propriété repoussable.
+     * 
+     */
+    public void setRepoussable(boolean value) {
+        this.repoussable = value;
     }
 
 }
