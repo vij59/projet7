@@ -81,7 +81,9 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 		Date dateDuJour = new Date();
 
 		for (Emprunt emprunt : liste) {
-
+			if(emprunt.getStatut()==null) {
+				emprunt.setStatut("");
+			}
 			Livre livre = getDaoFactory().getLivreDAO().getLivreById(emprunt.getIdLivre());
 			if (emprunt.getDateFin().compareTo(dateDuJour)<0){
 				emprunt.setRepoussable(false);

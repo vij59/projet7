@@ -20,7 +20,7 @@
 							<th>date emprunt</th>
 							<th>date retour</th>
 							<th>état</th>
-							<th>repoussé ?</th>
+							<th>Prolongation</th>
 						</tr>
 					</thead>
 
@@ -55,11 +55,14 @@
 									<s:param name="id_emprunt"><s:property value='id' /></s:param>
 								</s:url>
 								<p>
-									<a href="${helloLink}">Repousser</a>
+									<a href="${helloLink}">Prolonger</a>
 								</p></td>
 								</s:if>
+								<s:elseif test="%{dejaRepousse==true && statut=='en cours'}">
+									<td>Déjà prolongé&nbsp;</td>
+								</s:elseif>
 								<s:else>
-									<td>Déjà repoussé&nbsp;</td>
+									<td>Non prolongeable&nbsp;</td>
 								</s:else>
 
 								<%-- <td><s:property value="dejaRepousse" />&nbsp;</td> --%>
