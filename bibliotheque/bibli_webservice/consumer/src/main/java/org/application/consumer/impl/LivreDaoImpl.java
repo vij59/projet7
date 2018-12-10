@@ -32,7 +32,7 @@ public class LivreDaoImpl extends AbstractDAO implements LivreDAO {
 	@Override
 	public void creer(Livre livre) {
 
-		String vSQL = "INSERT INTO public.livre (id, titre, id_auteur, date_publication, nb_exemplaires) VALUES(:id, :titre, :id_auteur, :date_publication, :nb_exemplaires)";
+		String vSQL = "INSERT INTO public.livre (id, titre, id_auteur, date_publication, nb_exemplaires, disponible) VALUES(:id, :titre, :id_auteur, :date_publication, :nb_exemplaires, :disponible)";
 
 		MapSqlParameterSource vParams = new MapSqlParameterSource();
 		vParams.addValue("id", livre.getId(), Types.INTEGER);
@@ -40,7 +40,13 @@ public class LivreDaoImpl extends AbstractDAO implements LivreDAO {
 		vParams.addValue("id_auteur", livre.getIdAuteur(), Types.INTEGER);
 		vParams.addValue("date_publication", livre.getAnneeSortie(), Types.DATE);
 		vParams.addValue("nb_exemplaires", livre.getNbExemplaires(), Types.INTEGER);
-
+		boolean disponibility = true ;
+		if (livre.getNbExemplaires()>0) {
+			disponibility = true;
+		}else {
+			disponibility = false;
+		}
+		vParams.addValue("disponible", disponibility, Types.BOOLEAN);
 		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
 		vJdbcTemplate.update(vSQL, vParams);
 

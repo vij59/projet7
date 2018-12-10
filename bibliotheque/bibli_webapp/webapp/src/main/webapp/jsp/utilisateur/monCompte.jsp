@@ -38,14 +38,17 @@
 										format="dd/MM/yyyy" />&nbsp;
 								</td>
 
-								<s:if test="%{enCours==true && repoussable==true}">
-									<td>En cours&nbsp;</td>
-								</s:if>
-								<s:else>
-									<td>Terminé&nbsp;</td>
-								</s:else>
+									<%--
+                                    <s:if test="%{enCours==true && repoussable==true}">
+                                        <td>En cours&nbsp;</td>
+                                    </s:if>
+                                    <s:else>
+                                        <td>Terminé&nbsp;</td>
+                                    </s:else>
+                                    --%>
+								<td><s:property value="statut" /></td>
 
-								<%-- <td><s:property value="enCours" />&nbsp;</td> --%>
+                                    <%-- <td><s:property value="enCours" />&nbsp;</td> --%>
 
 								<s:if test="%{dejaRepousse==false && repoussable==true}">
 									<td><s:url action="repousseProcess" var="helloLink">

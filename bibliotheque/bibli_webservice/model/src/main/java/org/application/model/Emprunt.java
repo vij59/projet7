@@ -13,6 +13,7 @@ public class Emprunt {
 	private boolean dejaRepousse;
 	private Livre livre;
 	private boolean repoussable;
+	private String statut;
 
 	public Integer getId() {
 		return id;
@@ -86,6 +87,11 @@ public class Emprunt {
 		this.repoussable = repoussable;
 	}
 
+	public String getStatut() {
+		return statut;
+	}
 
-
+	public void setStatut(String statut) {
+		this.statut = statut;
+	}
 }

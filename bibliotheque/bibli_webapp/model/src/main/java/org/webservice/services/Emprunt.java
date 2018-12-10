@@ -27,6 +27,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="idUtilisateur" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="livre" type="{http://services.webservice.org/}livre" minOccurs="0"/>
  *         &lt;element name="repoussable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="statut" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -45,7 +46,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "idLivre",
     "idUtilisateur",
     "livre",
-    "repoussable"
+    "repoussable",
+    "statut"
 })
 public class Emprunt {
 
@@ -60,6 +62,7 @@ public class Emprunt {
     protected int idUtilisateur;
     protected Livre livre;
     protected boolean repoussable;
+    protected String statut;
 
     /**
      * Obtient la valeur de la propriété dateDebut.
@@ -235,6 +238,30 @@ public class Emprunt {
      */
     public void setRepoussable(boolean value) {
         this.repoussable = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété statut.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getStatut() {
+        return statut;
+    }
+
+    /**
+     * Définit la valeur de la propriété statut.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setStatut(String value) {
+        this.statut = value;
     }
 
 }

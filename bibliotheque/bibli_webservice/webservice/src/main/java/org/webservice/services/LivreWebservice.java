@@ -5,7 +5,6 @@ import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-import org.application.model.Auteur;
 import org.application.model.Livre;
 
 @WebService(serviceName = "Livre")
@@ -18,15 +17,18 @@ public class LivreWebservice extends AbstractWebservice {
 
 	@WebMethod
 	public Livre getLivreById(int id) {
-		return getManagerFactory().getLivreManager().getLivreById(id);
+
+			return getManagerFactory().getLivreManager().getLivreById(id);
+
+
 	}
 
 	@WebMethod
 	public List<Livre> getLivres() {
 		List<Livre> listeLivres = getManagerFactory().getLivreManager().getLivres();
 		for (Livre livre : listeLivres) {
-			Auteur auteur = getManagerFactory().getAuteurManager().getAuteurById(livre.getIdAuteur());
-			livre.setAuteur(auteur);
+
+			livre.setAuteur(getManagerFactory().getAuteurManager().getAuteurById(livre.getIdAuteur()));
 			boolean dispo = getManagerFactory().getEmpruntManager().empruntPossible(livre.getId());
 			livre.setDisponible(dispo);
 		}
@@ -35,21 +37,34 @@ public class LivreWebservice extends AbstractWebservice {
 
 	@WebMethod
 	public List<Livre> getLivreByRecherche(String titre, String auteur) {
-		// if (titre == null) {
-		// titre = "";
-		// }
-		// if (auteur == null) {
-		// auteur = "";
-		// }
-		
-		
-		List<Livre> listeLivres = getManagerFactory().getLivreManager().getLivreByRecherche(titre, auteur);
-		for (Livre livre : listeLivres) {
-			Auteur auteur1 = getManagerFactory().getAuteurManager().getAuteurById(livre.getIdAuteur());
-			livre.setAuteur(auteur1);
-			boolean dispo = getManagerFactory().getEmpruntManager().empruntPossible(livre.getId());
-			livre.setDisponible(dispo);
+
+		List<Livre> listeLivres = getManagerFactory().getLivreManager().getLivres();
+		try {
+			if (titre.equals(("")) && auteur.equals((""))){
+				for (Livre livre : listeLivres) {
+
+
+					boolean dispo = getManagerFactory().getEmpruntManager().empruntPossible(livre.getId());
+					livre.setDisponible(dispo);
+				}
+				return listeLivres;
+			}
+			else {
+
+				List<Livre> listeLivresRecherchés = getManagerFactory().getLivreManager().getLivreByRecherche(titre, auteur);
+				for (Livre livre : listeLivresRecherchés) {
+
+					livre.setAuteur(getManagerFactory().getAuteurManager().getAuteurById(livre.getIdAuteur()));
+					boolean dispo = getManagerFactory().getEmpruntManager().empruntPossible(livre.getId());
+					livre.setDisponible(dispo);
+				}
+				return listeLivresRecherchés;
+			}
+
 		}
-		return listeLivres;
+		catch (Exception e) {
+			e.getMessage();
+			return listeLivres;
+		}
 	}
 }

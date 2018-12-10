@@ -3,7 +3,9 @@ package org.webservice.services;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -16,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="anneeSortie" type="{http://services.webservice.org/}date" minOccurs="0"/>
+ *         &lt;element name="anneeSortie" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="auteur" type="{http://services.webservice.org/}auteur" minOccurs="0"/>
  *         &lt;element name="disponible" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
@@ -45,7 +47,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Livre {
 
-    protected Date anneeSortie;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar anneeSortie;
     protected Auteur auteur;
     protected boolean disponible;
     protected int id;
@@ -59,10 +62,10 @@ public class Livre {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public Date getAnneeSortie() {
+    public XMLGregorianCalendar getAnneeSortie() {
         return anneeSortie;
     }
 
@@ -71,10 +74,10 @@ public class Livre {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setAnneeSortie(Date value) {
+    public void setAnneeSortie(XMLGregorianCalendar value) {
         this.anneeSortie = value;
     }
 

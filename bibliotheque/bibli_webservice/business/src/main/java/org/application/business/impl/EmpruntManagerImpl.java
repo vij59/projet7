@@ -38,17 +38,32 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 
 		int nbDispo = livre.getNbExemplaires();
 		int nbRestant = nbDispo;
+		boolean livreDansLesEmprunts=false;
 
 		for (Emprunt emprunt : listeEmprunts) {
-			if (emprunt.getIdLivre() == id && emprunt.isEnCours()) {
-				livre.setNbRestant(--nbRestant);
+
+			if (emprunt.getIdLivre() == id) {
+				livreDansLesEmprunts = true;
 			}
 		}
+		if(livreDansLesEmprunts) {
+			for (Emprunt emprunt : listeEmprunts) {
+				if (emprunt.getIdLivre() == id && emprunt.isEnCours()) {
+					livre.setNbRestant(--nbRestant);
+				}
+			}
 
-		if (livre.getNbRestant() <= 0) {
-			dispo = false;
-		} else {
-			dispo = true;
+			if (livre.getNbRestant() <= 0) {
+				dispo = false;
+			} else {
+				dispo = true;
+			}
+		}
+		else {
+			if(livre.getNbExemplaires()>=1){
+				dispo = true;
+			}
+
 		}
 
 		return dispo;
@@ -70,11 +85,21 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 			Livre livre = getDaoFactory().getLivreDAO().getLivreById(emprunt.getIdLivre());
 			if (emprunt.getDateFin().compareTo(dateDuJour)<0){
 				emprunt.setRepoussable(false);
-			}
+					if(emprunt.getStatut().equals("rendu")){
+						emprunt.setStatut("rendu");
+					}
+					else {
+						emprunt.setStatut("à rendre");
+					}
+
+				}
+
 			else {
 				emprunt.setRepoussable(true);
+				emprunt.setStatut("en cours");
 			}
 			emprunt.setLivre(livre);
+
 
 		}
 		return liste;
