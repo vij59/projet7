@@ -11,8 +11,15 @@ import java.util.List;
     public class ReservationWebService extends AbstractWebservice {
 
         @WebMethod
-        public List<Reservation> getListeReservation() {
+        public List<Reservation> getListeReservations() {
             return getManagerFactory().getReservationManager().getListeReservations();
         }
 
+        @WebMethod
+        public void creerReservation(int idUser , int idLivre) {
+            Reservation reservation = null;
+            reservation.setIdLivre(idLivre);
+            reservation.setIdUser(idUser);
+            getManagerFactory().getReservationManager().creerReservation(idUser, idLivre);
+        }
 }

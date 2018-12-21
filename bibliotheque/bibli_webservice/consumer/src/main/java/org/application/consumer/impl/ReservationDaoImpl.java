@@ -29,20 +29,25 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
     }
 
     @Override
-    public void creerReservation(Reservation reservationRM) {
+    public void creerReservation(int idUser, int idLivre) {
 
-        String vSQL = "INSERT INTO reservation (id_user, id_livre, date_reservation) "
-                + "VALUES( :idUser,:idLivre, :dateReservation)";
+        String vSQL = "INSERT INTO reservation (id_user, id_livre) "
+                + "VALUES( :idUser,:idLivre)";
 
         MapSqlParameterSource vParams = new MapSqlParameterSource();
 
-        // Date now = new Date();
-        // Date d2 = new Date();
-        Calendar now = Calendar.getInstance();
-        Date dateReservation = now.getTime();
-        vParams.addValue("dateReservation", dateReservation, Types.DATE);
-        vParams.addValue("idLivre", reservationRM.getIdLivre(), Types.INTEGER);
-        vParams.addValue("idUtilisateur", reservationRM.getIdUser(), Types.INTEGER);
+
+//        Calendar now = Calendar.getInstance();
+//        Date dateReservation = now.getTime();
+        java.util.Date date = new java.util.Date(System.currentTimeMillis());
+        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+
+        //vParams.addValue("dateReservation", timestamp, Types.TIMESTAMP);
+      //  vParams.addValue("idLivre", preservation.getIdLivre(), Types.INTEGER);
+     //   vParams.addValue("idUser", preservation.getIdUser(), Types.INTEGER);
+
+        vParams.addValue("idLivre", idLivre, Types.INTEGER);
+        vParams.addValue("idUser", idUser, Types.INTEGER);
 
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
         vJdbcTemplate.update(vSQL, vParams);

@@ -3,6 +3,7 @@ package org.application.business.impl;
 import org.application.business.contract.ReservationManager;
 import org.application.model.Reservation;
 
+import java.sql.Date;
 import java.util.List;
 
 public class ReservationManagerImpl extends AbstractManager implements ReservationManager {
@@ -14,8 +15,8 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
     }
 
     @Override
-    public void creerReservation(Reservation reservation) {
-
+    public void creerReservation(int idUser, int idLivre) {
+        getDaoFactory().getReservationDAO().creerReservation(idUser,idLivre);
     }
 
     @Override

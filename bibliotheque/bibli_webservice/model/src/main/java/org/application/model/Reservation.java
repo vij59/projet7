@@ -1,13 +1,14 @@
 package org.application.model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.Date;
 
 public class Reservation {
 
     private int id;
     private int idUser;
     private int idLivre;
-    private Date dateReservation;
+    private Timestamp dateReservation;
 
     public int getIdReservation() {
         return id;
@@ -33,11 +34,11 @@ public class Reservation {
         this.idLivre = idLivre;
     }
 
-    public Date getDateReservation() {
+    public Timestamp getDateReservation() {
         return dateReservation;
     }
 
-    public void setDateReservation(Date dateReservation) {
+    public void setDateReservation(Timestamp dateReservation) {
         this.dateReservation = dateReservation;
     }
 }

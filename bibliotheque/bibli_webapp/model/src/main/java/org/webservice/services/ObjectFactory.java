@@ -24,14 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetLivreByRecherche_QNAME = new QName("http://services.webservice.org/", "getLivreByRecherche");
-    private final static QName _GetByNom_QNAME = new QName("http://services.webservice.org/", "getByNom");
-    private final static QName _GetLivreByIdResponse_QNAME = new QName("http://services.webservice.org/", "getLivreByIdResponse");
-    private final static QName _GetLivresResponse_QNAME = new QName("http://services.webservice.org/", "getLivresResponse");
-    private final static QName _GetLivreById_QNAME = new QName("http://services.webservice.org/", "getLivreById");
-    private final static QName _GetLivreByRechercheResponse_QNAME = new QName("http://services.webservice.org/", "getLivreByRechercheResponse");
-    private final static QName _GetByNomResponse_QNAME = new QName("http://services.webservice.org/", "getByNomResponse");
-    private final static QName _GetLivres_QNAME = new QName("http://services.webservice.org/", "getLivres");
+    private final static QName _GetListeReservationResponse_QNAME = new QName("http://services.webservice.org/", "getListeReservationResponse");
+    private final static QName _GetListeReservation_QNAME = new QName("http://services.webservice.org/", "getListeReservation");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.webservice.services
@@ -41,155 +35,53 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetLivreByRecherche }
+     * Create an instance of {@link GetListeReservationResponse }
      * 
      */
-    public GetLivreByRecherche createGetLivreByRecherche() {
-        return new GetLivreByRecherche();
+    public GetListeReservationResponse createGetListeReservationResponse() {
+        return new GetListeReservationResponse();
     }
 
     /**
-     * Create an instance of {@link GetLivreByIdResponse }
+     * Create an instance of {@link GetListeReservation }
      * 
      */
-    public GetLivreByIdResponse createGetLivreByIdResponse() {
-        return new GetLivreByIdResponse();
+    public GetListeReservation createGetListeReservation() {
+        return new GetListeReservation();
     }
 
     /**
-     * Create an instance of {@link GetByNom }
+     * Create an instance of {@link Date }
      * 
      */
-    public GetByNom createGetByNom() {
-        return new GetByNom();
+    public Date createDate() {
+        return new Date();
     }
 
     /**
-     * Create an instance of {@link GetLivreById }
+     * Create an instance of {@link Reservation }
      * 
      */
-    public GetLivreById createGetLivreById() {
-        return new GetLivreById();
+    public Reservation createReservation() {
+        return new Reservation();
     }
 
     /**
-     * Create an instance of {@link GetLivresResponse }
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListeReservationResponse }{@code >}}
      * 
      */
-    public GetLivresResponse createGetLivresResponse() {
-        return new GetLivresResponse();
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getListeReservationResponse")
+    public JAXBElement<GetListeReservationResponse> createGetListeReservationResponse(GetListeReservationResponse value) {
+        return new JAXBElement<GetListeReservationResponse>(_GetListeReservationResponse_QNAME, GetListeReservationResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link GetLivreByRechercheResponse }
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListeReservation }{@code >}}
      * 
      */
-    public GetLivreByRechercheResponse createGetLivreByRechercheResponse() {
-        return new GetLivreByRechercheResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetByNomResponse }
-     * 
-     */
-    public GetByNomResponse createGetByNomResponse() {
-        return new GetByNomResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetLivres }
-     * 
-     */
-    public GetLivres createGetLivres() {
-        return new GetLivres();
-    }
-
-    /**
-     * Create an instance of {@link Livre }
-     * 
-     */
-    public Livre createLivre() {
-        return new Livre();
-    }
-
-    /**
-     * Create an instance of {@link Auteur }
-     * 
-     */
-    public Auteur createAuteur() {
-        return new Auteur();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLivreByRecherche }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getLivreByRecherche")
-    public JAXBElement<GetLivreByRecherche> createGetLivreByRecherche(GetLivreByRecherche value) {
-        return new JAXBElement<GetLivreByRecherche>(_GetLivreByRecherche_QNAME, GetLivreByRecherche.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetByNom }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getByNom")
-    public JAXBElement<GetByNom> createGetByNom(GetByNom value) {
-        return new JAXBElement<GetByNom>(_GetByNom_QNAME, GetByNom.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLivreByIdResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getLivreByIdResponse")
-    public JAXBElement<GetLivreByIdResponse> createGetLivreByIdResponse(GetLivreByIdResponse value) {
-        return new JAXBElement<GetLivreByIdResponse>(_GetLivreByIdResponse_QNAME, GetLivreByIdResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLivresResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getLivresResponse")
-    public JAXBElement<GetLivresResponse> createGetLivresResponse(GetLivresResponse value) {
-        return new JAXBElement<GetLivresResponse>(_GetLivresResponse_QNAME, GetLivresResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLivreById }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getLivreById")
-    public JAXBElement<GetLivreById> createGetLivreById(GetLivreById value) {
-        return new JAXBElement<GetLivreById>(_GetLivreById_QNAME, GetLivreById.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLivreByRechercheResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getLivreByRechercheResponse")
-    public JAXBElement<GetLivreByRechercheResponse> createGetLivreByRechercheResponse(GetLivreByRechercheResponse value) {
-        return new JAXBElement<GetLivreByRechercheResponse>(_GetLivreByRechercheResponse_QNAME, GetLivreByRechercheResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetByNomResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getByNomResponse")
-    public JAXBElement<GetByNomResponse> createGetByNomResponse(GetByNomResponse value) {
-        return new JAXBElement<GetByNomResponse>(_GetByNomResponse_QNAME, GetByNomResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLivres }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getLivres")
-    public JAXBElement<GetLivres> createGetLivres(GetLivres value) {
-        return new JAXBElement<GetLivres>(_GetLivres_QNAME, GetLivres.class, null, value);
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getListeReservation")
+    public JAXBElement<GetListeReservation> createGetListeReservation(GetListeReservation value) {
+        return new JAXBElement<GetListeReservation>(_GetListeReservation_QNAME, GetListeReservation.class, null, value);
     }
 
 }

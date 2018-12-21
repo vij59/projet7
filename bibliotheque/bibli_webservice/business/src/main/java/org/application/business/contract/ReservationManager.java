@@ -8,7 +8,7 @@ public interface ReservationManager {
 
     public List<Reservation> getListeReservations();
 
-    void creerReservation(Reservation reservation);
+    void creerReservation(int idUser, int idLivre);
 
     public List<Reservation> getReservationsByIdLivre();
 }

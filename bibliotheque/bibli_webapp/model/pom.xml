@@ -41,6 +41,8 @@
 							http://localhost:8080/webserviceNew/Emprunt?wsdl</wsdlUrl>
 						<wsdlUrl>
 							http://localhost:8080/webserviceNew/Livre?wsdl</wsdlUrl>
+						<wsdlUrl>
+							http://localhost:8080/webserviceNew/Reservation?wsdl</wsdlUrl>
 </wsdlUrls>
 				</configuration>
 			</plugin>
