@@ -1,7 +1,5 @@
 package org.application.consumer.rowmapper;
 
-
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

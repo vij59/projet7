@@ -39,6 +39,12 @@
 		<property name="utilisateurRM" ref="utilisateurRM" />
 	</bean>
 
+	<bean id="reservationDao"
+		  class="org.application.consumer.impl.ReservationDaoImpl"
+		  parent="abstractDao">
+		<property name="reservationRM" ref="reservationRM" />
+	</bean>
+
 	<!-- ===== DaoFactory ===== -->
 	<bean id="daoFactory"
 		class="org.application.consumer.impl.DaoFactoryImpl">
@@ -46,6 +52,7 @@
 		<property name="livreDAO" ref="livreDao" />
 		<property name="empruntDAO" ref="empruntDao" />
 		<property name="utilisateurDAO" ref="utilisateurDao" />
+		<property name="reservationDAO" ref="reservationDao" />
 
 	</bean>
 
@@ -59,4 +66,6 @@
 		class="org.application.consumer.rowmapper.EmpruntRM" />
 	<bean id="utilisateurRM"
 		class="org.application.consumer.rowmapper.UtilisateurRM" />
+	<bean id="reservationRM"
+		  class="org.application.consumer.rowmapper.ReservationRM" />
 </beans>

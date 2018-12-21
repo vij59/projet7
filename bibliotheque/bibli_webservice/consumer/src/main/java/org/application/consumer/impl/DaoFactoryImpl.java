@@ -1,10 +1,6 @@
 package org.application.consumer.impl;
 
-import org.application.consumer.contract.AuteurDAO;
-import org.application.consumer.contract.DaoFactory;
-import org.application.consumer.contract.EmpruntDAO;
-import org.application.consumer.contract.LivreDAO;
-import org.application.consumer.contract.UtilisateurDAO;
+import org.application.consumer.contract.*;
 
 public class DaoFactoryImpl implements DaoFactory {
 
@@ -13,6 +9,7 @@ public class DaoFactoryImpl implements DaoFactory {
     private LivreDAO livreDAO;
     private EmpruntDAO empruntDAO;
     private UtilisateurDAO utilisateurDAO;
+    private ReservationDAO reservationDAO;
     
 	public AuteurDAO getAuteurDAO() {
 		return auteurDAO;
@@ -38,7 +35,7 @@ public class DaoFactoryImpl implements DaoFactory {
 	public void setUtilisateurDAO(UtilisateurDAO utilisateurDAO) {
 		this.utilisateurDAO = utilisateurDAO;
 	}
-    
-    
-	
+	public ReservationDAO getReservationDAO() {		return reservationDAO;	}
+	public void setReservationDAO(ReservationDAO reservationDAO) {this.reservationDAO = reservationDAO;
+	}
 }
