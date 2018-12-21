@@ -1,10 +1,6 @@
 package org.application.business.impl;
 
-import org.application.business.contract.AuteurManager;
-import org.application.business.contract.EmpruntManager;
-import org.application.business.contract.LivreManager;
-import org.application.business.contract.ManagerFactory;
-import org.application.business.contract.UtilisateurManager;
+import org.application.business.contract.*;
 
 public class ManagerFactoryImpl implements ManagerFactory {
 
@@ -12,6 +8,7 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	private LivreManager livreManager;
 	private AuteurManager auteurManager;
 	private EmpruntManager empruntManager;
+	private ReservationManager reservationManager;
 
 	public void setUtilisateurManager(UtilisateurManager utilisateurManager) {
 		this.utilisateurManager = utilisateurManager;
@@ -53,4 +50,12 @@ public class ManagerFactoryImpl implements ManagerFactory {
 		return empruntManager;
 	}
 
+	@Override
+	public ReservationManager getReservationManager() {
+		return reservationManager;
+	}
+
+	public void setReservationManager(ReservationManager reservationManager) {
+		this.reservationManager = reservationManager;
+	}
 }
