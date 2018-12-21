@@ -10,7 +10,7 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
 
     @Override
     public List<Reservation> getListeReservations() {
-        return null;
+        return getDaoFactory().getReservationDAO().getListeReservations();
     }
 
     @Override

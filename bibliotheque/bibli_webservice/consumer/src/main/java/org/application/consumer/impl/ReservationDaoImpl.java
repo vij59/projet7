@@ -6,12 +6,14 @@ import org.application.consumer.contract.ReservationDAO;
 import org.application.consumer.rowmapper.ReservationRM;
 import org.application.model.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.sql.Types;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
 
@@ -44,6 +46,18 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
 
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
         vJdbcTemplate.update(vSQL, vParams);
+
+    }
+
+    @Override
+    public List<Reservation> getListeReservations() {
+
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+
+        String sql = "SELECT * FROM reservation";
+
+        List<Reservation> vList = vJdbcTemplate.query(sql, reservationRM);
+        return vList;
 
     }
 

@@ -8,7 +8,7 @@ public interface ReservationDAO {
 
     void creerReservation(Reservation reservation);
 
-  //  List<Reservation> getListeReservations ;
+    List<Reservation> getListeReservations();
 
   //  List<Reservation> getReservationsByIdLivre;
 

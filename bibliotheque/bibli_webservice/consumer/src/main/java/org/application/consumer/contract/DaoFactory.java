@@ -1,5 +1,9 @@
 package org.application.consumer.contract;
 
+import org.application.model.Reservation;
+
+import java.util.List;
+
 public interface DaoFactory {
 
 
@@ -16,4 +20,6 @@ public interface DaoFactory {
     void setUtilisateurDAO(UtilisateurDAO utilisateurDAO);
 
 
+    ReservationDAO getReservationDAO();
+    void setReservationDAO(ReservationDAO reservationDAO);
 }
