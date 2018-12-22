@@ -14,7 +14,7 @@ public class ReservationRM implements RowMapper<Reservation> {
         Reservation reservation = new Reservation();
 
         reservation.setIdReservation(rs.getInt("id"));
-        reservation.setDateReservation(rs.getTimestamp("date_reservation"));
+        reservation.setDateReservation(rs.getDate("date_reservation"));
         reservation.setIdLivre(rs.getInt("id_livre"));
         reservation.setIdUser(rs.getInt("id_user"));
 

@@ -16,10 +16,7 @@ import java.util.List;
         }
 
         @WebMethod
-        public void creerReservation(int idUser, int idLivre) {
-            Reservation reservation = new Reservation();
-            reservation.setIdUser(idUser);
-            reservation.setIdLivre(idLivre);
+        public void creerReservation(Reservation reservation) {
             getManagerFactory().getReservationManager().creerReservation(reservation);
         }
 }

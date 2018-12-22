@@ -1,6 +1,5 @@
 package org.application.model;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 public class Reservation {
@@ -8,7 +7,7 @@ public class Reservation {
     private int id;
     private int idUser;
     private int idLivre;
-    private Timestamp dateReservation;
+    private Date dateReservation;
 
     public int getIdReservation() {
         return id;
@@ -34,11 +33,11 @@ public class Reservation {
         this.idLivre = idLivre;
     }
 
-    public Timestamp getDateReservation() {
+    public Date getDateReservation() {
         return dateReservation;
     }
 
-    public void setDateReservation(Timestamp dateReservation) {
+    public void setDateReservation(Date dateReservation) {
         this.dateReservation = dateReservation;
     }
 }
