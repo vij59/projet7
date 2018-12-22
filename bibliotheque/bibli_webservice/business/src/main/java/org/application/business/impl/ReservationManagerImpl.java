@@ -15,8 +15,8 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
     }
 
     @Override
-    public void creerReservation(int idUser, int idLivre) {
-        getDaoFactory().getReservationDAO().creerReservation(idUser,idLivre);
+    public void creerReservation(Reservation reservation) {
+        getDaoFactory().getReservationDAO().creerReservation(reservation);
     }
 
     @Override

@@ -16,10 +16,10 @@ import java.util.List;
         }
 
         @WebMethod
-        public void creerReservation(int idUser , int idLivre) {
-            Reservation reservation = null;
-            reservation.setIdLivre(idLivre);
+        public void creerReservation(int idUser, int idLivre) {
+            Reservation reservation = new Reservation();
             reservation.setIdUser(idUser);
-            getManagerFactory().getReservationManager().creerReservation(idUser, idLivre);
+            reservation.setIdLivre(idLivre);
+            getManagerFactory().getReservationManager().creerReservation(reservation);
         }
 }
