@@ -16,7 +16,7 @@ import java.util.List;
         }
 
         @WebMethod
-        public void creerReservation(Reservation reservation) {
-            getManagerFactory().getReservationManager().creerReservation(reservation);
+        public void creerReservation(Reservation reservation ) {
+                        getManagerFactory().getReservationManager().creerReservation(reservation);
         }
 }
