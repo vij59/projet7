@@ -19,8 +19,6 @@ public class LivreWebservice extends AbstractWebservice {
 	public Livre getLivreById(int id) {
 
 			return getManagerFactory().getLivreManager().getLivreById(id);
-
-
 	}
 
 	@WebMethod

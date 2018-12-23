@@ -10,5 +10,5 @@ public interface ReservationManager {
 
     void creerReservation(Reservation reservation);
 
-    public List<Reservation> getReservationsByIdLivre();
+    public List<Reservation> getReservationsByBookId(int idLivre);
 }

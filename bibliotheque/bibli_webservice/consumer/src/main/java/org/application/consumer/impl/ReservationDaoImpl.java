@@ -6,6 +6,7 @@ import org.application.consumer.contract.ReservationDAO;
 import org.application.consumer.rowmapper.ReservationRM;
 import org.application.model.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -69,5 +70,19 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
         return vList;
 
     }
+
+        @Override
+        public List<Reservation>  getReservationsByBookId(int idLivre) {
+
+            String vSQL = "SELECT * FROM reservation WHERE id_livre = :id";
+            NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+            MapSqlParameterSource vParams = new MapSqlParameterSource("id", idLivre);
+            try {
+                List<Reservation> vList = vJdbcTemplate.query(vSQL,vParams, reservationRM);
+                return vList;
+            } catch (EmptyResultDataAccessException vEx) {
+                return null;
+            }
+        }
 
 }

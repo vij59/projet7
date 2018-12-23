@@ -29,21 +29,6 @@ public interface LivreWebservice {
      * 
      * @param arg0
      * @return
-     *     returns org.webservice.services.Livre
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getLivreById", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivreById")
-    @ResponseWrapper(localName = "getLivreByIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivreByIdResponse")
-    @Action(input = "http://services.webservice.org/LivreWebservice/getLivreByIdRequest", output = "http://services.webservice.org/LivreWebservice/getLivreByIdResponse")
-    public Livre getLivreById(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns java.util.List<org.webservice.services.Livre>
      */
     @WebMethod
@@ -66,6 +51,21 @@ public interface LivreWebservice {
     @ResponseWrapper(localName = "getLivresResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivresResponse")
     @Action(input = "http://services.webservice.org/LivreWebservice/getLivresRequest", output = "http://services.webservice.org/LivreWebservice/getLivresResponse")
     public List<Livre> getLivres();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.webservice.services.Livre
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getLivreById", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivreById")
+    @ResponseWrapper(localName = "getLivreByIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetLivreByIdResponse")
+    @Action(input = "http://services.webservice.org/LivreWebservice/getLivreByIdRequest", output = "http://services.webservice.org/LivreWebservice/getLivreByIdResponse")
+    public Livre getLivreById(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
     /**
      * 

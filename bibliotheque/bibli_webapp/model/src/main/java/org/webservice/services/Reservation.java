@@ -3,7 +3,9 @@ package org.webservice.services;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -16,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="dateReservation" type="{http://services.webservice.org/}date" minOccurs="0"/>
+ *         &lt;element name="dateReservation" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="idLivre" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="idReservation" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="idUser" type="{http://www.w3.org/2001/XMLSchema}int"/>
@@ -37,7 +39,8 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Reservation {
 
-    protected Date dateReservation;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar dateReservation;
     protected int idLivre;
     protected int idReservation;
     protected int idUser;
@@ -47,10 +50,10 @@ public class Reservation {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public Date getDateReservation() {
+    public XMLGregorianCalendar getDateReservation() {
         return dateReservation;
     }
 
@@ -59,10 +62,10 @@ public class Reservation {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setDateReservation(Date value) {
+    public void setDateReservation(XMLGregorianCalendar value) {
         this.dateReservation = value;
     }
 

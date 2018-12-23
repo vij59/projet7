@@ -10,6 +10,6 @@ public interface ReservationDAO {
 
     List<Reservation> getListeReservations();
 
-  //  List<Reservation> getReservationsByIdLivre;
+    List<Reservation> getReservationsByBookId(int idLivre);
 
 }

@@ -3,6 +3,7 @@ package org.webservice.services;
 
 import java.util.List;
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
@@ -31,9 +32,21 @@ public interface ReservationWebService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getListeReservation", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetListeReservation")
-    @ResponseWrapper(localName = "getListeReservationResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetListeReservationResponse")
-    @Action(input = "http://services.webservice.org/ReservationWebService/getListeReservationRequest", output = "http://services.webservice.org/ReservationWebService/getListeReservationResponse")
-    public List<Reservation> getListeReservation();
+    @RequestWrapper(localName = "getListeReservations", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetListeReservations")
+    @ResponseWrapper(localName = "getListeReservationsResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetListeReservationsResponse")
+    @Action(input = "http://services.webservice.org/ReservationWebService/getListeReservationsRequest", output = "http://services.webservice.org/ReservationWebService/getListeReservationsResponse")
+    public List<Reservation> getListeReservations();
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "creerReservation", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerReservation")
+    @ResponseWrapper(localName = "creerReservationResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerReservationResponse")
+    @Action(input = "http://services.webservice.org/ReservationWebService/creerReservationRequest", output = "http://services.webservice.org/ReservationWebService/creerReservationResponse")
+    public void creerReservation(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Reservation arg0);
 
 }

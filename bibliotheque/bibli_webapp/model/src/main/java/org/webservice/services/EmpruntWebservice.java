@@ -27,18 +27,6 @@ public interface EmpruntWebservice {
 
     /**
      * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "empruntProlonge", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.EmpruntProlonge")
-    @ResponseWrapper(localName = "empruntProlongeResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.EmpruntProlongeResponse")
-    @Action(input = "http://services.webservice.org/EmpruntWebservice/empruntProlongeRequest", output = "http://services.webservice.org/EmpruntWebservice/empruntProlongeResponse")
-    public void empruntProlonge(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<org.webservice.services.Emprunt>
      */
@@ -75,5 +63,26 @@ public interface EmpruntWebservice {
     public List<Emprunt> getEmpruntByUserId(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "empruntProlonge", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.EmpruntProlonge")
+    @ResponseWrapper(localName = "empruntProlongeResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.EmpruntProlongeResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/empruntProlongeRequest", output = "http://services.webservice.org/EmpruntWebservice/empruntProlongeResponse")
+    public void empruntProlonge(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     */
+    @WebMethod
+    @RequestWrapper(localName = "creerEmprunt", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerEmprunt")
+    @ResponseWrapper(localName = "creerEmpruntResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerEmpruntResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/creerEmpruntRequest", output = "http://services.webservice.org/EmpruntWebservice/creerEmpruntResponse")
+    public void creerEmprunt();
 
 }

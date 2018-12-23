@@ -20,7 +20,7 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
     }
 
     @Override
-    public List<Reservation> getReservationsByIdLivre() {
-        return null;
+    public List<Reservation> getReservationsByBookId(int idLivre) {
+        return getDaoFactory().getReservationDAO().getReservationsByBookId(idLivre);
     }
 }

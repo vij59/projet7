@@ -19,4 +19,10 @@ import java.util.List;
         public void creerReservation(Reservation reservation ) {
                         getManagerFactory().getReservationManager().creerReservation(reservation);
         }
+
+        @WebMethod
+        public List<Reservation> getListeReservationsByBookId(int idLivre) {
+        return getManagerFactory().getReservationManager().getReservationsByBookId(idLivre);
+    }
+
 }
