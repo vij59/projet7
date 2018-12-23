@@ -6,12 +6,36 @@ import java.util.List;
 import org.application.business.contract.EmpruntManager;
 import org.application.model.Emprunt;
 import org.application.model.Livre;
+import org.application.model.Reservation;
 
 public class EmpruntManagerImpl extends AbstractManager implements EmpruntManager {
 
 	@Override
 	public void creerEmprunt(Emprunt emprunt) {
-		getDaoFactory().getEmpruntDAO().creer(emprunt);
+		List<Emprunt> listeEmprunts = getDaoFactory().getEmpruntDAO().getListeEmprunts();
+		// recuperer le livre en question
+		Livre livre = getDaoFactory().getLivreDAO().getLivreById(emprunt.getIdLivre());
+		// obtenir le nombre de reservations possibles, cad 2 fois le nb d exemplaires dispo
+		int nbReservationsPossibles = 2 * livre.getNbExemplaires();
+		List<Reservation> listeReservations = getDaoFactory().getReservationDAO().getListeReservations();
+		int nbReservationsDuLivre = 0;
+
+		for(Reservation reservation : listeReservations) {
+			if(emprunt.getIdLivre() == reservation.getIdLivre()) {
+				nbReservationsDuLivre++;
+			}
+		}
+			if(empruntPossible(emprunt.getIdLivre())){
+			getDaoFactory().getEmpruntDAO().creerEmprunt(emprunt);
+		}
+		else if(nbReservationsPossibles > nbReservationsDuLivre){
+
+			Reservation reservation1 = new Reservation();
+			reservation1.setIdUser(emprunt.getIdUtilisateur());
+			reservation1.setIdLivre(emprunt.getIdLivre());
+			getDaoFactory().getReservationDAO().creerReservation(reservation1);
+		}
+		
 	}
 
 	@Override
@@ -118,4 +142,6 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 		}
 		return liste;
 	}
+
+
 }

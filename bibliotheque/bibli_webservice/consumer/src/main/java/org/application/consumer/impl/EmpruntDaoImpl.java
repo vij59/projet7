@@ -30,7 +30,7 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 	}
 
 	@Override
-	public void creer(Emprunt empruntRM) {
+	public void creerEmprunt(Emprunt empruntRM) {
 
 		String vSQL = "INSERT INTO emprunt (date_emprunt, date_retour, id_livre, id_utilisateur,en_cours,repousse) "
 				+ "VALUES( :dateDebut, :dateFin, :idLivre, :idUtilisateur, :enCours, :repousse)";

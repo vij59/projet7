@@ -6,7 +6,7 @@ import org.application.model.Emprunt;
 
 public interface EmpruntDAO {
 
-	void creer(Emprunt emprunt);
+	void creerEmprunt(Emprunt emprunt);
 
 	void empruntProlonge(int idEmprunt);
 
