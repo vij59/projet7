@@ -5,11 +5,13 @@ import java.util.List;
 
 import org.webapp.resource.AbstractRessource;
 import org.webservice.services.Emprunt;
+import org.webservice.services.Livre;
 import org.webservice.services.Utilisateur;
 import com.opensymphony.xwork2.ActionContext;
 
 public class ListerEmprunts extends AbstractRessource  {
 
+// reliée à la jsp monCompte
 
 	private static final long serialVersionUID = 1L;
 	private List<Emprunt> mesEmprunts;
@@ -54,7 +56,14 @@ public class ListerEmprunts extends AbstractRessource  {
         setCustomDate(newDate);
 
         mesEmprunts =  getManagerFactory().getEmpruntManager().getEmpruntByUserId(user.getId());
-
+        List<Livre> listeLivres = getManagerFactory().getLivreManager().getLivres();
+        for(Emprunt  emprunt : mesEmprunts) {
+            for(Livre livre : listeLivres) {
+                if(livre.getId() ==  emprunt.getIdLivre()) {
+                    emprunt.setLivre(livre);
+                }
+            }
+        }
    	
         return "success";
     }

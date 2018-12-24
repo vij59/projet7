@@ -5,7 +5,7 @@ import org.webapp.resource.AbstractRessource;
 public class HomeAction extends AbstractRessource {
 
 
-    public String execute() throws Exception {
+    public String execute() {
 
         return "success";
     }

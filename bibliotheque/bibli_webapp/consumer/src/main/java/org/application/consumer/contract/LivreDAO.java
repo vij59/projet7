@@ -7,7 +7,7 @@ import org.webservice.services.Livre;
 
 public interface LivreDAO {
 
-	public List<Livre> getLivres();
+	List<Livre> getLivres();
 
 	List<Livre> getLivreByRecherche(String titre, String nomAuteur);
 

@@ -6,8 +6,8 @@ import org.webservice.services.Utilisateur;
 
 public interface UtilisateurManager {
 
-	public List<Utilisateur> getUtilisateurs();
-	public boolean validerLogin(String mail, String mdp);
+	List<Utilisateur> getUtilisateurs();
+	boolean validerLogin(String mail, String mdp);
 	Utilisateur getUtilisateurByMail(String mail);
 	
 }

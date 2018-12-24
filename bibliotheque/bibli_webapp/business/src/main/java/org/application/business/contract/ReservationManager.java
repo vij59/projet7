@@ -1,16 +1,17 @@
 package org.application.business.contract;
 
-import org.application.model.Reservation;
+import org.webservice.services.Reservation;
 
 import java.util.List;
 
 public interface ReservationManager {
+    List<Reservation> getListeReservations();
 
-    public List<Reservation> getListeReservations();
+    List<Reservation> getReservationsByBookId(int idLivre);
 
     void creerReservation(Reservation reservation);
 
-    public List<Reservation> getReservationsByBookId(int idLivre);
+    Reservation getPremiereReservationDuLivreById(int idLivre);
 
     void supprimerReservation(Reservation reservation);
 }

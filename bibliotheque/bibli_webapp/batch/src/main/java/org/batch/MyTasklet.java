@@ -27,7 +27,7 @@ public class MyTasklet implements Tasklet {
     private MailMail mailMail;
 
     @Override
-    public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
+    public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) {
 
     	 String from = "jokoker59@gmail.com";
          String nom ="Monsieur ";

@@ -98,6 +98,20 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 	}
 
 	@Override
+	public Emprunt getEmpruntById(int idEmprunt) {
+		String vSQL = "SELECT * FROM emprunt WHERE id = :id order by en_cours desc, repousse desc, date_retour asc ";
+		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+		MapSqlParameterSource vParams = new MapSqlParameterSource("id", idEmprunt);
+		try {
+			Emprunt emprunt = vJdbcTemplate.queryForObject(vSQL, vParams, empruntRM);
+
+			return emprunt;
+		} catch (EmptyResultDataAccessException vEx) {
+			return null;
+		}
+	}
+
+	@Override
 	public List<Emprunt> getEmpruntsEnCours() {
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 
@@ -105,6 +119,21 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 
 		List<Emprunt> vList = vJdbcTemplate.query(sql, empruntRM);
 		return vList;
+	}
+
+	// méthode qui va mettre fin à l'emprunt, et donc permet de rendre le livre
+	@Override
+	public void rendreLivreDeLemprunt(Emprunt emprunt) {
+		String vSQL = "UPDATE emprunt SET  date_retour=:dateFin, en_cours=false , statut=:statut WHERE id=:id";
+
+		MapSqlParameterSource vParams = new MapSqlParameterSource();
+		Calendar now = Calendar.getInstance();
+		Date now1 = now.getTime();
+		vParams.addValue("dateFin", now1, Types.DATE);
+		vParams.addValue("statut", "rendu", Types.VARCHAR);
+		vParams.addValue("id", emprunt.getId(), Types.INTEGER);
+		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vSQL, vParams);
 	}
 
 }

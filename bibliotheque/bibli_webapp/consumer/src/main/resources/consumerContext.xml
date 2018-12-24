@@ -12,7 +12,9 @@
 	<bean id="auteurDao"
 		class="org.application.consumer.impl.AuteurDAOImpl" />
 	<bean id="empruntDao"
-		class="org.application.consumer.impl.EmpruntDAOImpl" /> 
+		class="org.application.consumer.impl.EmpruntDAOImpl" />
+	<bean id="reservationDao"
+		  class="org.application.consumer.impl.ReservationDaoImpl" />
 
 	<!-- ===== DaoFactoryImpl ===== -->
 	<bean id="daoFactory"
@@ -20,7 +22,8 @@
 		<property name="utilisateurDao" ref="utilisateurDao" />
 		<property name="livreDao" ref="livreDao" />
 		<property name="auteurDao" ref="auteurDao" />
-	    <property name="empruntDao" ref="empruntDao" /> 
+	    <property name="empruntDao" ref="empruntDao" />
+		<property name="reservationDao" ref="reservationDao" />
 	</bean>
 
 </beans>

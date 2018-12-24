@@ -6,5 +6,7 @@ import org.webservice.services.Auteur;
 
 public interface AuteurDAO {
 
-	public List<Auteur> getAuteurs();
+	List<Auteur> getAuteurs();
+
+	List<Auteur> getAuteurByName(String nom);
 }

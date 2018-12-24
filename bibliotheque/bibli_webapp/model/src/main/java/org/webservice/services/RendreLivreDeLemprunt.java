@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour creerEmprunt complex type.
+ * <p>Classe Java pour rendreLivreDeLemprunt complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="creerEmprunt">
+ * &lt;complexType name="rendreLivreDeLemprunt">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "creerEmprunt", propOrder = {
+@XmlType(name = "rendreLivreDeLemprunt", propOrder = {
     "arg0"
 })
-public class CreerEmprunt {
+public class RendreLivreDeLemprunt {
 
     protected Emprunt arg0;
 

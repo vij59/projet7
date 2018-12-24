@@ -21,6 +21,9 @@
 	<bean id="empruntManager"
 		class="org.application.business.impl.EmpruntManagerImpl"
 		parent="abstractManager" />
+	<bean id="reservationManager"
+		  class="org.application.business.impl.ReservationManagerImpl"
+		  parent="abstractManager" />
 
 	<bean id="managerFactory"
 		class="org.application.business.impl.ManagerFactoryImpl">
@@ -28,6 +31,7 @@
 		<property name="livreManager" ref="livreManager" />
 		<property name="auteurManager" ref="auteurManager" />
 		<property name="empruntManager" ref="empruntManager" />
+		<property name="reservationManager" ref="reservationManager" />
 	</bean>
 
 

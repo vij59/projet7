@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour creerEmprunt complex type.
+ * <p>Classe Java pour getPremiereReservationDuLivreById complex type.
  * 
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="creerEmprunt">
+ * &lt;complexType name="getPremiereReservationDuLivreById">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://services.webservice.org/}emprunt" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,34 +26,26 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "creerEmprunt", propOrder = {
+@XmlType(name = "getPremiereReservationDuLivreById", propOrder = {
     "arg0"
 })
-public class CreerEmprunt {
+public class GetPremiereReservationDuLivreById {
 
-    protected Emprunt arg0;
+    protected int arg0;
 
     /**
      * Obtient la valeur de la propriété arg0.
      * 
-     * @return
-     *     possible object is
-     *     {@link Emprunt }
-     *     
      */
-    public Emprunt getArg0() {
+    public int getArg0() {
         return arg0;
     }
 
     /**
      * Définit la valeur de la propriété arg0.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Emprunt }
-     *     
      */
-    public void setArg0(Emprunt value) {
+    public void setArg0(int value) {
         this.arg0 = value;
     }
 

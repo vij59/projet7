@@ -14,6 +14,10 @@ public interface EmpruntDAO {
 
 	List<Emprunt> getEmpruntByUserId(int idUser);
 
+	Emprunt getEmpruntById(int idEmprunt);
+
 	List<Emprunt> getEmpruntsEnCours();
 
+	// méthode qui va mettre fin à l'emprunt, et donc permet de rendre le livre
+	void rendreLivreDeLemprunt(Emprunt emprunt);
 }

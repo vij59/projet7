@@ -69,6 +69,18 @@ public interface EmpruntWebservice {
      * @param arg0
      */
     @WebMethod
+    @RequestWrapper(localName = "rendreLivreDeLemprunt", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.RendreLivreDeLemprunt")
+    @ResponseWrapper(localName = "rendreLivreDeLempruntResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.RendreLivreDeLempruntResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/rendreLivreDeLempruntRequest", output = "http://services.webservice.org/EmpruntWebservice/rendreLivreDeLempruntResponse")
+    public void rendreLivreDeLemprunt(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Emprunt arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
     @RequestWrapper(localName = "empruntProlonge", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.EmpruntProlonge")
     @ResponseWrapper(localName = "empruntProlongeResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.EmpruntProlongeResponse")
     @Action(input = "http://services.webservice.org/EmpruntWebservice/empruntProlongeRequest", output = "http://services.webservice.org/EmpruntWebservice/empruntProlongeResponse")
@@ -78,11 +90,29 @@ public interface EmpruntWebservice {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns org.webservice.services.Emprunt
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getEmpruntById", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntById")
+    @ResponseWrapper(localName = "getEmpruntByIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntByIdResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/getEmpruntByIdRequest", output = "http://services.webservice.org/EmpruntWebservice/getEmpruntByIdResponse")
+    public Emprunt getEmpruntById(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
      */
     @WebMethod
     @RequestWrapper(localName = "creerEmprunt", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerEmprunt")
     @ResponseWrapper(localName = "creerEmpruntResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerEmpruntResponse")
     @Action(input = "http://services.webservice.org/EmpruntWebservice/creerEmpruntRequest", output = "http://services.webservice.org/EmpruntWebservice/creerEmpruntResponse")
-    public void creerEmprunt();
+    public void creerEmprunt(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Emprunt arg0);
 
 }

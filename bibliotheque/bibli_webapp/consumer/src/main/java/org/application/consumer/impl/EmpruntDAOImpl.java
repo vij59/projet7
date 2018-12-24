@@ -39,4 +39,20 @@ public class EmpruntDAOImpl implements EmpruntDAO {
 		return empruntWebService.getEmpruntsEnCours();
 	}
 
+	@Override
+	public void creerEmprunt(Emprunt emprunt) {
+		empruntWebService.creerEmprunt(emprunt);
+	}
+
+	@Override
+	public void rendreLivreDeLemprunt(Emprunt emprunt) {
+		empruntWebService.rendreLivreDeLemprunt(emprunt);
+	}
+
+	@Override
+	public Emprunt getEmpruntById(int idEmprunt) {
+		return empruntWebService.getEmpruntById(idEmprunt);
+	}
+
+
 }

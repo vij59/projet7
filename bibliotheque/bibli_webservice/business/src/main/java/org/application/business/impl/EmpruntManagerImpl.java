@@ -27,6 +27,7 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 		}
 			if(empruntPossible(emprunt.getIdLivre())){
 			getDaoFactory().getEmpruntDAO().creerEmprunt(emprunt);
+
 		}
 		else if(nbReservationsPossibles > nbReservationsDuLivre){
 
@@ -143,5 +144,47 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 		return liste;
 	}
 
+	@Override
+	public Emprunt getEmpruntById(int idEmprunt){
+		return getDaoFactory().getEmpruntDAO().getEmpruntById(idEmprunt);
+	}
 
+	@Override
+	public void rendreLivreDeLemprunt(Emprunt emprunt) {
+		//on rend le livre, donc on met à jour l'emprunt
+		getDaoFactory().getEmpruntDAO().rendreLivreDeLemprunt(emprunt);
+		transfertReservationVersEmprunt(emprunt);
+	}
+
+	@Override
+	public Reservation getPremiereReservationByBookId(int idLivre) {
+
+			List<Reservation> reservationsLivre = getDaoFactory().getReservationDAO().getReservationsByBookId(idLivre);
+
+			Date date = new Date();
+			Reservation premiereReservation = new Reservation();
+			for (Reservation reservation : reservationsLivre) {
+				if (reservation.getDateReservation().getTime() < date.getTime()) {
+					date = reservation.getDateReservation();
+					premiereReservation = reservation;
+				}
+			}
+			return premiereReservation;
+		}
+
+	@Override
+	public void transfertReservationVersEmprunt(Emprunt emprunt) {
+
+		// on transfere la premiere reservation vers l'emprunt
+		Reservation premiereReservation = getPremiereReservationByBookId(emprunt.getIdLivre());
+		//on crée l'emprunt depuis la reservation
+		Emprunt emprunt1 = new Emprunt();
+		emprunt1.setIdLivre(emprunt.getIdLivre());
+		emprunt1.setIdUtilisateur(premiereReservation.getIdUser());
+		getDaoFactory().getEmpruntDAO().creerEmprunt(emprunt1);
+
+		// on supprime la réservation
+		getDaoFactory().getReservationDAO().supprimerReservation(premiereReservation);
+		// Reservation reservation = getDaoFactory().getReservationDAO().
+	}
 }

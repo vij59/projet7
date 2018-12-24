@@ -25,4 +25,14 @@ import java.util.List;
         return getManagerFactory().getReservationManager().getReservationsByBookId(idLivre);
     }
 
+        @WebMethod
+        public Reservation getPremiereReservationDuLivreById(int idLivre) {
+            return getManagerFactory().getEmpruntManager().getPremiereReservationByBookId(idLivre);
+        }
+
+        @WebMethod
+        public void supprimerReservation (Reservation reservation){
+            getManagerFactory().getReservationManager().supprimerReservation(reservation);
+        }
+
 }

@@ -17,4 +17,8 @@ public class AuteurDAOImpl implements AuteurDAO {
 		return auteurWebService.listAuteurs();
 	}
 
+	@Override
+	public List<Auteur> getAuteurByName(String nom) {
+		return auteurWebService.getAuteurByName(nom);
+	}
 }

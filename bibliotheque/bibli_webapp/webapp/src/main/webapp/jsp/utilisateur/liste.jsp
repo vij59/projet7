@@ -52,7 +52,15 @@
 										test="%{disponible==false}">
 											Indisponible
 										</s:if> <s:else>
-										    Disponible
+
+
+								<s:url action="emprunterProcess" var="helloLink">
+									<s:param name="id_livre"><s:property value='id' /></s:param>
+								</s:url>
+									<p>
+										<a href="${helloLink}">Réserver</a>
+									</p>
+
 										</s:else>
 								</td>
 							</tr>

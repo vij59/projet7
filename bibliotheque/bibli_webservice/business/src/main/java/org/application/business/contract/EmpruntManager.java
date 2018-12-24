@@ -3,6 +3,7 @@ package org.application.business.contract;
 import java.util.List;
 
 import org.application.model.Emprunt;
+import org.application.model.Reservation;
 
 public interface EmpruntManager {
 
@@ -18,4 +19,11 @@ public interface EmpruntManager {
 
 	List<Emprunt> getEmpruntsEnCours();
 
+    Emprunt getEmpruntById(int idEmprunt);
+
+    void rendreLivreDeLemprunt(Emprunt emprunt);
+
+    Reservation getPremiereReservationByBookId(int idLivre);
+
+    void transfertReservationVersEmprunt(Emprunt emprunt);
 }

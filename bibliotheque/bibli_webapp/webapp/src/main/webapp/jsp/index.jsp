@@ -27,7 +27,7 @@ background-color : white;}</style>
 <jsp:include page="/jsp/others/banner.jsp"></jsp:include> 
 <hr/> 
 
- <h2>Bienvenue sur l'intranet de votre bibliothèque</h2>
+ <h2>Bienvenue sur l'intranet de votre bibliothÃ¨que</h2>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

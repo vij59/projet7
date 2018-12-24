@@ -6,7 +6,7 @@ import org.webservice.services.Livre;
 
 public interface LivreManager {
 
-	public List<Livre> getLivres();
+	List<Livre> getLivres();
 
 	List<Livre> getLivreByRecherche(String titre, String nomAuteur);
 

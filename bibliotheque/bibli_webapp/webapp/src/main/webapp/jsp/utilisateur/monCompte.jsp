@@ -17,6 +17,7 @@
 					<thead>
 						<tr>
 							<th>id emprunt</th>
+							<th>titre</th>
 							<th>date emprunt</th>
 							<th>date retour</th>
 							<th>état</th>
@@ -30,6 +31,8 @@
 						<tbody>
 							<tr>
 								<td><s:property value="id" /></td>
+
+								<td><s:property value="livre.titre" /></td>
 
 								<td><s:date name="dateDebut.toGregorianCalendar()"
 										format="dd/MM/yyyy" /></td>

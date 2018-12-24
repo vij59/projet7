@@ -47,7 +47,7 @@ public class ListeLivres extends AbstractRessource{
 
 	public String execute(){
 	        listeLivres = getManagerFactory().getLivreManager().getLivres();
-	     
+
 	        return "success";
 	 }
 
