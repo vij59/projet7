@@ -26,6 +26,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="idLivre" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="idUtilisateur" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="livre" type="{http://services.webservice.org/}livre" minOccurs="0"/>
+ *         &lt;element name="recupere" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="repoussable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="statut" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
@@ -46,6 +47,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "idLivre",
     "idUtilisateur",
     "livre",
+    "recupere",
     "repoussable",
     "statut"
 })
@@ -61,6 +63,7 @@ public class Emprunt {
     protected int idLivre;
     protected int idUtilisateur;
     protected Livre livre;
+    protected boolean recupere;
     protected boolean repoussable;
     protected String statut;
 
@@ -222,6 +225,22 @@ public class Emprunt {
      */
     public void setLivre(Livre value) {
         this.livre = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété recupere.
+     * 
+     */
+    public boolean isRecupere() {
+        return recupere;
+    }
+
+    /**
+     * Définit la valeur de la propriété recupere.
+     * 
+     */
+    public void setRecupere(boolean value) {
+        this.recupere = value;
     }
 
     /**

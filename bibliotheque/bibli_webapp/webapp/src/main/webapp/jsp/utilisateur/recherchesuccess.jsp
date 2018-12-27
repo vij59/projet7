@@ -30,7 +30,7 @@
 
 
 
-								<td><s:property value="auteur.nom" />&nbsp; <s:property
+								<td><s:property value="livre.auteur.nom" /> &nbsp; <s:property
 										value="auteur.prenom" /></td>
 
 

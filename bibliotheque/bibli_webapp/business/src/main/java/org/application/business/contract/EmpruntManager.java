@@ -19,4 +19,6 @@ public interface EmpruntManager {
 	void rendreLivreDeLemprunt(Emprunt emprunt);
 
 	Emprunt getEmpruntById(int idEmprunt) ;
+
+	List<Emprunt>  getMesEmpruntsEnCours(int idUser);
 }

@@ -14,6 +14,10 @@ public class Livre {
     private boolean disponible;
     private Auteur auteur;
     private int nbRestant;
+    private boolean livreEmprunteByUserId;
+    private boolean livreReserveByUserId;
+    private boolean empruntable;
+    private boolean reservable;
     
 	public int getId() {
 		return id;
@@ -64,6 +68,35 @@ public class Livre {
 		this.nbRestant = nbRestant;
 	}
 
-	
-    
+	public boolean isLivreEmprunteByUserId() {
+		return livreEmprunteByUserId;
+	}
+
+	public void setLivreEmprunteByUserId(boolean livreEmprunteByUserId) {
+		this.livreEmprunteByUserId = livreEmprunteByUserId;
+	}
+
+	public boolean isLivreReserveByUserId() {
+		return livreReserveByUserId;
+	}
+
+	public void setLivreReserveByUserId(boolean livreReserveByUserId) {
+		this.livreReserveByUserId = livreReserveByUserId;
+	}
+
+	public boolean isEmpruntable() {
+		return empruntable;
+	}
+
+	public void setEmpruntable(boolean empruntable) {
+		this.empruntable = empruntable;
+	}
+
+	public boolean isReservable() {
+		return reservable;
+	}
+
+	public void setReservable(boolean reservable) {
+		this.reservable = reservable;
+	}
 }

@@ -1,9 +1,11 @@
 package org.application.business.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.application.business.contract.EmpruntManager;
 import org.webservice.services.Emprunt;
+import org.webservice.services.Livre;
 
 public class EmpruntManagerImpl extends AbstractManager implements EmpruntManager {
 
@@ -45,5 +47,25 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
     public Emprunt getEmpruntById(int idEmprunt) {
         return getDaoFactory().getEmpruntDao().getEmpruntById(idEmprunt);
     }
+
+	@Override
+	public List<Emprunt> getMesEmpruntsEnCours(int idUser) {
+		List<Emprunt> mesEmprunts = getDaoFactory().getEmpruntDao().getEmpruntByUserId(idUser);
+		List<Emprunt> mesEmpruntsEnCours = new ArrayList<>();
+		// List<Livre> livres = getDaoFactory().getLivreDao().getLivres();
+
+
+
+
+
+		for(Emprunt emprunt : mesEmprunts) {
+			// emprunt.setLivre(getDaoFactory().getLivreDao().getLivreById(emprunt.getIdLivre()));
+			if(emprunt.isEnCours()) {
+				mesEmpruntsEnCours.add(emprunt);
+			}
+		}
+		return mesEmpruntsEnCours;
+
+	}
 
 }

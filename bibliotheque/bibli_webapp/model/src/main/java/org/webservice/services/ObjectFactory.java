@@ -28,11 +28,13 @@ public class ObjectFactory {
     private final static QName _CreerReservation_QNAME = new QName("http://services.webservice.org/", "creerReservation");
     private final static QName _GetListeReservationsByBookId_QNAME = new QName("http://services.webservice.org/", "getListeReservationsByBookId");
     private final static QName _GetPremiereReservationDuLivreByIdResponse_QNAME = new QName("http://services.webservice.org/", "getPremiereReservationDuLivreByIdResponse");
+    private final static QName _GetReservationsByUserIdResponse_QNAME = new QName("http://services.webservice.org/", "getReservationsByUserIdResponse");
     private final static QName _CreerReservationResponse_QNAME = new QName("http://services.webservice.org/", "creerReservationResponse");
     private final static QName _GetListeReservationsByBookIdResponse_QNAME = new QName("http://services.webservice.org/", "getListeReservationsByBookIdResponse");
     private final static QName _GetPremiereReservationDuLivreById_QNAME = new QName("http://services.webservice.org/", "getPremiereReservationDuLivreById");
     private final static QName _GetListeReservations_QNAME = new QName("http://services.webservice.org/", "getListeReservations");
     private final static QName _GetListeReservationsResponse_QNAME = new QName("http://services.webservice.org/", "getListeReservationsResponse");
+    private final static QName _GetReservationsByUserId_QNAME = new QName("http://services.webservice.org/", "getReservationsByUserId");
     private final static QName _SupprimerReservation_QNAME = new QName("http://services.webservice.org/", "supprimerReservation");
 
     /**
@@ -64,6 +66,14 @@ public class ObjectFactory {
      */
     public CreerReservation createCreerReservation() {
         return new CreerReservation();
+    }
+
+    /**
+     * Create an instance of {@link GetReservationsByUserIdResponse }
+     * 
+     */
+    public GetReservationsByUserIdResponse createGetReservationsByUserIdResponse() {
+        return new GetReservationsByUserIdResponse();
     }
 
     /**
@@ -112,6 +122,14 @@ public class ObjectFactory {
      */
     public GetListeReservationsResponse createGetListeReservationsResponse() {
         return new GetListeReservationsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetReservationsByUserId }
+     * 
+     */
+    public GetReservationsByUserId createGetReservationsByUserId() {
+        return new GetReservationsByUserId();
     }
 
     /**
@@ -167,6 +185,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetReservationsByUserIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getReservationsByUserIdResponse")
+    public JAXBElement<GetReservationsByUserIdResponse> createGetReservationsByUserIdResponse(GetReservationsByUserIdResponse value) {
+        return new JAXBElement<GetReservationsByUserIdResponse>(_GetReservationsByUserIdResponse_QNAME, GetReservationsByUserIdResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CreerReservationResponse }{@code >}}
      * 
      */
@@ -209,6 +236,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getListeReservationsResponse")
     public JAXBElement<GetListeReservationsResponse> createGetListeReservationsResponse(GetListeReservationsResponse value) {
         return new JAXBElement<GetListeReservationsResponse>(_GetListeReservationsResponse_QNAME, GetListeReservationsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetReservationsByUserId }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getReservationsByUserId")
+    public JAXBElement<GetReservationsByUserId> createGetReservationsByUserId(GetReservationsByUserId value) {
+        return new JAXBElement<GetReservationsByUserId>(_GetReservationsByUserId_QNAME, GetReservationsByUserId.class, null, value);
     }
 
     /**

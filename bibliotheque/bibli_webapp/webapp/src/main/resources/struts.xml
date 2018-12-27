@@ -89,7 +89,7 @@
 		</action>
 
 		<action name="emprunterProcess" class="org.webapp.action.EmprunterReserver" method="execute">
-
+			<result name="input" type="redirectAction">liste</result>
 			<result name="success" type="redirectAction">liste</result>
 			<result name="error">/jsp/utilisateur/index.jsp</result>
 		</action>

@@ -14,6 +14,7 @@ public class Emprunt {
 	private Livre livre;
 	private boolean repoussable;
 	private String statut;
+	private boolean recupere;
 
 	public Integer getId() {
 		return id;
@@ -93,5 +94,13 @@ public class Emprunt {
 
 	public void setStatut(String statut) {
 		this.statut = statut;
+	}
+
+	public boolean isRecupere() {
+		return recupere;
+	}
+
+	public void setRecupere(boolean recupere) {
+		this.recupere = recupere;
 	}
 }

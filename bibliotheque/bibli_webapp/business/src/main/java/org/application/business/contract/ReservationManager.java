@@ -14,4 +14,6 @@ public interface ReservationManager {
     Reservation getPremiereReservationDuLivreById(int idLivre);
 
     void supprimerReservation(Reservation reservation);
+
+    List<Reservation> getReservationsByUserId(int idUser);
 }

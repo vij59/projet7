@@ -25,7 +25,12 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
     }
 
     @Override
-    public void supprimerReservation (Reservation reservation){
-       getDaoFactory().getReservationDAO().supprimerReservation(reservation);
+    public void supprimerReservation(Reservation reservation) {
+        getDaoFactory().getReservationDAO().supprimerReservation(reservation);
+    }
+
+    @Override
+    public List<Reservation> getReservationsByUserId(int userId) {
+      return  getDaoFactory().getReservationDAO().getReservationsByUserId(userId);
     }
 }

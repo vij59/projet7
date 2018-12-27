@@ -2,9 +2,12 @@ package org.application.business.impl;
 
 import java.util.List;
 
+import org.application.business.contract.EmpruntManager;
 import org.application.business.contract.LivreManager;
 import org.application.model.Auteur;
+import org.application.model.Emprunt;
 import org.application.model.Livre;
+import org.application.model.Reservation;
 
 public class LivreManagerImpl extends AbstractManager implements LivreManager {
 
@@ -47,5 +50,6 @@ public class LivreManagerImpl extends AbstractManager implements LivreManager {
 
 		return liste;
 	}
+
 
 }

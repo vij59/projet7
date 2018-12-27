@@ -21,10 +21,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="anneeSortie" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="auteur" type="{http://services.webservice.org/}auteur" minOccurs="0"/>
  *         &lt;element name="disponible" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="empruntable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="idAuteur" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="livreEmprunteByUserId" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="livreReserveByUserId" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="nbExemplaires" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="nbRestant" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="reservable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="titre" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -39,10 +43,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "anneeSortie",
     "auteur",
     "disponible",
+    "empruntable",
     "id",
     "idAuteur",
+    "livreEmprunteByUserId",
+    "livreReserveByUserId",
     "nbExemplaires",
     "nbRestant",
+    "reservable",
     "titre"
 })
 public class Livre {
@@ -51,10 +59,14 @@ public class Livre {
     protected XMLGregorianCalendar anneeSortie;
     protected Auteur auteur;
     protected boolean disponible;
+    protected boolean empruntable;
     protected int id;
     protected int idAuteur;
+    protected boolean livreEmprunteByUserId;
+    protected boolean livreReserveByUserId;
     protected int nbExemplaires;
     protected int nbRestant;
+    protected boolean reservable;
     protected String titre;
 
     /**
@@ -122,6 +134,22 @@ public class Livre {
     }
 
     /**
+     * Obtient la valeur de la propriété empruntable.
+     * 
+     */
+    public boolean isEmpruntable() {
+        return empruntable;
+    }
+
+    /**
+     * Définit la valeur de la propriété empruntable.
+     * 
+     */
+    public void setEmpruntable(boolean value) {
+        this.empruntable = value;
+    }
+
+    /**
      * Obtient la valeur de la propriété id.
      * 
      */
@@ -154,6 +182,38 @@ public class Livre {
     }
 
     /**
+     * Obtient la valeur de la propriété livreEmprunteByUserId.
+     * 
+     */
+    public boolean isLivreEmprunteByUserId() {
+        return livreEmprunteByUserId;
+    }
+
+    /**
+     * Définit la valeur de la propriété livreEmprunteByUserId.
+     * 
+     */
+    public void setLivreEmprunteByUserId(boolean value) {
+        this.livreEmprunteByUserId = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété livreReserveByUserId.
+     * 
+     */
+    public boolean isLivreReserveByUserId() {
+        return livreReserveByUserId;
+    }
+
+    /**
+     * Définit la valeur de la propriété livreReserveByUserId.
+     * 
+     */
+    public void setLivreReserveByUserId(boolean value) {
+        this.livreReserveByUserId = value;
+    }
+
+    /**
      * Obtient la valeur de la propriété nbExemplaires.
      * 
      */
@@ -183,6 +243,22 @@ public class Livre {
      */
     public void setNbRestant(int value) {
         this.nbRestant = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété reservable.
+     * 
+     */
+    public boolean isReservable() {
+        return reservable;
+    }
+
+    /**
+     * Définit la valeur de la propriété reservable.
+     * 
+     */
+    public void setReservable(boolean value) {
+        this.reservable = value;
     }
 
     /**

@@ -13,4 +13,6 @@ public interface ReservationManager {
     public List<Reservation> getReservationsByBookId(int idLivre);
 
     void supprimerReservation(Reservation reservation);
+
+    public List<Reservation> getReservationsByUserId(int userId);
 }

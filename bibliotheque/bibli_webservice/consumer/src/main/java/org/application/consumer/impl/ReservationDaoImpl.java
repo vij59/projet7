@@ -94,5 +94,18 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
             vJdbcTemplate.update(vSQL, vParams);
         }
 
+    @Override
+    public List<Reservation>  getReservationsByUserId(int idUser) {
+
+        String vSQL = "SELECT * FROM reservation WHERE id_user = :id";
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+        MapSqlParameterSource vParams = new MapSqlParameterSource("id", idUser);
+        try {
+            List<Reservation> vList = vJdbcTemplate.query(vSQL,vParams, reservationRM);
+            return vList;
+        } catch (EmptyResultDataAccessException vEx) {
+            return null;
+        }
+    }
 
 }
