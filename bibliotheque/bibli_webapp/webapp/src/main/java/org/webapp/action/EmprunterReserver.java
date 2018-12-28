@@ -84,4 +84,19 @@ public class EmprunterReserver extends AbstractRessource {
 
     }
 
+    public String deleteReservation() {
+        Utilisateur user = (Utilisateur) ActionContext.getContext().getSession().get("user");
+        String message = "error";
+        try {
+            if(user.getId() != 0 && id_livre != 0) {
+                getManagerFactory().getReservationManager().annulerReservation(id_livre, user.getId());
+                message = "success";
+            }
+        }
+        catch (Exception e) {
+            e.getMessage();
+        }
+        return message;
+    }
+
 }

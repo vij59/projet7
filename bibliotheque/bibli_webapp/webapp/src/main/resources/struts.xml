@@ -94,5 +94,13 @@
 			<result name="error">/jsp/utilisateur/index.jsp</result>
 		</action>
 
+		<action name="deleteReservationFromList" class="org.webapp.action.EmprunterReserver"
+				method="deleteReservation">
+            <result name="input" type="redirectAction">liste</result>
+			<result name="success" type="redirectAction">liste</result>
+			<result name="error">/jsp/index.jsp</result>
+		</action>
+
+
 	</package>
 </struts>

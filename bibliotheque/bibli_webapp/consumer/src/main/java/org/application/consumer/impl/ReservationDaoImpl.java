@@ -45,4 +45,9 @@ public class ReservationDaoImpl implements ReservationDAO {
         return reservationWebService.getReservationsByUserId(idUser);
     }
 
+    @Override
+    public void annulerReservation(int idLivre, int idUser) {
+         reservationWebService.annulerReservation(idLivre,idUser);
+    }
+
 }

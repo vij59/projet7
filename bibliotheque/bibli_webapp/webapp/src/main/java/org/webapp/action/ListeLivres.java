@@ -14,6 +14,7 @@ public class ListeLivres extends AbstractRessource {
     private Livre livre;
     private List<Emprunt> mesEmpruntsDeLivres;
     private List<Reservation> mesReservations;
+    private int idlivre;
 
     public List<Livre> getListeLivres() {
         return listeLivres;
@@ -36,6 +37,14 @@ public class ListeLivres extends AbstractRessource {
     }
     public void setMesEmpruntsDeLivres(List<Emprunt> mesEmpruntsDeLivres) {
         this.mesEmpruntsDeLivres = mesEmpruntsDeLivres;
+    }
+
+    public int getIdlivre() {
+        return idlivre;
+    }
+
+    public void setIdlivre(int idlivre) {
+        this.idlivre = idlivre;
     }
 
     public String execute() {
@@ -78,5 +87,8 @@ public class ListeLivres extends AbstractRessource {
 
         return "success";
     }
+
+
+
 
 }

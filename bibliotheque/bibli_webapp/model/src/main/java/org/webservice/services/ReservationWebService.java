@@ -93,6 +93,21 @@ public interface ReservationWebService {
 
     /**
      * 
+     * @param arg1
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "annulerReservation", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.AnnulerReservation")
+    @ResponseWrapper(localName = "annulerReservationResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.AnnulerReservationResponse")
+    @Action(input = "http://services.webservice.org/ReservationWebService/annulerReservationRequest", output = "http://services.webservice.org/ReservationWebService/annulerReservationResponse")
+    public void annulerReservation(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns java.util.List<org.webservice.services.Reservation>

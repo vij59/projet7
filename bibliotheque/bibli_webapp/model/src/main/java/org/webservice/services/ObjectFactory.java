@@ -24,17 +24,19 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _AnnulerReservation_QNAME = new QName("http://services.webservice.org/", "annulerReservation");
     private final static QName _SupprimerReservationResponse_QNAME = new QName("http://services.webservice.org/", "supprimerReservationResponse");
-    private final static QName _CreerReservation_QNAME = new QName("http://services.webservice.org/", "creerReservation");
     private final static QName _GetListeReservationsByBookId_QNAME = new QName("http://services.webservice.org/", "getListeReservationsByBookId");
     private final static QName _GetPremiereReservationDuLivreByIdResponse_QNAME = new QName("http://services.webservice.org/", "getPremiereReservationDuLivreByIdResponse");
+    private final static QName _GetPremiereReservationDuLivreById_QNAME = new QName("http://services.webservice.org/", "getPremiereReservationDuLivreById");
+    private final static QName _GetListeReservationsResponse_QNAME = new QName("http://services.webservice.org/", "getListeReservationsResponse");
+    private final static QName _AnnulerReservationResponse_QNAME = new QName("http://services.webservice.org/", "annulerReservationResponse");
+    private final static QName _GetReservationsByUserId_QNAME = new QName("http://services.webservice.org/", "getReservationsByUserId");
+    private final static QName _CreerReservation_QNAME = new QName("http://services.webservice.org/", "creerReservation");
     private final static QName _GetReservationsByUserIdResponse_QNAME = new QName("http://services.webservice.org/", "getReservationsByUserIdResponse");
     private final static QName _CreerReservationResponse_QNAME = new QName("http://services.webservice.org/", "creerReservationResponse");
     private final static QName _GetListeReservationsByBookIdResponse_QNAME = new QName("http://services.webservice.org/", "getListeReservationsByBookIdResponse");
-    private final static QName _GetPremiereReservationDuLivreById_QNAME = new QName("http://services.webservice.org/", "getPremiereReservationDuLivreById");
     private final static QName _GetListeReservations_QNAME = new QName("http://services.webservice.org/", "getListeReservations");
-    private final static QName _GetListeReservationsResponse_QNAME = new QName("http://services.webservice.org/", "getListeReservationsResponse");
-    private final static QName _GetReservationsByUserId_QNAME = new QName("http://services.webservice.org/", "getReservationsByUserId");
     private final static QName _SupprimerReservation_QNAME = new QName("http://services.webservice.org/", "supprimerReservation");
 
     /**
@@ -42,22 +44,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link SupprimerReservationResponse }
-     * 
-     */
-    public SupprimerReservationResponse createSupprimerReservationResponse() {
-        return new SupprimerReservationResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetListeReservationsByBookId }
-     * 
-     */
-    public GetListeReservationsByBookId createGetListeReservationsByBookId() {
-        return new GetListeReservationsByBookId();
     }
 
     /**
@@ -77,14 +63,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetPremiereReservationDuLivreByIdResponse }
-     * 
-     */
-    public GetPremiereReservationDuLivreByIdResponse createGetPremiereReservationDuLivreByIdResponse() {
-        return new GetPremiereReservationDuLivreByIdResponse();
-    }
-
-    /**
      * Create an instance of {@link CreerReservationResponse }
      * 
      */
@@ -101,35 +79,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetPremiereReservationDuLivreById }
-     * 
-     */
-    public GetPremiereReservationDuLivreById createGetPremiereReservationDuLivreById() {
-        return new GetPremiereReservationDuLivreById();
-    }
-
-    /**
      * Create an instance of {@link GetListeReservations }
      * 
      */
     public GetListeReservations createGetListeReservations() {
         return new GetListeReservations();
-    }
-
-    /**
-     * Create an instance of {@link GetListeReservationsResponse }
-     * 
-     */
-    public GetListeReservationsResponse createGetListeReservationsResponse() {
-        return new GetListeReservationsResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetReservationsByUserId }
-     * 
-     */
-    public GetReservationsByUserId createGetReservationsByUserId() {
-        return new GetReservationsByUserId();
     }
 
     /**
@@ -141,11 +95,84 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AnnulerReservation }
+     * 
+     */
+    public AnnulerReservation createAnnulerReservation() {
+        return new AnnulerReservation();
+    }
+
+    /**
+     * Create an instance of {@link SupprimerReservationResponse }
+     * 
+     */
+    public SupprimerReservationResponse createSupprimerReservationResponse() {
+        return new SupprimerReservationResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetListeReservationsByBookId }
+     * 
+     */
+    public GetListeReservationsByBookId createGetListeReservationsByBookId() {
+        return new GetListeReservationsByBookId();
+    }
+
+    /**
+     * Create an instance of {@link GetPremiereReservationDuLivreByIdResponse }
+     * 
+     */
+    public GetPremiereReservationDuLivreByIdResponse createGetPremiereReservationDuLivreByIdResponse() {
+        return new GetPremiereReservationDuLivreByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetPremiereReservationDuLivreById }
+     * 
+     */
+    public GetPremiereReservationDuLivreById createGetPremiereReservationDuLivreById() {
+        return new GetPremiereReservationDuLivreById();
+    }
+
+    /**
+     * Create an instance of {@link GetListeReservationsResponse }
+     * 
+     */
+    public GetListeReservationsResponse createGetListeReservationsResponse() {
+        return new GetListeReservationsResponse();
+    }
+
+    /**
+     * Create an instance of {@link AnnulerReservationResponse }
+     * 
+     */
+    public AnnulerReservationResponse createAnnulerReservationResponse() {
+        return new AnnulerReservationResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetReservationsByUserId }
+     * 
+     */
+    public GetReservationsByUserId createGetReservationsByUserId() {
+        return new GetReservationsByUserId();
+    }
+
+    /**
      * Create an instance of {@link Reservation }
      * 
      */
     public Reservation createReservation() {
         return new Reservation();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AnnulerReservation }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "annulerReservation")
+    public JAXBElement<AnnulerReservation> createAnnulerReservation(AnnulerReservation value) {
+        return new JAXBElement<AnnulerReservation>(_AnnulerReservation_QNAME, AnnulerReservation.class, null, value);
     }
 
     /**
@@ -155,15 +182,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "supprimerReservationResponse")
     public JAXBElement<SupprimerReservationResponse> createSupprimerReservationResponse(SupprimerReservationResponse value) {
         return new JAXBElement<SupprimerReservationResponse>(_SupprimerReservationResponse_QNAME, SupprimerReservationResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CreerReservation }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "creerReservation")
-    public JAXBElement<CreerReservation> createCreerReservation(CreerReservation value) {
-        return new JAXBElement<CreerReservation>(_CreerReservation_QNAME, CreerReservation.class, null, value);
     }
 
     /**
@@ -182,6 +200,51 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getPremiereReservationDuLivreByIdResponse")
     public JAXBElement<GetPremiereReservationDuLivreByIdResponse> createGetPremiereReservationDuLivreByIdResponse(GetPremiereReservationDuLivreByIdResponse value) {
         return new JAXBElement<GetPremiereReservationDuLivreByIdResponse>(_GetPremiereReservationDuLivreByIdResponse_QNAME, GetPremiereReservationDuLivreByIdResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetPremiereReservationDuLivreById }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getPremiereReservationDuLivreById")
+    public JAXBElement<GetPremiereReservationDuLivreById> createGetPremiereReservationDuLivreById(GetPremiereReservationDuLivreById value) {
+        return new JAXBElement<GetPremiereReservationDuLivreById>(_GetPremiereReservationDuLivreById_QNAME, GetPremiereReservationDuLivreById.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListeReservationsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getListeReservationsResponse")
+    public JAXBElement<GetListeReservationsResponse> createGetListeReservationsResponse(GetListeReservationsResponse value) {
+        return new JAXBElement<GetListeReservationsResponse>(_GetListeReservationsResponse_QNAME, GetListeReservationsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AnnulerReservationResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "annulerReservationResponse")
+    public JAXBElement<AnnulerReservationResponse> createAnnulerReservationResponse(AnnulerReservationResponse value) {
+        return new JAXBElement<AnnulerReservationResponse>(_AnnulerReservationResponse_QNAME, AnnulerReservationResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetReservationsByUserId }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getReservationsByUserId")
+    public JAXBElement<GetReservationsByUserId> createGetReservationsByUserId(GetReservationsByUserId value) {
+        return new JAXBElement<GetReservationsByUserId>(_GetReservationsByUserId_QNAME, GetReservationsByUserId.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreerReservation }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "creerReservation")
+    public JAXBElement<CreerReservation> createCreerReservation(CreerReservation value) {
+        return new JAXBElement<CreerReservation>(_CreerReservation_QNAME, CreerReservation.class, null, value);
     }
 
     /**
@@ -212,39 +275,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetPremiereReservationDuLivreById }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getPremiereReservationDuLivreById")
-    public JAXBElement<GetPremiereReservationDuLivreById> createGetPremiereReservationDuLivreById(GetPremiereReservationDuLivreById value) {
-        return new JAXBElement<GetPremiereReservationDuLivreById>(_GetPremiereReservationDuLivreById_QNAME, GetPremiereReservationDuLivreById.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetListeReservations }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getListeReservations")
     public JAXBElement<GetListeReservations> createGetListeReservations(GetListeReservations value) {
         return new JAXBElement<GetListeReservations>(_GetListeReservations_QNAME, GetListeReservations.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetListeReservationsResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getListeReservationsResponse")
-    public JAXBElement<GetListeReservationsResponse> createGetListeReservationsResponse(GetListeReservationsResponse value) {
-        return new JAXBElement<GetListeReservationsResponse>(_GetListeReservationsResponse_QNAME, GetListeReservationsResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetReservationsByUserId }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getReservationsByUserId")
-    public JAXBElement<GetReservationsByUserId> createGetReservationsByUserId(GetReservationsByUserId value) {
-        return new JAXBElement<GetReservationsByUserId>(_GetReservationsByUserId_QNAME, GetReservationsByUserId.class, null, value);
     }
 
     /**

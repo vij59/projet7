@@ -76,7 +76,7 @@
 
 
                             <td><s:property value="auteur.nom"/>&nbsp; <s:property
-                                    value="auteur.prenom"/><s:property value="#session.userMail"/></td>
+                                    value="auteur.prenom"/><s:property value="#session.userId"/></td>
 
 
                             <td><s:property value="nbExemplaires"/></td>
@@ -87,7 +87,12 @@
 
                                 </s:if>
                                 <s:elseif test="%{livreReserveByUserId==true}">
-                                    Déjà réservé
+                                    <s:url action="deleteReservationFromList" var="helloLink">
+                                        <s:param name="id_livre"><s:property value='id'/></s:param>
+                                    </s:url>
+                                    <p>
+                                        <a href="${helloLink}">Annuler la réservation</a>
+                                    </p>
                                 </s:elseif>
                                 <s:elseif test="%{empruntable==true && livreEmprunteByUserId==false
                                 && livreReserveByUserId==false}">
