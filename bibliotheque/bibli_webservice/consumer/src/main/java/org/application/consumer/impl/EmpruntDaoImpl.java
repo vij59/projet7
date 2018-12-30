@@ -42,7 +42,7 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 		Calendar now = Calendar.getInstance();
 		Date now1 = now.getTime();
 		vParams.addValue("dateDebut", now1, Types.DATE);
-		now.add(Calendar.MONTH, 1);
+		now.add(Calendar.DATE, 2);
 		Date now2 = now.getTime();
 		vParams.addValue("dateFin", now2, Types.DATE);
 		vParams.addValue("idLivre", empruntRM.getIdLivre(), Types.INTEGER);
@@ -123,7 +123,7 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 
 	// méthode qui va mettre fin à l'emprunt, et donc permet de rendre le livre
 	@Override
-	public void rendreLivreDeLemprunt(Emprunt emprunt) {
+	public void rendreLivreDeLemprunt(int idEmprunt) {
 		String vSQL = "UPDATE emprunt SET  date_retour=:dateFin, en_cours=false , statut=:statut WHERE id=:id";
 
 		MapSqlParameterSource vParams = new MapSqlParameterSource();
@@ -131,7 +131,34 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 		Date now1 = now.getTime();
 		vParams.addValue("dateFin", now1, Types.DATE);
 		vParams.addValue("statut", "rendu", Types.VARCHAR);
-		vParams.addValue("id", emprunt.getId(), Types.INTEGER);
+		vParams.addValue("id", idEmprunt, Types.INTEGER);
+		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vSQL, vParams);
+	}
+
+	// méthode qui va permettre de valider l'emprunt une fois transferé de la reservation
+	@Override
+	public void recupererLivre(int idEmprunt) {
+		String vSQL = "UPDATE emprunt SET date_emprunt=:dateDebut , date_retour=:dateFin, en_cours=true , recupere=true  WHERE id=:id";
+
+		MapSqlParameterSource vParams = new MapSqlParameterSource();
+		Calendar now = Calendar.getInstance();
+		Date now1 = now.getTime();
+		vParams.addValue("dateDebut", now1, Types.DATE);
+		now.add(Calendar.MONTH, 1);
+		Date now2 = now.getTime();
+		vParams.addValue("dateFin", now2, Types.DATE);
+		vParams.addValue("id", idEmprunt, Types.INTEGER);
+		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vSQL, vParams);
+	}
+
+	// méthode qui va permettre de valider l'emprunt une fois transferé de la reservation
+	@Override
+	public void livreNonRecupereByIdEmprunt(int idEmprunt) {
+		String vSQL = "DELETE FROM emprunt  WHERE id=:id";
+		MapSqlParameterSource vParams = new MapSqlParameterSource();
+		vParams.addValue("id", idEmprunt, Types.INTEGER);
 		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
 		vJdbcTemplate.update(vSQL, vParams);
 	}

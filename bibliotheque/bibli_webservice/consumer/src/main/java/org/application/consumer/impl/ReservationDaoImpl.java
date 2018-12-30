@@ -74,7 +74,7 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
         @Override
         public List<Reservation>  getReservationsByBookId(int idLivre) {
 
-            String vSQL = "SELECT * FROM reservation WHERE id_livre = :id";
+            String vSQL = "SELECT * FROM reservation WHERE id_livre = :id ";
             NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
             MapSqlParameterSource vParams = new MapSqlParameterSource("id", idLivre);
             try {
@@ -117,5 +117,36 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
         vJdbcTemplate.update(vSQL, vParams);
     }
+
+    @Override
+    public int getNombreDeReservationsPourLivreId(int idLivre) {
+        int nbReservations=0;
+        String vSQL = "SELECT COUNT(*) FROM reservation WHERE id_livre = :id";
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+        MapSqlParameterSource vParams = new MapSqlParameterSource("id", idLivre);
+        try {
+             nbReservations = vJdbcTemplate.queryForObject(vSQL, vParams, Integer.class );
+
+        } catch (EmptyResultDataAccessException vEx) {
+            return 0;
+        }
+        return nbReservations;
+    }
+
+    @Override
+    public Reservation getReservationByBookIdByUserId(int pIdLivre, int pIdUser) {
+        String vSQL = "SELECT * FROM reservation WHERE id_user = :id and id_livre = :idLivre";
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+        MapSqlParameterSource vParams = new MapSqlParameterSource();
+        vParams.addValue("id", pIdUser, Types.INTEGER);
+        vParams.addValue("idLivre", pIdLivre, Types.INTEGER);
+        try {
+            Reservation reservation = vJdbcTemplate.queryForObject(vSQL,vParams, reservationRM);
+            return reservation;
+        } catch (EmptyResultDataAccessException vEx) {
+            return null;
+        }
+    }
+
 
 }

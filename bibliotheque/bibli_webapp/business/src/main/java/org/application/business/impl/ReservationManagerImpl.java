@@ -44,4 +44,19 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
     public void annulerReservation(int idLivre, int idUser) {
         getDaoFactory().getReservationDao().annulerReservation(idLivre,idUser);
     }
+
+    @Override
+    public int getNombreDeReservationsPourLivreId(int idLivre) {
+        return getDaoFactory().getReservationDao().getNombreDeReservationsPourLivreId(idLivre);
+    }
+
+    @Override
+    public int getPlaceDansListeReservationsBookUser(int idLivre, int idUser) {
+        return getDaoFactory().getReservationDao().getPlaceDansListeReservationsBookUser(idLivre, idUser);
+    }
+
+    @Override
+    public Reservation getReservationByBookIdByUserId(int pIdLivre, int pIdUser) {
+        return getDaoFactory().getReservationDao().getReservationByBookIdByUserId(pIdLivre, pIdUser);
+    }
 }

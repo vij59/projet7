@@ -17,4 +17,10 @@ public interface ReservationManager {
     public List<Reservation> getReservationsByUserId(int userId);
 
     void annulerReservation(int idLivre, int idUser);
+
+    int getNombreDeReservationsPourLivreId(int idLivre);
+
+    int getPlaceDansListeReservations(int idLivre, int idUser);
+
+    Reservation getReservationByBookIdByUserId(int pIdLivre, int pIdUser);
 }

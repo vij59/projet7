@@ -27,6 +27,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="livreEmprunteByUserId" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="livreReserveByUserId" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="nbExemplaires" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="nbReservations" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="nbRestant" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="reservable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="titre" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -49,6 +50,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "livreEmprunteByUserId",
     "livreReserveByUserId",
     "nbExemplaires",
+    "nbReservations",
     "nbRestant",
     "reservable",
     "titre"
@@ -65,6 +67,7 @@ public class Livre {
     protected boolean livreEmprunteByUserId;
     protected boolean livreReserveByUserId;
     protected int nbExemplaires;
+    protected int nbReservations;
     protected int nbRestant;
     protected boolean reservable;
     protected String titre;
@@ -227,6 +230,22 @@ public class Livre {
      */
     public void setNbExemplaires(int value) {
         this.nbExemplaires = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété nbReservations.
+     * 
+     */
+    public int getNbReservations() {
+        return nbReservations;
+    }
+
+    /**
+     * Définit la valeur de la propriété nbReservations.
+     * 
+     */
+    public void setNbReservations(int value) {
+        this.nbReservations = value;
     }
 
     /**

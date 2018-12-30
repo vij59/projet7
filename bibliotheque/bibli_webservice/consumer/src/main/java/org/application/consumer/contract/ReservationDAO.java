@@ -17,4 +17,8 @@ public interface ReservationDAO {
     List<Reservation> getReservationsByUserId(int idUser);
 
     void annulerReservation(int idLivre, int idUser);
+
+    int getNombreDeReservationsPourLivreId(int idLivre);
+
+    Reservation getReservationByBookIdByUserId ( int idLivre, int idUser);
 }

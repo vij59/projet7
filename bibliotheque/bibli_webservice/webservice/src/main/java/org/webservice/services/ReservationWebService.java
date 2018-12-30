@@ -45,4 +45,19 @@ public class ReservationWebService extends AbstractWebservice {
         getManagerFactory().getReservationManager().annulerReservation(idLivre, idUser);
     }
 
+    @WebMethod
+    public int getNombreDeReservationsPourLivreId(int idLivre) {
+        return getManagerFactory().getReservationManager().getNombreDeReservationsPourLivreId(idLivre);
+    }
+
+    @WebMethod
+    public int getPlaceDansListeReservationsBookUser(int idLivre, int idUser) {
+        return getManagerFactory().getReservationManager().getPlaceDansListeReservations(idLivre, idUser);
+    }
+
+    @WebMethod
+    public Reservation getReservationByBookIdByUserId(int pIdLivre, int pIdUser) {
+        return getManagerFactory().getReservationManager().getReservationByBookIdByUserId(pIdLivre, pIdUser);
+
+    }
 }

@@ -22,6 +22,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="idLivre" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="idReservation" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="idUser" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="placeDansReservations" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +36,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "dateReservation",
     "idLivre",
     "idReservation",
-    "idUser"
+    "idUser",
+    "placeDansReservations"
 })
 public class Reservation {
 
@@ -44,6 +46,7 @@ public class Reservation {
     protected int idLivre;
     protected int idReservation;
     protected int idUser;
+    protected int placeDansReservations;
 
     /**
      * Obtient la valeur de la propriété dateReservation.
@@ -115,6 +118,22 @@ public class Reservation {
      */
     public void setIdUser(int value) {
         this.idUser = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété placeDansReservations.
+     * 
+     */
+    public int getPlaceDansReservations() {
+        return placeDansReservations;
+    }
+
+    /**
+     * Définit la valeur de la propriété placeDansReservations.
+     * 
+     */
+    public void setPlaceDansReservations(int value) {
+        this.placeDansReservations = value;
     }
 
 }

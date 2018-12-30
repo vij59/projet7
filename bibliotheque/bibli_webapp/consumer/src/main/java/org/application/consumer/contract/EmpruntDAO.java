@@ -19,4 +19,8 @@ public interface EmpruntDAO {
 	void rendreLivreDeLemprunt(Emprunt emprunt);
 
 	Emprunt getEmpruntById(int idEmprunt) ;
+
+    void recupererLivreByIdEmprunt(int idEmprunt);
+
+	void livreNonRecupereByIdEmprunt(int idEmprunt);
 }

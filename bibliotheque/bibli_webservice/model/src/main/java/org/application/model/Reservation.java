@@ -8,6 +8,7 @@ public class Reservation {
     private int idUser;
     private int idLivre;
     private Date dateReservation;
+    private int placeDansReservations;
 
     public int getIdReservation() {
         return id;
@@ -40,4 +41,13 @@ public class Reservation {
     public void setDateReservation(Date dateReservation) {
         this.dateReservation = dateReservation;
     }
+
+    public int getPlaceDansReservations() {
+        return placeDansReservations;
+    }
+
+    public void setPlaceDansReservations(int placeDansReservations) {
+        this.placeDansReservations = placeDansReservations;
+    }
+
 }

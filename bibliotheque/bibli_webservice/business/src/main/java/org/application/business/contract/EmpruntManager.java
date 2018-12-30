@@ -31,4 +31,8 @@ public interface EmpruntManager {
 	boolean livreIsEmpruntable(int idLivre);
 
 	boolean livreIsReservable(int idLivre);
+
+    void recupererLivre(int idEmprunt);
+
+	void livreNonRecupereByIdEmprunt(int idEmprunt);
 }

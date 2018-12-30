@@ -1,14 +1,21 @@
 package org.webapp.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.opensymphony.xwork2.ActionContext;
 import org.webapp.resource.AbstractRessource;
+import org.webservice.services.Emprunt;
 import org.webservice.services.Livre;
+import org.webservice.services.Reservation;
+import org.webservice.services.Utilisateur;
 
 public class Recherche extends AbstractRessource {
 	private String titre, nomAuteur;
 	private List<Livre> listeLivres;
-	
+	private List<Emprunt> mesEmpruntsDeLivres;
+	private List<Reservation> mesReservations;
+
 
 	public String getTitre() {
 		return titre;
@@ -39,10 +46,55 @@ public class Recherche extends AbstractRessource {
 		this.listeLivres = listeLivres;
 	}
 
+	public List<Emprunt> getMesEmpruntsDeLivres() {
+		return mesEmpruntsDeLivres;
+	}
+
+	public void setMesEmpruntsDeLivres(List<Emprunt> mesEmpruntsDeLivres) {
+		this.mesEmpruntsDeLivres = mesEmpruntsDeLivres;
+	}
+
+	public List<Reservation> getMesReservations() {
+		return mesReservations;
+	}
+
+	public void setMesReservations(List<Reservation> mesReservations) {
+		this.mesReservations = mesReservations;
+	}
 
 	public String execute() {
 		listeLivres = getManagerFactory().getLivreManager().getLivreByRecherche(titre, nomAuteur);
-			return "success";
+		Utilisateur user = (Utilisateur) ActionContext.getContext().getSession().get("user");
+
+		if (user != null) {
+			List<Integer> mesIdsReservations = new ArrayList<>();
+			List<Integer> mesIdsEmpruntsDeLivres = new ArrayList<>();
+
+			mesEmpruntsDeLivres = getManagerFactory().getEmpruntManager().getMesEmpruntsEnCours(user.getId());
+			mesReservations = getManagerFactory().getReservationManager().getReservationsByUserId(user.getId());
+
+			for (Emprunt emprunt : mesEmpruntsDeLivres) {
+				mesIdsEmpruntsDeLivres.add(emprunt.getIdLivre());
+			}
+
+			for (Reservation reservation : mesReservations) {
+				mesIdsReservations.add(reservation.getIdLivre());
+			}
+
+			for (Livre livre : listeLivres) {
+				Integer idLivre = livre.getId();
+				if (mesIdsEmpruntsDeLivres.contains(idLivre)) {
+					livre.setLivreEmprunteByUserId(true);
+				}
+				if (mesIdsReservations.contains(idLivre)) {
+					livre.setLivreReserveByUserId(true);
+				}
+			}
+		}
+
+
+
+		return "success";
 		
 	}
 

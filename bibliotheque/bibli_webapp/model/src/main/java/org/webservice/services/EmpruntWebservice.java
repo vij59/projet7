@@ -28,15 +28,12 @@ public interface EmpruntWebservice {
     /**
      * 
      * @param arg0
-     * @return
-     *     returns org.webservice.services.Emprunt
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getEmpruntById", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntById")
-    @ResponseWrapper(localName = "getEmpruntByIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntByIdResponse")
-    @Action(input = "http://services.webservice.org/EmpruntWebservice/getEmpruntByIdRequest", output = "http://services.webservice.org/EmpruntWebservice/getEmpruntByIdResponse")
-    public Emprunt getEmpruntById(
+    @RequestWrapper(localName = "empruntProlonge", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.EmpruntProlonge")
+    @ResponseWrapper(localName = "empruntProlongeResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.EmpruntProlongeResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/empruntProlongeRequest", output = "http://services.webservice.org/EmpruntWebservice/empruntProlongeResponse")
+    public void empruntProlonge(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
@@ -66,6 +63,60 @@ public interface EmpruntWebservice {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns org.webservice.services.Emprunt
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getEmpruntById", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntById")
+    @ResponseWrapper(localName = "getEmpruntByIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntByIdResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/getEmpruntByIdRequest", output = "http://services.webservice.org/EmpruntWebservice/getEmpruntByIdResponse")
+    public Emprunt getEmpruntById(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "recupererLivreByIdEmprunt", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.RecupererLivreByIdEmprunt")
+    @ResponseWrapper(localName = "recupererLivreByIdEmpruntResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.RecupererLivreByIdEmpruntResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/recupererLivreByIdEmpruntRequest", output = "http://services.webservice.org/EmpruntWebservice/recupererLivreByIdEmpruntResponse")
+    public void recupererLivreByIdEmprunt(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "livreNonRecupereByIdEmprunt", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.LivreNonRecupereByIdEmprunt")
+    @ResponseWrapper(localName = "livreNonRecupereByIdEmpruntResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.LivreNonRecupereByIdEmpruntResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/livreNonRecupereByIdEmpruntRequest", output = "http://services.webservice.org/EmpruntWebservice/livreNonRecupereByIdEmpruntResponse")
+    public void livreNonRecupereByIdEmprunt(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.webservice.services.Emprunt>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getEmpruntByUserId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntByUserId")
+    @ResponseWrapper(localName = "getEmpruntByUserIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntByUserIdResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/getEmpruntByUserIdRequest", output = "http://services.webservice.org/EmpruntWebservice/getEmpruntByUserIdResponse")
+    public List<Emprunt> getEmpruntByUserId(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<org.webservice.services.Emprunt>
      */
@@ -87,32 +138,5 @@ public interface EmpruntWebservice {
     public void rendreLivreDeLemprunt(
         @WebParam(name = "arg0", targetNamespace = "")
         Emprunt arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<org.webservice.services.Emprunt>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getEmpruntByUserId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntByUserId")
-    @ResponseWrapper(localName = "getEmpruntByUserIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntByUserIdResponse")
-    @Action(input = "http://services.webservice.org/EmpruntWebservice/getEmpruntByUserIdRequest", output = "http://services.webservice.org/EmpruntWebservice/getEmpruntByUserIdResponse")
-    public List<Emprunt> getEmpruntByUserId(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "empruntProlonge", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.EmpruntProlonge")
-    @ResponseWrapper(localName = "empruntProlongeResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.EmpruntProlongeResponse")
-    @Action(input = "http://services.webservice.org/EmpruntWebservice/empruntProlongeRequest", output = "http://services.webservice.org/EmpruntWebservice/empruntProlongeResponse")
-    public void empruntProlonge(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
 
 }

@@ -21,4 +21,8 @@ public interface EmpruntManager {
 	Emprunt getEmpruntById(int idEmprunt) ;
 
 	List<Emprunt>  getMesEmpruntsEnCours(int idUser);
+
+    void recupererLivreByIdEmprunt(int idEmprunt);
+
+	void livreNonRecupereByIdEmprunt(int idEmprunt);
 }

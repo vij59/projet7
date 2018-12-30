@@ -19,5 +19,11 @@ public interface EmpruntDAO {
 	List<Emprunt> getEmpruntsEnCours();
 
 	// méthode qui va mettre fin à l'emprunt, et donc permet de rendre le livre
-	void rendreLivreDeLemprunt(Emprunt emprunt);
+	void rendreLivreDeLemprunt(int idEmprunt);
+
+	// méthode qui va mettre fin à l'emprunt, et donc permet de rendre le livre
+	void recupererLivre(int idEmprunt);
+
+	// méthode qui va permettre de valider l'emprunt une fois transferé de la reservation
+	void livreNonRecupereByIdEmprunt(int idEmprunt);
 }

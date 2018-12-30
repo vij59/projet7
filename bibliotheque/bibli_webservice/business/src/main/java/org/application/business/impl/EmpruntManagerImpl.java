@@ -147,7 +147,7 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
     @Override
     public void rendreLivreDeLemprunt(Emprunt emprunt) {
         //on rend le livre, donc on met à jour l'emprunt
-        getDaoFactory().getEmpruntDAO().rendreLivreDeLemprunt(emprunt);
+        getDaoFactory().getEmpruntDAO().rendreLivreDeLemprunt(emprunt.getId());
         transfertReservationVersEmprunt(emprunt);
     }
 
@@ -216,5 +216,15 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
         }
 
         return reservable;
+    }
+
+    @Override
+    public void recupererLivre(int idEmprunt) {
+        getDaoFactory().getEmpruntDAO().recupererLivre(idEmprunt);
+    }
+
+    @Override
+    public void livreNonRecupereByIdEmprunt(int idEmprunt) {
+        getDaoFactory().getEmpruntDAO().livreNonRecupereByIdEmprunt(idEmprunt);
     }
 }

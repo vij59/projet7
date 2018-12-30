@@ -61,6 +61,7 @@ public class LivreWebservice extends AbstractWebservice {
 					boolean dispo = getManagerFactory().getEmpruntManager().empruntPossible(livre.getId());
 					livre.setDisponible(dispo);
 				}
+				listeLivres = setAuteurAndStatus(listeLivres);
 				return listeLivres;
 			}
 			else {

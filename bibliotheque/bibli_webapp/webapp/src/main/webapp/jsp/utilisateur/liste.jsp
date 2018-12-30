@@ -27,26 +27,27 @@
                 <thead>
                 <tr>
                     <th>ISBN</th>
-                    <th><a href="listeByTitre">Titre</a></th>
-                    <th><a href="listeByAuteur">Auteur</a></th>
+                    <th>Titre</th>
+                    <th>Auteur</th>
                     <th>Exemplaires</th>
                     <th>Disponibilité</th>
+                    <th>Reservations</th>
+                    <th>Prochain retour</th>
                 </tr>
                 </thead>
-                <s:if test="#session.userMail == null">
-
-                    <s:iterator var="livres" value="listeLivres">
-                        <tbody>
-                        <tr>
-                            <td><s:property value="id"/></td>
-                            <td><s:property value="titre"/></td>
+                <s:iterator var="livres" value="listeLivres">
+                    <tbody>
+                    <tr>
+                        <td><s:property value="id"/></td>
+                        <td><s:property value="titre"/></td>
 
 
-                            <td><s:property value="auteur.nom"/>&nbsp; <s:property
-                                    value="auteur.prenom"/><s:property value="#session.userMail"/></td>
+                        <td><s:property value="livre.auteur.nom"/> &nbsp; <s:property
+                                value="auteur.prenom"/></td>
 
 
-                            <td><s:property value="nbExemplaires"/></td>
+                        <td><s:property value="nbExemplaires"/></td>
+                        <s:if test="#session.userMail == null">
                             <td>
                                 <s:if test="%{empruntable==true}">
                                     Disponible à l'emprunt
@@ -61,25 +62,16 @@
                                 </s:else>
 
                             </td>
-                        </tr>
-
-                        </tbody>
-                    </s:iterator>
-                </s:if>
-                <s:else>
-
-                    <s:iterator var="livres" value="listeLivres">
-                        <tbody>
-                        <tr>
-                            <td><s:property value="id"/></td>
-                            <td><s:property value="titre"/></td>
-
-
-                            <td><s:property value="auteur.nom"/>&nbsp; <s:property
-                                    value="auteur.prenom"/><s:property value="#session.userId"/></td>
-
-
-                            <td><s:property value="nbExemplaires"/></td>
+                            <td>
+                                <s:if test="%{nbReservations<2}">
+                                    <s:property value="nbReservations"/>&nbsp; réservation
+                                </s:if>
+                                <s:else>
+                                    <s:property value="nbReservations"/>&nbsp; réservations
+                                </s:else>
+                            </td>
+                        </s:if>
+                        <s:else>
                             <td>
                                 <s:if
                                         test="%{livreEmprunteByUserId==true}">
@@ -122,12 +114,27 @@
                                 </s:else>
 
                             </td>
-                        </tr>
+                            <td>
+                                <s:if test="%{nbReservations==1}">
+                                    Reservation <s:property value="placeDansReservations"/> sur
+                                    <s:property value="nbReservations"/>
+                                </s:if>
+                                <s:elseif test="%{nbReservations>1}">
+                                    Reservation <s:property value="placeDansReservations"/> sur
+                                    <s:property value="nbReservations"/>
+                                </s:elseif>
+                                <s:else>
+                                    Pas de réservation
+                                </s:else>
+                            </td>
+                        </s:else>
+                        <td>
+                           Retour le  <s:property value="nbReservations"/>
+                        </td>
+                    </tr>
 
-                        </tbody>
-                    </s:iterator>
-                </s:else>
-
+                    </tbody>
+                </s:iterator>
             </table>
         </div>
     </div>

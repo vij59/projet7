@@ -31,11 +31,40 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
 
     @Override
     public List<Reservation> getReservationsByUserId(int userId) {
-        return getDaoFactory().getReservationDAO().getReservationsByUserId(userId);
+        List<Reservation> listeResa = getDaoFactory().getReservationDAO().getReservationsByUserId(userId);
+        for(Reservation reservation : listeResa) {
+            reservation.setPlaceDansReservations(getPlaceDansListeReservations(reservation.getIdLivre(),userId ));
+        }
+        return listeResa;
     }
 
     @Override
     public void annulerReservation(int idLivre, int idUser) {
         getDaoFactory().getReservationDAO().annulerReservation(idLivre, idUser);
+    }
+
+    @Override
+    public int getNombreDeReservationsPourLivreId(int idLivre) {
+        return getDaoFactory().getReservationDAO().getNombreDeReservationsPourLivreId(idLivre);
+    }
+
+    @Override
+    public int getPlaceDansListeReservations(int idLivre, int idUser) {
+
+        List<Reservation> reservationsLivre = getDaoFactory().getReservationDAO().getReservationsByBookId(idLivre);
+        Reservation reservationsLivreByUserByBookId = getDaoFactory().getReservationDAO().getReservationByBookIdByUserId(idLivre,idUser);
+        int placeDansResa=1;
+        for (Reservation reservation : reservationsLivre) {
+            if (reservation.getIdReservation() < reservationsLivreByUserByBookId.getIdReservation()) {
+               placeDansResa++;
+            }
+
+        }
+        return placeDansResa;
+    }
+
+    @Override
+    public Reservation getReservationByBookIdByUserId(int pIdLivre, int pIdUser) {
+        return getDaoFactory().getReservationDAO().getReservationByBookIdByUserId(pIdLivre,pIdUser);
     }
 }

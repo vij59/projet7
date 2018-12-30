@@ -45,4 +45,14 @@ public class EmpruntWebservice extends AbstractWebservice {
 	public Emprunt getEmpruntById(int idEmprunt) {
 		return getManagerFactory().getEmpruntManager().getEmpruntById(idEmprunt);
 	}
+
+	@WebMethod
+	public void recupererLivreByIdEmprunt(int idEmprunt) {
+		getManagerFactory().getEmpruntManager().recupererLivre(idEmprunt);
+	}
+
+	@WebMethod
+	public void livreNonRecupereByIdEmprunt(int idEmprunt) {
+		getManagerFactory().getEmpruntManager().livreNonRecupereByIdEmprunt(idEmprunt);
+	}
 }

@@ -12,8 +12,11 @@ import org.application.model.Reservation;
 public class LivreManagerImpl extends AbstractManager implements LivreManager {
 
 	public List<Livre> getLivres() {
-
-		return getDaoFactory().getLivreDAO().getLivres();
+		List<Livre> liste = getDaoFactory().getLivreDAO().getLivres();
+		for(Livre livre : liste) {
+			livre.setNbReservations(getDaoFactory().getReservationDAO().getNombreDeReservationsPourLivreId(livre.getId()));
+		}
+		return liste;
 	}
 
 	@Override
@@ -47,7 +50,9 @@ public class LivreManagerImpl extends AbstractManager implements LivreManager {
 	@Override
 	public List<Livre> getLivreByRecherche(String titre, String auteur) {
 		List<Livre> liste = getDaoFactory().getLivreDAO().getLivreByRecherche(titre, auteur);
-
+		for(Livre livre : liste) {
+			livre.setNbReservations(getDaoFactory().getReservationDAO().getNombreDeReservationsPourLivreId(livre.getId()));
+		}
 		return liste;
 	}
 

@@ -50,4 +50,18 @@ public class ReservationDaoImpl implements ReservationDAO {
          reservationWebService.annulerReservation(idLivre,idUser);
     }
 
+    @Override
+    public int getNombreDeReservationsPourLivreId(int idLivre) {
+        return reservationWebService.getNombreDeReservationsPourLivreId(idLivre);
+    }
+
+    @Override
+    public int getPlaceDansListeReservationsBookUser(int idLivre, int idUser) {
+        return reservationWebService.getPlaceDansListeReservationsBookUser(idLivre, idUser);
+    }
+
+    @Override
+    public Reservation getReservationByBookIdByUserId(int pIdLivre, int pIdUser) {
+        return reservationWebService.getReservationByBookIdByUserId(pIdLivre, pIdUser);
+    }
 }
