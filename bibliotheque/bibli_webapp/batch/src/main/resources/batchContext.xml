@@ -22,6 +22,7 @@
         <property name="port" value="587"/>
         <property name="username" value="jokoker59@gmail.com"/>
         <property name="password" value="xxxxxxxxx"/>
+
         <property name="javaMailProperties">
             <props>
                 <prop key="mail.transport.protocol">smtp</prop>
