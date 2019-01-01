@@ -21,7 +21,7 @@
         <property name="host" value="smtp.gmail.com"/>
         <property name="port" value="587"/>
         <property name="username" value="jokoker59@gmail.com"/>
-        <property name="password" value="Losc5959!"/>
+        <property name="password" value="xxxxxxxxx"/>
         <property name="javaMailProperties">
             <props>
                 <prop key="mail.transport.protocol">smtp</prop>
@@ -53,14 +53,30 @@
     <bean id="myTasklet" class="org.batch.MyTasklet" scope="step"/>
 
 
+
     <batch:job id="scheduledJob">
         <batch:step id="jobStep">
             <batch:tasklet ref="myTasklet" />
         </batch:step>
     </batch:job>
 
+    <bean id="runScheduler2" class="org.batch.Scheduler2"/>
+    <bean id="myTaskletTicket3" class="org.batch.MyTaskletTicket3" scope="step"/>
+    <batch:job id="scheduledJob2">
+        <batch:step id="jobStep2">
+            <batch:tasklet ref="myTaskletTicket3" />
+        </batch:step>
+    </batch:job>
+
+
+
+
     <task:scheduled-tasks>
         <task:scheduled ref="runScheduler" method="run" cron="*/5 * * * * *"/>
+    </task:scheduled-tasks>
+
+    <task:scheduled-tasks>
+        <task:scheduled ref="runScheduler2" method="run" cron="*/5 * * * * *"/>
     </task:scheduled-tasks>
 
 

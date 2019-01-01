@@ -11,15 +11,16 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-public class Scheduler {
+public class Scheduler2 {
 
     //private static final Logger LOGGER = LogManager.getLogger(Scheduler.class);
 
     @Autowired
     private JobLauncher jobLauncher;
 
+
     @Autowired
-    @Qualifier("scheduledJob")
+    @Qualifier("scheduledJob2")
     private Job job;
 
     public void run() {
