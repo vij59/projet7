@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 <hr/>
 
 <div class="container-fluid">
@@ -62,12 +63,11 @@
                                 </p></td>
                         </s:if>
                         <s:elseif test="%{dejaRepousse==true}">
-                            <td>Déjà repoussé&nbsp;</td>
+                            <td>Déjà prolongé&nbsp;</td>
                         </s:elseif>
                         <s:else>
-                            <td>Non repoussable</td>
+                            <td>Non prolongeable</td>
                         </s:else>
-
 
                         <s:if test="%{enCours==false && recupere==false}">
                             <td><s:url action="recupererLivre" var="helloLink">
@@ -154,7 +154,6 @@
         </div>
     </div>
 </div>
-
 
 </body>
 </html>
