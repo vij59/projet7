@@ -213,6 +213,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Livre }
+     * 
+     */
+    public Livre createLivre() {
+        return new Livre();
+    }
+
+    /**
+     * Create an instance of {@link Auteur }
+     * 
+     */
+    public Auteur createAuteur() {
+        return new Auteur();
+    }
+
+    /**
      * Create an instance of {@link Reservation }
      * 
      */

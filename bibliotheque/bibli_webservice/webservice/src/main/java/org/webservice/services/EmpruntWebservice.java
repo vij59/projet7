@@ -37,8 +37,8 @@ public class EmpruntWebservice extends AbstractWebservice {
 	}
 
 	@WebMethod
-	public void rendreLivreDeLemprunt(Emprunt emprunt) {
-		getManagerFactory().getEmpruntManager().rendreLivreDeLemprunt(emprunt);
+	public void rendreLivreDeLemprunt(int idEmprunt) {
+		getManagerFactory().getEmpruntManager().rendreLivreDeLemprunt(idEmprunt);
 	}
 
 	@WebMethod

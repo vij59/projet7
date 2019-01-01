@@ -137,6 +137,6 @@ public interface EmpruntWebservice {
     @Action(input = "http://services.webservice.org/EmpruntWebservice/rendreLivreDeLempruntRequest", output = "http://services.webservice.org/EmpruntWebservice/rendreLivreDeLempruntResponse")
     public void rendreLivreDeLemprunt(
         @WebParam(name = "arg0", targetNamespace = "")
-        Emprunt arg0);
+        int arg0);
 
 }

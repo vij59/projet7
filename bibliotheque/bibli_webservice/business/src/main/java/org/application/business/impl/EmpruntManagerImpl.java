@@ -106,7 +106,7 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
         for (Emprunt emprunt : liste) {
 
             Livre livre = getDaoFactory().getLivreDAO().getLivreById(emprunt.getIdLivre());
-            if (emprunt.getDateFin().compareTo(dateDuJour) < 0) {
+            if (emprunt.getDateFin().compareTo(dateDuJour) <= 0) {
                 emprunt.setRepoussable(false);
                 if (emprunt.getStatut().equals("rendu")) {
                     emprunt.setStatut("rendu");
@@ -145,9 +145,11 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
     }
 
     @Override
-    public void rendreLivreDeLemprunt(Emprunt emprunt) {
+    public void rendreLivreDeLemprunt(int idEmprunt) {
         //on rend le livre, donc on met à jour l'emprunt
-        getDaoFactory().getEmpruntDAO().rendreLivreDeLemprunt(emprunt.getId());
+        getDaoFactory().getEmpruntDAO().rendreLivreDeLemprunt(idEmprunt);
+
+        Emprunt emprunt = getDaoFactory().getEmpruntDAO().getEmpruntById(idEmprunt);
         transfertReservationVersEmprunt(emprunt);
     }
 
@@ -170,17 +172,26 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
     @Override
     public void transfertReservationVersEmprunt(Emprunt emprunt) {
 
-        // on transfere la premiere reservation vers l'emprunt
-        Reservation premiereReservation = getPremiereReservationByBookId(emprunt.getIdLivre());
-        //on crée l'emprunt depuis la reservation
-        Emprunt emprunt1 = new Emprunt();
-        emprunt1.setIdLivre(emprunt.getIdLivre());
-        emprunt1.setIdUtilisateur(premiereReservation.getIdUser());
-        getDaoFactory().getEmpruntDAO().creerEmprunt(emprunt1);
+        try {
+            // on transfere la premiere reservation vers l'emprunt
+            Reservation premiereReservation = getPremiereReservationByBookId(emprunt.getIdLivre());
+            //on crée l'emprunt depuis la reservation
+            Emprunt emprunt1 = new Emprunt();
+            emprunt1.setIdLivre(emprunt.getIdLivre());
+            emprunt1.setIdUtilisateur(premiereReservation.getIdUser());
+            if(premiereReservation.getIdReservation()!=0) {
+                getDaoFactory().getEmpruntDAO().creerEmprunt(emprunt1);
 
-        // on supprime la réservation
-        getDaoFactory().getReservationDAO().supprimerReservation(premiereReservation);
-        // Reservation reservation = getDaoFactory().getReservationDAO().
+                // on supprime la réservation
+                getDaoFactory().getReservationDAO().supprimerReservation(premiereReservation);
+                // Reservation reservation = getDaoFactory().getReservationDAO().
+            }
+        }
+        catch(Exception e) {
+            e.getMessage();
+        }
+
+
     }
 
     @Override
@@ -227,4 +238,6 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
     public void livreNonRecupereByIdEmprunt(int idEmprunt) {
         getDaoFactory().getEmpruntDAO().livreNonRecupereByIdEmprunt(idEmprunt);
     }
+
+
 }

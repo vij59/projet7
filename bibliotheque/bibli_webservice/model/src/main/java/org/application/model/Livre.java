@@ -20,6 +20,7 @@ public class Livre {
     private boolean empruntable;
     private boolean reservable;
     private int nbReservations;
+    private Date dateRetourProche;
 
     public int getId() {
         return id;
@@ -125,4 +126,11 @@ public class Livre {
         this.nbReservations = nbReservations;
     }
 
+    public Date getDateRetourProche() {
+        return dateRetourProche;
+    }
+
+    public void setDateRetourProche(Date dateRetourProche) {
+        this.dateRetourProche = dateRetourProche;
+    }
 }

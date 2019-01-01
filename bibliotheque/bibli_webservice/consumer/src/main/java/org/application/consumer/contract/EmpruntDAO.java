@@ -1,5 +1,6 @@
 package org.application.consumer.contract;
 
+import java.util.Date;
 import java.util.List;
 
 import org.application.model.Emprunt;
@@ -26,4 +27,6 @@ public interface EmpruntDAO {
 
 	// méthode qui va permettre de valider l'emprunt une fois transferé de la reservation
 	void livreNonRecupereByIdEmprunt(int idEmprunt);
+
+    Date getDateRetourPlusProche(int idLivre);
 }

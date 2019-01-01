@@ -9,6 +9,7 @@ public class Reservation {
     private int idLivre;
     private Date dateReservation;
     private int placeDansReservations;
+    private Livre livre;
 
     public int getIdReservation() {
         return id;
@@ -50,4 +51,11 @@ public class Reservation {
         this.placeDansReservations = placeDansReservations;
     }
 
+    public Livre getLivre() {
+        return livre;
+    }
+
+    public void setLivre(Livre livre) {
+        this.livre = livre;
+    }
 }

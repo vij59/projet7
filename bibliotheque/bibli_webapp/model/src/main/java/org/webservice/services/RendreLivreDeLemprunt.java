@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://services.webservice.org/}emprunt" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,29 +31,21 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class RendreLivreDeLemprunt {
 
-    protected Emprunt arg0;
+    protected int arg0;
 
     /**
      * Obtient la valeur de la propriété arg0.
      * 
-     * @return
-     *     possible object is
-     *     {@link Emprunt }
-     *     
      */
-    public Emprunt getArg0() {
+    public int getArg0() {
         return arg0;
     }
 
     /**
      * Définit la valeur de la propriété arg0.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Emprunt }
-     *     
      */
-    public void setArg0(Emprunt value) {
+    public void setArg0(int value) {
         this.arg0 = value;
     }
 

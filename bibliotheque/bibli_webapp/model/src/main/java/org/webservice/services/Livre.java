@@ -20,6 +20,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *       &lt;sequence>
  *         &lt;element name="anneeSortie" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="auteur" type="{http://services.webservice.org/}auteur" minOccurs="0"/>
+ *         &lt;element name="dateRetourProche" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="disponible" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="empruntable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
@@ -43,6 +44,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "livre", propOrder = {
     "anneeSortie",
     "auteur",
+    "dateRetourProche",
     "disponible",
     "empruntable",
     "id",
@@ -60,6 +62,8 @@ public class Livre {
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar anneeSortie;
     protected Auteur auteur;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar dateRetourProche;
     protected boolean disponible;
     protected boolean empruntable;
     protected int id;
@@ -118,6 +122,30 @@ public class Livre {
      */
     public void setAuteur(Auteur value) {
         this.auteur = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété dateRetourProche.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getDateRetourProche() {
+        return dateRetourProche;
+    }
+
+    /**
+     * Définit la valeur de la propriété dateRetourProche.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setDateRetourProche(XMLGregorianCalendar value) {
+        this.dateRetourProche = value;
     }
 
     /**

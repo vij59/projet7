@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Vij
+  Date: 31/12/2018
+  Time: 14:00
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +34,9 @@
 <body>
 
 <jsp:include page="/jsp/others/banner.jsp"></jsp:include>
+<hr/>
+
+<h2>Bienvenue sur l'intranet de votre bibliothèque</h2>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

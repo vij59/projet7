@@ -1,5 +1,6 @@
 package org.application.business.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.application.business.contract.EmpruntManager;
@@ -15,6 +16,7 @@ public class LivreManagerImpl extends AbstractManager implements LivreManager {
 		List<Livre> liste = getDaoFactory().getLivreDAO().getLivres();
 		for(Livre livre : liste) {
 			livre.setNbReservations(getDaoFactory().getReservationDAO().getNombreDeReservationsPourLivreId(livre.getId()));
+			livre.setDateRetourProche(getDaoFactory().getEmpruntDAO().getDateRetourPlusProche(livre.getId()));
 		}
 		return liste;
 	}
@@ -36,7 +38,8 @@ public class LivreManagerImpl extends AbstractManager implements LivreManager {
 	@Override
 	public Livre getLivreById(int id) {
 		Livre livre = getDaoFactory().getLivreDAO().getLivreById(id);
-
+		livre.setNbReservations(getDaoFactory().getReservationDAO().getNombreDeReservationsPourLivreId(livre.getId()));
+		livre.setDateRetourProche(getDaoFactory().getEmpruntDAO().getDateRetourPlusProche(id));
 		return livre;
 	}
 
@@ -52,9 +55,15 @@ public class LivreManagerImpl extends AbstractManager implements LivreManager {
 		List<Livre> liste = getDaoFactory().getLivreDAO().getLivreByRecherche(titre, auteur);
 		for(Livre livre : liste) {
 			livre.setNbReservations(getDaoFactory().getReservationDAO().getNombreDeReservationsPourLivreId(livre.getId()));
+			livre.setDateRetourProche(getDaoFactory().getEmpruntDAO().getDateRetourPlusProche(livre.getId()));
 		}
 		return liste;
 	}
 
+
+	@Override
+	public Date getDateRetourPlusProche(int idLivre) {
+		return getDaoFactory().getEmpruntDAO().getDateRetourPlusProche(idLivre);
+	}
 
 }

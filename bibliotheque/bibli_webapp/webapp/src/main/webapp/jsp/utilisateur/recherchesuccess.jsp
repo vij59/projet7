@@ -21,6 +21,8 @@
                     <th>Exemplaires</th>
                     <th>Disponibilité</th>
                     <th>Reservations</th>
+                    <th>Place</th>
+                    <th>Retour</th>
                 </tr>
                 </thead>
                 <s:iterator var="livres" value="listeLivres">
@@ -30,7 +32,7 @@
                         <td><s:property value="titre"/></td>
 
 
-                        <td><s:property value="livre.auteur.nom"/> &nbsp; <s:property
+                        <td><s:property value="auteur.nom"/> &nbsp; <s:property
                                 value="auteur.prenom"/></td>
 
 
@@ -51,12 +53,17 @@
 
                             </td>
                             <td>
-                                <s:if test="%{nbReservations<2}">
-                                    <s:property value="nbReservations"/>&nbsp; réservation
-                                </s:if>
-                                <s:else>
-                                    <s:property value="nbReservations"/>&nbsp; réservations
-                                </s:else>
+                                    <s:if test="%{nbReservations==1}">
+                                        1 Reservation
+                                    </s:if>
+                                    <s:elseif test="%{nbReservations>1}">
+                                        <s:property value="nbReservations"/> Reservations
+                                    </s:elseif>
+                            </td>
+                            <td></td>
+                            <td>
+                                <s:date name="dateRetourProche.toGregorianCalendar()"
+                                        format="dd/MM/yyyy"/>
                             </td>
                         </s:if>
                         <s:else>
@@ -103,17 +110,36 @@
 
                             </td>
                             <td>
-                                <s:if test="%{nbReservations==1}">
-                                    Reservation <s:property value="nbReservations"/> sur
-                                    <s:property value="nbReservations"/>
-                                </s:if>
-                                <s:elseif test="%{nbReservations>1}">
-                                    Reservation <s:property value="nbReservations"/> sur
-                                    <s:property value="nbReservations"/>
-                                </s:elseif>
-                                <s:else>
-                                    Pas de réservation
-                                </s:else>
+                                    <s:if test="%{nbReservations==1}">
+                                        1 Reservation
+                                    </s:if>
+                                    <s:elseif test="%{nbReservations>1}">
+                                        <s:property value="nbReservations"/> Reservations
+                                    </s:elseif>
+                                    <s:else>
+                                        Pas de réservation
+                                    </s:else>
+                            </td>
+                            <td>
+                                <s:iterator var="resa" value="mesReservations">
+
+                                    <s:if test="%{idLivre == id}">
+                                        <s:if test="%{nbReservations==1}">
+                                            <s:property value="placeDansReservations"/>
+
+                                        </s:if>
+                                        <s:elseif test="%{nbReservations>1}">
+                                            <s:property value="placeDansReservations"/>
+
+                                        </s:elseif>
+
+                                    </s:if>
+
+                                </s:iterator>
+                            </td>
+                            <td>
+                                <s:date name="dateRetourProche.toGregorianCalendar()"
+                                        format="dd/MM/yyyy"/>
                             </td>
                         </s:else>
                     </tr>

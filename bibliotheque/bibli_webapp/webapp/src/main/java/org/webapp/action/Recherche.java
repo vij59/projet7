@@ -1,6 +1,7 @@
 package org.webapp.action;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -15,6 +16,7 @@ public class Recherche extends AbstractRessource {
 	private List<Livre> listeLivres;
 	private List<Emprunt> mesEmpruntsDeLivres;
 	private List<Reservation> mesReservations;
+	private Date dateDuJour;
 
 
 	public String getTitre() {
@@ -62,8 +64,18 @@ public class Recherche extends AbstractRessource {
 		this.mesReservations = mesReservations;
 	}
 
+	public Date getDateDuJour() {
+		return dateDuJour;
+	}
+
+	public void setDateDuJour(Date dateDuJour) {
+		this.dateDuJour = dateDuJour;
+	}
+
 	public String execute() {
 		listeLivres = getManagerFactory().getLivreManager().getLivreByRecherche(titre, nomAuteur);
+		dateDuJour = new Date();
+
 		Utilisateur user = (Utilisateur) ActionContext.getContext().getSession().get("user");
 
 		if (user != null) {

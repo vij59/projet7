@@ -1,5 +1,6 @@
 package org.application.business.contract;
 
+import java.util.Date;
 import java.util.List;
 
 import org.application.model.Auteur;
@@ -17,4 +18,6 @@ public interface LivreManager {
 	List<Livre> getLivreByRecherche(String titre, String auteur);
 
 	List<Livre> getLivreByAuteur(Auteur auteur);
+
+	Date getDateRetourPlusProche(int idLivre);
 }

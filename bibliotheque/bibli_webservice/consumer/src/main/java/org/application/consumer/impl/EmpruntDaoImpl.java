@@ -47,7 +47,7 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 		vParams.addValue("dateFin", now2, Types.DATE);
 		vParams.addValue("idLivre", empruntRM.getIdLivre(), Types.INTEGER);
 		vParams.addValue("idUtilisateur", empruntRM.getIdUtilisateur(), Types.INTEGER);
-		vParams.addValue("enCours", true, Types.BOOLEAN);
+		vParams.addValue("enCours", false, Types.BOOLEAN);
 		vParams.addValue("repousse", false, Types.BOOLEAN);
 
 		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
@@ -86,7 +86,7 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 
 	@Override
 	public List<Emprunt> getEmpruntByUserId(int idUser) {
-		String vSQL = "SELECT * FROM emprunt WHERE id_utilisateur = :id order by en_cours desc, repousse desc, date_retour asc ";
+		String vSQL = "SELECT * FROM emprunt WHERE id_utilisateur = :id   order by en_cours desc, repousse desc, date_retour asc ";
 		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
 		MapSqlParameterSource vParams = new MapSqlParameterSource("id", idUser);
 		try {
@@ -163,4 +163,20 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 		vJdbcTemplate.update(vSQL, vParams);
 	}
 
+	@Override
+	public Date getDateRetourPlusProche(int idLivre) {
+		Date dateRetour= new Date();
+		String vSQL = "SELECT date_retour FROM emprunt WHERE  " +
+				"id=(SELECT MIN(id) from emprunt where en_cours=true and id_livre = :id) ";
+
+		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+		MapSqlParameterSource vParams = new MapSqlParameterSource("id", idLivre);
+		try {
+			dateRetour = vJdbcTemplate.queryForObject(vSQL, vParams, Date.class );
+
+		} catch (EmptyResultDataAccessException vEx) {
+			return null;
+		}
+		return dateRetour;
+	}
 }

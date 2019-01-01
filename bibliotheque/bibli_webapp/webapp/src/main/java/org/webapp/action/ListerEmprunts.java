@@ -1,11 +1,13 @@
 package org.webapp.action;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.webapp.resource.AbstractRessource;
 import org.webservice.services.Emprunt;
 import org.webservice.services.Livre;
+import org.webservice.services.Reservation;
 import org.webservice.services.Utilisateur;
 import com.opensymphony.xwork2.ActionContext;
 
@@ -15,9 +17,11 @@ public class ListerEmprunts extends AbstractRessource  {
 
 	private static final long serialVersionUID = 1L;
 	private List<Emprunt> mesEmprunts;
-	
+    private List<Reservation> mesReservations;
+    private int idLivreRecupere;
 
-	public List<Emprunt> getMesEmprunts() {
+
+    public List<Emprunt> getMesEmprunts() {
 		return mesEmprunts;
 	}
     public Date customDate;
@@ -34,7 +38,22 @@ public class ListerEmprunts extends AbstractRessource  {
     }
 
 
-	// ==================== Méthodes ====================
+    public List<Reservation> getMesReservations() {
+        return mesReservations;
+    }
+
+    public void setMesReservations(List<Reservation> mesReservations) {
+        this.mesReservations = mesReservations;
+    }
+
+    public int getIdLivreRecupere() {
+        return idLivreRecupere;
+    }
+
+    public void setIdLivreRecupere(int idLivreRecupere) {
+        this.idLivreRecupere = idLivreRecupere;
+    }
+// ==================== Méthodes ====================
  
 
 	/**
@@ -55,6 +74,14 @@ public class ListerEmprunts extends AbstractRessource  {
 
         setCustomDate(newDate);
 
+        List<Integer> mesIdsReservations = new ArrayList<>();
+
+        mesReservations = getManagerFactory().getReservationManager().getReservationsByUserId(user.getId());
+        for (Reservation reservation : mesReservations) {
+            mesIdsReservations.add(reservation.getIdLivre());
+            reservation.setLivre(getManagerFactory().getLivreManager().getLivreById(reservation.getIdLivre()));
+        }
+
         mesEmprunts =  getManagerFactory().getEmpruntManager().getEmpruntByUserId(user.getId());
         List<Livre> listeLivres = getManagerFactory().getLivreManager().getLivres();
         for(Emprunt  emprunt : mesEmprunts) {
@@ -64,7 +91,20 @@ public class ListerEmprunts extends AbstractRessource  {
                 }
             }
         }
+
    	
+        return "success";
+    }
+
+    public String recupererLivre() {
+
+        getManagerFactory().getEmpruntManager().recupererLivreByIdEmprunt(idLivreRecupere);
+    return "success";
+    }
+
+    public String rendreLivre() {
+
+        getManagerFactory().getEmpruntManager().rendreLivreDeLemprunt(idLivreRecupere);
         return "success";
     }
 

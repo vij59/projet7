@@ -1,5 +1,6 @@
 package org.application.business.contract;
 
+import java.util.Date;
 import java.util.List;
 
 import org.application.model.Emprunt;
@@ -22,7 +23,7 @@ public interface EmpruntManager {
 
     Emprunt getEmpruntById(int idEmprunt);
 
-    void rendreLivreDeLemprunt(Emprunt emprunt);
+    void rendreLivreDeLemprunt(int idEmprunt);
 
     Reservation getPremiereReservationByBookId(int idLivre);
 
@@ -35,4 +36,5 @@ public interface EmpruntManager {
     void recupererLivre(int idEmprunt);
 
 	void livreNonRecupereByIdEmprunt(int idEmprunt);
+
 }

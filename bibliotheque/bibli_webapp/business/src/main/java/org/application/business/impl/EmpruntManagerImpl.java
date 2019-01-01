@@ -39,8 +39,8 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
     }
 
     @Override
-    public void rendreLivreDeLemprunt(Emprunt emprunt) {
-        getDaoFactory().getEmpruntDao().rendreLivreDeLemprunt(emprunt);
+    public void rendreLivreDeLemprunt(int idEmprunt) {
+        getDaoFactory().getEmpruntDao().rendreLivreDeLemprunt(idEmprunt);
     }
 
     @Override

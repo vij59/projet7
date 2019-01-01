@@ -16,7 +16,7 @@ public interface EmpruntDAO {
 
 	void creerEmprunt(Emprunt emprunt);
 
-	void rendreLivreDeLemprunt(Emprunt emprunt);
+	void rendreLivreDeLemprunt(int idEmprunt);
 
 	Emprunt getEmpruntById(int idEmprunt) ;
 
