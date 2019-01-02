@@ -29,23 +29,12 @@ public class UtilisateurDaoImpl extends AbstractDAO implements UtilisateurDAO {
 	}
 
 	public List<Utilisateur> getUtilisateurs() {
-		String vSQL = "SELECT * FROM utilisateur";
 
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 
-		RowMapper<Utilisateur> vRowMapper = new RowMapper<Utilisateur>() {
-			public Utilisateur mapRow(ResultSet pRS, int pRowNum) throws SQLException {
-				Utilisateur vUtilisateur = new Utilisateur();
-				vUtilisateur.setId(pRS.getInt("id"));
-				vUtilisateur.setNom(pRS.getString("nom"));
-				vUtilisateur.setPrenom(pRS.getString("prenom"));
-				vUtilisateur.setMail(pRS.getString("mail"));
-				vUtilisateur.setMdp(pRS.getString("mdp"));
-				return vUtilisateur;
-			}
-		};
+		String vSQL = "SELECT * FROM utilisateur";
 
-		List<Utilisateur> vListeUtilisateurs = vJdbcTemplate.query(vSQL, vRowMapper);
+		List<Utilisateur> vListeUtilisateurs = vJdbcTemplate.query(vSQL, utilisateurRM);
 
 		return vListeUtilisateurs;
 	}
