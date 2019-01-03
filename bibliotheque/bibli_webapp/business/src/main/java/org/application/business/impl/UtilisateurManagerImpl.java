@@ -22,8 +22,20 @@ public class UtilisateurManagerImpl extends AbstractManager implements Utilisate
 	@Override
 	public Utilisateur getUtilisateurByMail(String mail) {
 		return getDaoFactory().getUtilisateurDao().getUtilisateurByMail(mail);
-		
 	}
-	
 
+	@Override
+	public void setRappelInactifById(int idUser) {
+		 getDaoFactory().getUtilisateurDao().setRappelInactifById(idUser);
+	}
+
+	@Override
+	public void setRappelActifById(int idUser) {
+		getDaoFactory().getUtilisateurDao().setRappelActifById(idUser);
+	}
+
+	@Override
+	public Utilisateur getUtilisateurById(int idUser) {
+		return getDaoFactory().getUtilisateurDao().getUtilisateurById(idUser);
+	}
 }

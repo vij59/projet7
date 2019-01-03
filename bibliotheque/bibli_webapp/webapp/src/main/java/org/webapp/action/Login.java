@@ -53,6 +53,8 @@ public String execute(){
     	sessionmap.put("user",user);
     	String userId = ""+user.getId();
     	sessionmap.put("userId", userId);
+        boolean rappel = user.isRappelActif();
+        sessionmap.put("rappelActif", rappel);
         return "success";  
     }  
     else{  

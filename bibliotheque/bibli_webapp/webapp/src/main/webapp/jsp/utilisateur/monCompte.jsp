@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<<<<<<< HEAD
 <hr/>
 
 <div class="container-fluid">

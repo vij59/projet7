@@ -28,4 +28,19 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 		return utilisateurWebService.getUtilisateurByMail(mail);
 	}
 
+	@Override
+	public void setRappelInactifById(int idUser) {
+		utilisateurWebService.setRappelInActifByUserId(idUser);
+	}
+
+	@Override
+	public void setRappelActifById(int idUser) {
+		utilisateurWebService.setRappelActifByUserId(idUser);
+	}
+
+	@Override
+	public Utilisateur getUtilisateurById(int idUser) {
+		return utilisateurWebService.getUtilisateurById(idUser);
+	}
+
 }

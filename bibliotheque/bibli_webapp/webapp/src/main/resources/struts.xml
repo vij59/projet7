@@ -125,5 +125,23 @@
 			<result name="error">/jsp/utilisateur/index.jsp</result>
 		</action>
 
+		<action name="mesInfos" class="org.webapp.action.UtilisateurInfos" method="execute">
+			<interceptor-ref name="auth" />
+			<result name="success">/jsp/utilisateur/mesInfos.jsp</result>
+			<result name="error" type="redirectAction">login</result>
+		</action>
+
+		<action name="desactiverRappel" class="org.webapp.action.UtilisateurInfos" method="desactiverRappel">
+			<result name="input" type="redirectAction">mesInfos</result>
+			<result name="success" type="redirectAction">mesInfos</result>
+			<result name="error">/jsp/utilisateur/home.jsp</result>
+		</action>
+		<action name="activerRappel" class="org.webapp.action.UtilisateurInfos" method="activerRappel">
+			<result name="input" type="redirectAction">mesInfos</result>
+			<result name="success" type="redirectAction">mesInfos</result>
+			<result name="error">/jsp/utilisateur/home.jsp</result>
+		</action>
+
+
 	</package>
 </struts>

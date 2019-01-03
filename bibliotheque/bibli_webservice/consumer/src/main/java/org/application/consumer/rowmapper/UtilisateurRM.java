@@ -19,7 +19,7 @@ public class UtilisateurRM implements RowMapper<Utilisateur> {
         utilisateur.setPrenom(resultSet.getString("prenom"));
         utilisateur.setMail(resultSet.getString("mail"));
         utilisateur.setMdp(resultSet.getString("mdp"));
-        
+        utilisateur.setRappelActif(resultSet.getBoolean("rappel"));
        
         return utilisateur;
     }

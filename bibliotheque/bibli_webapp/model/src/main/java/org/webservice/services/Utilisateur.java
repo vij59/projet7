@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="mdp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="prenom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="rappelActif" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +36,8 @@ import javax.xml.bind.annotation.XmlType;
     "mail",
     "mdp",
     "nom",
-    "prenom"
+    "prenom",
+    "rappelActif"
 })
 public class Utilisateur {
 
@@ -44,6 +46,7 @@ public class Utilisateur {
     protected String mdp;
     protected String nom;
     protected String prenom;
+    protected boolean rappelActif;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -155,6 +158,22 @@ public class Utilisateur {
      */
     public void setPrenom(String value) {
         this.prenom = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété rappelActif.
+     * 
+     */
+    public boolean isRappelActif() {
+        return rappelActif;
+    }
+
+    /**
+     * Définit la valeur de la propriété rappelActif.
+     * 
+     */
+    public void setRappelActif(boolean value) {
+        this.rappelActif = value;
     }
 
 }

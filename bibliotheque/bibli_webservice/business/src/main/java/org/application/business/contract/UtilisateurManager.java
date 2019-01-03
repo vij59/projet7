@@ -11,4 +11,10 @@ public interface UtilisateurManager {
 	boolean validerLogin(String mail, String mdp);
 
 	Utilisateur getUtilisateurByMail(String mail);
+
+    void setRappelActif(int idUser);
+
+	void setRappelInActif(int idUser);
+
+    Utilisateur getUtilisateurById(int idUser);
 }

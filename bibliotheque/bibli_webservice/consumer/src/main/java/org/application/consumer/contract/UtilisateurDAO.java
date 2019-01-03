@@ -10,4 +10,9 @@ public interface UtilisateurDAO {
 
 	Utilisateur getUtilisateurByMail(String mail);
 
+    void setRappelActif(int idUser);
+
+    void setRappelInActif(int idUser);
+
+    Utilisateur getUtilisateurById(int idUser);
 }

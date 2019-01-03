@@ -21,6 +21,13 @@
 				<li class="nav-item">
 					<a class="nav-link" href="recherche">Rechercher</a>
 				</li>
+				<li>
+				</li>
+				<li></li>
+				<li></li>
+				<li class="nav-item">
+					<a class="nav-link" href="mesInfos">Mes infos</a>
+				</li>
 			</ul>
 		</div>
 	</div>

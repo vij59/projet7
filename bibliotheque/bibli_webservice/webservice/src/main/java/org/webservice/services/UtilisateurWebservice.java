@@ -28,4 +28,19 @@ public class UtilisateurWebservice extends AbstractWebservice {
 		return getManagerFactory().getUtilisateurManager().getUtilisateurByMail(mail);
 	}
 
+	@WebMethod
+	public void setRappelActifByUserId(int idUser){
+		getManagerFactory().getUtilisateurManager().setRappelActif(idUser);
+	}
+	@WebMethod
+	public void setRappelInActifByUserId(int idUser){
+		getManagerFactory().getUtilisateurManager().setRappelInActif(idUser);
+	}
+
+	@WebMethod
+	public Utilisateur getUtilisateurById(int idUser) {
+		return getManagerFactory().getUtilisateurManager().getUtilisateurById(idUser);
+
+	}
+
 }
