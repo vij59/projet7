@@ -49,6 +49,7 @@ public class MyTaskletTicket3 implements Tasklet {
         String jour = " jours";
         String repousser = "";
         String texte = "";
+        boolean rappelActif = true;
 
         try {
 
@@ -59,6 +60,7 @@ public class MyTaskletTicket3 implements Tasklet {
                         if (utilisateur.getId() == emprunt.getIdUtilisateur()) {
                             to = utilisateur.getMail();
                             nom = nom + utilisateur.getNom();
+                            rappelActif = utilisateur.isRappelActif();
                         }
                     }
                     long daysBetween = ChronoUnit.DAYS.between(dateEmprunt, date);
@@ -70,18 +72,17 @@ public class MyTaskletTicket3 implements Tasklet {
                     }
 
 
-
-                    if (daysBetween < 5) {
+                    if (daysBetween < 5 && rappelActif==true) {
                         texte = body + "Vous devez rendre les livres suivants :"+ daysBetween
                                 + ". Suite à cela nous nous verrons dans l'obligation de contacter les autorités"
                                 + " Date de retour = " + dateEmprunt + repousser;
+                        mailMail.sendMail(to, nom, texte);
                     }
 
 // 					MailMail mm = (MailMail)  context.getBean("mailMail");
 // 		            mm.sendMail(from,to,nom, texte);
 
 
-                    mailMail.sendMail(to, nom, texte);
                 }
             }
         } catch (Exception e) {
