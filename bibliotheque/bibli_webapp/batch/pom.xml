@@ -40,7 +40,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
-
 		</dependency>
 
 		<dependency>
@@ -62,7 +61,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
-
 
 		<dependency>
 			<groupId>com.sun.mail</groupId>
@@ -94,10 +92,6 @@
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
         </dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-core</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>com.edouard</groupId>
 			<artifactId>business</artifactId>

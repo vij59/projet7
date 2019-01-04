@@ -13,10 +13,9 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.webservice.services.*;
-import resource.AbstractResource;
 
 @Component
-public class MyTaskletTicket3 extends AbstractResource implements Tasklet  {
+public class MyTaskletTicket3 implements Tasklet  {
 
 
     @Autowired
@@ -60,7 +59,7 @@ public class MyTaskletTicket3 extends AbstractResource implements Tasklet  {
                         }
                     }
                     List <Livre> listeLivres = null;
-                    listeLivres.add(getManagerFactory().getLivreManager().getLivreById(emprunt.getIdLivre()));
+                    //listeLivres.add(getManagerFactory().getLivreManager().getLivreById(emprunt.getIdLivre()));
 
                     long daysBetween = ChronoUnit.DAYS.between(dateEmprunt, date);
                     // daysBetween = 3 - daysBetween;
