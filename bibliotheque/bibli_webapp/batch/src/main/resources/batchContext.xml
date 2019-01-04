@@ -50,16 +50,15 @@
         <property name="mailSender" ref="mailSender"/>
     </bean>
 
-    <!--  <bean id="runScheduler" class="org.batch.Scheduler"/>
+      <bean id="runScheduler" class="org.batch.Scheduler"/>
       <bean id="myTasklet" class="org.batch.MyTasklet" scope="step"/>
-  -->
 
 
-    <!-- <batch:job id="scheduledJob">
+     <batch:job id="scheduledJob">
          <batch:step id="jobStep">
              <batch:tasklet ref="myTasklet" />
          </batch:step>
-     </batch:job>-->
+     </batch:job>
 
     <bean id="runScheduler2" class="org.batch.Scheduler2"/>
     <bean id="myTaskletTicket3" class="org.batch.MyTaskletTicket3" scope="step"/>
@@ -70,9 +69,9 @@
     </batch:job>
 
 
-    <!--<task:scheduled-tasks>
+    <task:scheduled-tasks>
         <task:scheduled ref="runScheduler" method="run" cron="*/5 * * * * *"/>
-    </task:scheduled-tasks>-->
+    </task:scheduled-tasks>
 
     <task:scheduled-tasks>
         <task:scheduled ref="runScheduler2" method="run" cron="*/5 * * * * *"/>
