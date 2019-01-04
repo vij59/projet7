@@ -12,15 +12,11 @@ import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.webservice.services.Emprunt;
-import org.webservice.services.EmpruntWebservice;
-import org.webservice.services.Emprunt_Service;
-import org.webservice.services.Utilisateur;
-import org.webservice.services.UtilisateurWebservice;
-import org.webservice.services.Utilisateur_Service;
+import org.webservice.services.*;
+import resource.AbstractResource;
 
 @Component
-public class MyTaskletTicket3 implements Tasklet {
+public class MyTaskletTicket3 extends AbstractResource implements Tasklet  {
 
 
     @Autowired
@@ -63,7 +59,9 @@ public class MyTaskletTicket3 implements Tasklet {
                             rappelActif = utilisateur.isRappelActif();
                         }
                     }
-                    List<Emprunt> mesEmpruntsEnCours ;
+                    List <Livre> listeLivres = null;
+                    listeLivres.add(getManagerFactory().getLivreManager().getLivreById(emprunt.getIdLivre()));
+
                     long daysBetween = ChronoUnit.DAYS.between(dateEmprunt, date);
                     // daysBetween = 3 - daysBetween;
                     if (daysBetween > 1) {
@@ -74,7 +72,7 @@ public class MyTaskletTicket3 implements Tasklet {
 
 
                     if (daysBetween < 5 && rappelActif==true) {
-                        texte = body + "Vous devez rendre les livres suivants :"+ daysBetween
+                        texte = body + "Vous devez rendre les livres suivants :"+ listeLivres
                                 + ". Suite à cela nous nous verrons dans l'obligation de contacter les autorités"
                                 + " Date de retour = " + dateEmprunt + repousser;
                         mailMail.sendMail(to, nom, texte);
