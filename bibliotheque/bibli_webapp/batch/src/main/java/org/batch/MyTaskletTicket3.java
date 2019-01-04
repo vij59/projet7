@@ -63,6 +63,7 @@ public class MyTaskletTicket3 implements Tasklet {
                             rappelActif = utilisateur.isRappelActif();
                         }
                     }
+                    List<Emprunt> mesEmpruntsEnCours ;
                     long daysBetween = ChronoUnit.DAYS.between(dateEmprunt, date);
                     // daysBetween = 3 - daysBetween;
                     if (daysBetween > 1) {

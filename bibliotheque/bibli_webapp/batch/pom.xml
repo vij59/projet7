@@ -90,6 +90,22 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.edouard</groupId>
+			<artifactId>business</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.edouard</groupId>
+			<artifactId>webapp</artifactId>
+		</dependency>
 
 	</dependencies>
 
