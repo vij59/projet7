@@ -29,4 +29,6 @@ public interface EmpruntDAO {
 	void livreNonRecupereByIdEmprunt(int idEmprunt);
 
     Date getDateRetourPlusProche(int idLivre);
+
+    List<Emprunt> getEmpruntsEnCoursByUserId(int idUser);
 }

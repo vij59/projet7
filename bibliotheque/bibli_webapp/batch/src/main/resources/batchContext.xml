@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:batch="http://www.springframework.org/schema/batch"
-        xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans.xsd 
        http://www.springframework.org/schema/context 
@@ -13,7 +13,7 @@
        http://www.springframework.org/schema/task 
        http://www.springframework.org/schema/task/spring-task.xsd">
 
-    <context:component-scan base-package="org.batch" />
+    <context:component-scan base-package="org.batch"/>
 
 
     <!-- SET default mail properties -->
@@ -21,7 +21,7 @@
         <property name="host" value="smtp.gmail.com"/>
         <property name="port" value="587"/>
         <property name="username" value="jokoker59@gmail.com"/>
-        <property name="password" value="xxxxxxxxx"/>
+        <property name="password" value="Joker5959!"/>
 
         <property name="javaMailProperties">
             <props>
@@ -36,50 +36,47 @@
     <!-- ==== Batch beans ===== -->
     <bean id="jobRepository"
           class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean">
-        <property name="transactionManager" ref="transactionManager" />
+        <property name="transactionManager" ref="transactionManager"/>
     </bean>
 
     <bean id="transactionManager"
-          class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
+          class="org.springframework.batch.support.transaction.ResourcelessTransactionManager"/>
 
     <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
-        <property name="jobRepository" ref="jobRepository" />
+        <property name="jobRepository" ref="jobRepository"/>
     </bean>
 
     <bean id="mailMail" class="org.batch.MailMail">
         <property name="mailSender" ref="mailSender"/>
     </bean>
 
-    <bean id="runScheduler" class="org.batch.Scheduler"/>
-    <bean id="myTasklet" class="org.batch.MyTasklet" scope="step"/>
+    <!--  <bean id="runScheduler" class="org.batch.Scheduler"/>
+      <bean id="myTasklet" class="org.batch.MyTasklet" scope="step"/>
+  -->
 
 
-
-    <batch:job id="scheduledJob">
-        <batch:step id="jobStep">
-            <batch:tasklet ref="myTasklet" />
-        </batch:step>
-    </batch:job>
+    <!-- <batch:job id="scheduledJob">
+         <batch:step id="jobStep">
+             <batch:tasklet ref="myTasklet" />
+         </batch:step>
+     </batch:job>-->
 
     <bean id="runScheduler2" class="org.batch.Scheduler2"/>
     <bean id="myTaskletTicket3" class="org.batch.MyTaskletTicket3" scope="step"/>
     <batch:job id="scheduledJob2">
         <batch:step id="jobStep2">
-            <batch:tasklet ref="myTaskletTicket3" />
+            <batch:tasklet ref="myTaskletTicket3"/>
         </batch:step>
     </batch:job>
 
 
-
-
-    <task:scheduled-tasks>
+    <!--<task:scheduled-tasks>
         <task:scheduled ref="runScheduler" method="run" cron="*/5 * * * * *"/>
-    </task:scheduled-tasks>
+    </task:scheduled-tasks>-->
 
     <task:scheduled-tasks>
         <task:scheduled ref="runScheduler2" method="run" cron="*/5 * * * * *"/>
     </task:scheduled-tasks>
-
 
 
 </beans>

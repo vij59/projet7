@@ -139,4 +139,19 @@ public interface EmpruntWebservice {
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.webservice.services.Emprunt>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getEmpruntsEnCoursByUserId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntsEnCoursByUserId")
+    @ResponseWrapper(localName = "getEmpruntsEnCoursByUserIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetEmpruntsEnCoursByUserIdResponse")
+    @Action(input = "http://services.webservice.org/EmpruntWebservice/getEmpruntsEnCoursByUserIdRequest", output = "http://services.webservice.org/EmpruntWebservice/getEmpruntsEnCoursByUserIdResponse")
+    public List<Emprunt> getEmpruntsEnCoursByUserId(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
 }

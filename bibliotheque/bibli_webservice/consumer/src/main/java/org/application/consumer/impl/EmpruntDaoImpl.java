@@ -179,4 +179,19 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 		}
 		return dateRetour;
 	}
+
+	@Override
+	public List<Emprunt> getEmpruntsEnCoursByUserId(int idUser) {
+		String vSQL = "SELECT * FROM emprunt WHERE  " +
+				"id_utilisateur = :id and en_cours=true and recupere=true  ";
+
+		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+		MapSqlParameterSource vParams = new MapSqlParameterSource("id", idUser);
+		try {
+			List<Emprunt> emprunts = vJdbcTemplate.query(vSQL, vParams, empruntRM);
+			return emprunts;
+		} catch (EmptyResultDataAccessException vEx) {
+			return null;
+		}
+	}
 }
