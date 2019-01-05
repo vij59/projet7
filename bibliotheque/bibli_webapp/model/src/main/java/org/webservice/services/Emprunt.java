@@ -26,6 +26,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="idLivre" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="idUtilisateur" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="livre" type="{http://services.webservice.org/}livre" minOccurs="0"/>
+ *         &lt;element name="mailSent" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="recupere" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="repoussable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="statut" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -47,6 +48,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "idLivre",
     "idUtilisateur",
     "livre",
+    "mailSent",
     "recupere",
     "repoussable",
     "statut"
@@ -63,6 +65,7 @@ public class Emprunt {
     protected int idLivre;
     protected int idUtilisateur;
     protected Livre livre;
+    protected boolean mailSent;
     protected boolean recupere;
     protected boolean repoussable;
     protected String statut;
@@ -225,6 +228,22 @@ public class Emprunt {
      */
     public void setLivre(Livre value) {
         this.livre = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété mailSent.
+     * 
+     */
+    public boolean isMailSent() {
+        return mailSent;
+    }
+
+    /**
+     * Définit la valeur de la propriété mailSent.
+     * 
+     */
+    public void setMailSent(boolean value) {
+        this.mailSent = value;
     }
 
     /**

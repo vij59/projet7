@@ -62,7 +62,7 @@ public class EmpruntWebservice extends AbstractWebservice {
 	}
 
 	@WebMethod
-	public void setMailSentByUserId(int idUser) {
-		getManagerFactory().getEmpruntManager().setMailSentByUserId(idUser);
+	public void setMailSentByEmpruntId(int id) {
+		getManagerFactory().getEmpruntManager().setMailSentByEmpruntId(id);
 	}
 }

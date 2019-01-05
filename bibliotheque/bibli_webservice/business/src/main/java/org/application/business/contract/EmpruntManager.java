@@ -39,5 +39,5 @@ public interface EmpruntManager {
 
 	List<Emprunt> getEmpruntsEnCoursByUserId(int idUser);
 
-    void setMailSentByUserId(int idUser);
+    void setMailSentByEmpruntId(int idUser);
 }

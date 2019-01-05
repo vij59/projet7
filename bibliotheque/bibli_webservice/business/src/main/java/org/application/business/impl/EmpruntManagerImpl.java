@@ -252,8 +252,8 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
     }
 
     @Override
-    public void setMailSentByUserId(int idUser) {
-        getDaoFactory().getEmpruntDAO().setMailSentByUserId(idUser);
+    public void setMailSentByEmpruntId(int id) {
+        getDaoFactory().getEmpruntDAO().setMailSentByEmpruntId(id);
     }
 
 }

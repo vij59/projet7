@@ -44,47 +44,27 @@ public class RappelRecupererLivre implements Tasklet {
         String jour = " jours";
         String repousser = "";
         String texte = "";
+        String titreLivre ="";
 
         try {
 
             for (Emprunt emprunt : emprunts) {
-                LocalDate dateEmprunt = emprunt.getDateFin().toGregorianCalendar().toZonedDateTime().toLocalDate();
-                if (dateEmprunt.compareTo(date) < 0) {
-                    for (Utilisateur utilisateur : utilisateurs) {
-                        if (utilisateur.getId() == emprunt.getIdUtilisateur()) {
+
+                if(emprunt.isMailSent()) {
+                }
+                else if(!emprunt.isMailSent() && !emprunt.isRecupere()) {
+                Utilisateur utilisateur = UtilisateurwebSer.getUtilisateurById(emprunt.getIdUtilisateur());
                             to = utilisateur.getMail();
                             nom = nom + utilisateur.getNom();
-                        }
-                    }
-                    long daysBetween = ChronoUnit.DAYS.between(dateEmprunt, date);
-                    daysBetween = 3 - daysBetween;
-                    if (daysBetween > 1) {
-                        jour = " jours";
-                    } else {
-                        jour = " jour";
-                    }
-
-                    if (emprunt.isDejaRepousse() == false) {
-                        repousser = ". Vous pouvez repousser votre date de retour d'un mois en vous connectant au site de la bibliotheque, dans votre accès personnalisé.";
-                    } else {
-                        repousser = "";
-                    }
-
-                    if (daysBetween == 0) {
-                        texte = body + "Vous avez jusque ce soir minuit"
-                                + ". Suite à cela nous nous verrons dans l'obligation de contacter les autorités"
-                                + " Date de retour = " + dateEmprunt + repousser;
-                    } else if (daysBetween < 0) {
-                        texte = body + "Vous avez dépassé la date de retour (" + dateEmprunt + ")";
-                    } else {
-                        texte = body + "Vous avez " + daysBetween + jour
-                                + ". Suite à cela nous nous verrons dans l'obligation de contacter les autorités"
-                                + " Date de retour = " + dateEmprunt + repousser;
-                    }
-
+                Livre livre = LivreWebSer.getLivreById(emprunt.getIdLivre());
+                titreLivre = livre.getTitre();
+               // empruntwebSer.setMailSentByUserId(utilisateur.getId());
                     mailMail.sendMail(to, nom, texte);
                 }
-            }
+
+
+                }
+
         } catch (Exception e) {
             System.out.println("adresse mail pas bonne");
         }

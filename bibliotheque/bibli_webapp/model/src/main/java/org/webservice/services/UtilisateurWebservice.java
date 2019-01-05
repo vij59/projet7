@@ -39,21 +39,6 @@ public interface UtilisateurWebservice {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns org.webservice.services.Utilisateur
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUtilisateurByMail", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurByMail")
-    @ResponseWrapper(localName = "getUtilisateurByMailResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurByMailResponse")
-    @Action(input = "http://services.webservice.org/UtilisateurWebservice/getUtilisateurByMailRequest", output = "http://services.webservice.org/UtilisateurWebservice/getUtilisateurByMailResponse")
-    public Utilisateur getUtilisateurByMail(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -90,22 +75,37 @@ public interface UtilisateurWebservice {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "setRappelInActifByUserId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SetRappelInActifByUserId")
-    @ResponseWrapper(localName = "setRappelInActifByUserIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SetRappelInActifByUserIdResponse")
-    @Action(input = "http://services.webservice.org/UtilisateurWebservice/setRappelInActifByUserIdRequest", output = "http://services.webservice.org/UtilisateurWebservice/setRappelInActifByUserIdResponse")
-    public void setRappelInActifByUserId(
+    @RequestWrapper(localName = "setRappelActifByUserId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SetRappelActifByUserId")
+    @ResponseWrapper(localName = "setRappelActifByUserIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SetRappelActifByUserIdResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/setRappelActifByUserIdRequest", output = "http://services.webservice.org/UtilisateurWebservice/setRappelActifByUserIdResponse")
+    public void setRappelActifByUserId(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
     /**
      * 
      * @param arg0
+     * @return
+     *     returns org.webservice.services.Utilisateur
      */
     @WebMethod
-    @RequestWrapper(localName = "setRappelActifByUserId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SetRappelActifByUserId")
-    @ResponseWrapper(localName = "setRappelActifByUserIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SetRappelActifByUserIdResponse")
-    @Action(input = "http://services.webservice.org/UtilisateurWebservice/setRappelActifByUserIdRequest", output = "http://services.webservice.org/UtilisateurWebservice/setRappelActifByUserIdResponse")
-    public void setRappelActifByUserId(
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getUtilisateurByMail", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurByMail")
+    @ResponseWrapper(localName = "getUtilisateurByMailResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetUtilisateurByMailResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/getUtilisateurByMailRequest", output = "http://services.webservice.org/UtilisateurWebservice/getUtilisateurByMailResponse")
+    public Utilisateur getUtilisateurByMail(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "setRappelInActifByUserId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SetRappelInActifByUserId")
+    @ResponseWrapper(localName = "setRappelInActifByUserIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SetRappelInActifByUserIdResponse")
+    @Action(input = "http://services.webservice.org/UtilisateurWebservice/setRappelInActifByUserIdRequest", output = "http://services.webservice.org/UtilisateurWebservice/setRappelInActifByUserIdResponse")
+    public void setRappelInActifByUserId(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
