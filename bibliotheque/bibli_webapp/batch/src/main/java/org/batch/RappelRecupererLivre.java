@@ -50,15 +50,16 @@ public class RappelRecupererLivre implements Tasklet {
 
             for (Emprunt emprunt : emprunts) {
 
-                if(emprunt.isMailSent()) {
-                }
-                else if(!emprunt.isMailSent() && !emprunt.isRecupere()) {
+                 if(!emprunt.isMailSent() && !emprunt.isRecupere()) {
                 Utilisateur utilisateur = UtilisateurwebSer.getUtilisateurById(emprunt.getIdUtilisateur());
                             to = utilisateur.getMail();
                             nom = nom + utilisateur.getNom();
                 Livre livre = LivreWebSer.getLivreById(emprunt.getIdLivre());
                 titreLivre = livre.getTitre();
-               // empruntwebSer.setMailSentByUserId(utilisateur.getId());
+                empruntwebSer.setMailSentByEmpruntId(utilisateur.getId());
+
+                texte = "Bonjour, vous pouvez venir récupérer le livre "+titreLivre+ " que vous avez réservé.";
+
                     mailMail.sendMail(to, nom, texte);
                 }
 
@@ -66,7 +67,7 @@ public class RappelRecupererLivre implements Tasklet {
                 }
 
         } catch (Exception e) {
-            System.out.println("adresse mail pas bonne");
+            e.getMessage();
         }
         System.out.println("j ai fini");
 
