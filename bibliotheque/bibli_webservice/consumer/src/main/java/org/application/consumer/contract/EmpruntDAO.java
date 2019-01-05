@@ -31,4 +31,6 @@ public interface EmpruntDAO {
     Date getDateRetourPlusProche(int idLivre);
 
     List<Emprunt> getEmpruntsEnCoursByUserId(int idUser);
+
+	void setMailSentByUserId(int idUser);
 }

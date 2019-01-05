@@ -106,12 +106,17 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 
         for (Emprunt emprunt : liste) {
 
+
             Livre livre = getDaoFactory().getLivreDAO().getLivreById(emprunt.getIdLivre());
             if (emprunt.getDateFin().compareTo(dateDuJour) <= 0) {
+                if(emprunt.isMailSent()) {
+                    livreNonRecupereByIdEmprunt(emprunt.getId());
+                }
                 emprunt.setRepoussable(false);
                 if (emprunt.getStatut().equals("rendu")) {
                     emprunt.setStatut("rendu");
-                } else {
+                }
+                else {
                     emprunt.setStatut("à rendre");
                 }
 
@@ -180,6 +185,7 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
             Emprunt emprunt1 = new Emprunt();
             emprunt1.setIdLivre(emprunt.getIdLivre());
             emprunt1.setIdUtilisateur(premiereReservation.getIdUser());
+            emprunt1.setMailSent(false);
             if(premiereReservation.getIdReservation()!=0) {
                 getDaoFactory().getEmpruntDAO().creerEmprunt(emprunt1);
 
@@ -243,6 +249,11 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
     @Override
     public List<Emprunt> getEmpruntsEnCoursByUserId(int idUser) {
         return getDaoFactory().getEmpruntDAO().getEmpruntsEnCoursByUserId(idUser);
+    }
+
+    @Override
+    public void setMailSentByUserId(int idUser) {
+        getDaoFactory().getEmpruntDAO().setMailSentByUserId(idUser);
     }
 
 }

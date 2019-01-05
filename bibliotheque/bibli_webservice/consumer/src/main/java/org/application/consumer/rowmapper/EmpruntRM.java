@@ -22,6 +22,7 @@ public class EmpruntRM implements RowMapper<Emprunt> {
         emprunt.setDejaRepousse(rs.getBoolean("repousse"));
         emprunt.setStatut(rs.getString("statut"));
         emprunt.setRecupere(rs.getBoolean("recupere"));
+        emprunt.setMailSent(rs.getBoolean("mail_sent"));
 
         return emprunt;
     }

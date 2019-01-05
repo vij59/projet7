@@ -38,4 +38,6 @@ public interface EmpruntManager {
 	void livreNonRecupereByIdEmprunt(int idEmprunt);
 
 	List<Emprunt> getEmpruntsEnCoursByUserId(int idUser);
+
+    void setMailSentByUserId(int idUser);
 }

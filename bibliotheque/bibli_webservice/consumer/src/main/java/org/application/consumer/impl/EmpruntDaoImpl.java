@@ -194,4 +194,14 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 			return null;
 		}
 	}
+
+	@Override
+	public void setMailSentByUserId(int idUser) {
+		String vSQL = "UPDATE emprunt SET mail_sent=true  WHERE id_utilisateur=:id";
+
+		MapSqlParameterSource vParams = new MapSqlParameterSource();
+		vParams.addValue("id", idUser, Types.INTEGER);
+		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+		vJdbcTemplate.update(vSQL, vParams);
+	}
 }

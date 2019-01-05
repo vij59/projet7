@@ -15,6 +15,7 @@ public class Emprunt {
 	private boolean repoussable;
 	private String statut;
 	private boolean recupere;
+	private boolean mailSent;
 
 	public Integer getId() {
 		return id;
@@ -102,5 +103,13 @@ public class Emprunt {
 
 	public void setRecupere(boolean recupere) {
 		this.recupere = recupere;
+	}
+
+	public boolean isMailSent() {
+		return mailSent;
+	}
+
+	public void setMailSent(boolean mailSent) {
+		this.mailSent = mailSent;
 	}
 }
