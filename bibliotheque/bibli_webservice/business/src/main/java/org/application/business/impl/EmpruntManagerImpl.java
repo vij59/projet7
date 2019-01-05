@@ -56,7 +56,7 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
     public boolean empruntPossible(int id) {
         // TODO Auto-generated method stub
 
-        List<Emprunt> listeEmprunts = getDaoFactory().getEmpruntDAO().getListeEmprunts();
+        List<Emprunt> listeEmprunts = getDaoFactory().getEmpruntDAO().getListeEmpruntsEnCours();
         List<Livre> listeLivres = getDaoFactory().getLivreDAO().getLivres();
         Livre livre = getDaoFactory().getLivreDAO().getLivreById(id);
         boolean dispo = false;

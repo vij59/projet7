@@ -50,20 +50,8 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 
 	@Override
 	public List<Emprunt> getMesEmpruntsEnCours(int idUser) {
-		List<Emprunt> mesEmprunts = getDaoFactory().getEmpruntDao().getEmpruntByUserId(idUser);
-		List<Emprunt> mesEmpruntsEnCours = new ArrayList<>();
-		// List<Livre> livres = getDaoFactory().getLivreDao().getLivres();
+		List<Emprunt> mesEmpruntsEnCours = getDaoFactory().getEmpruntDao().getEmpruntsEnCoursByUserId(idUser);
 
-
-
-
-
-		for(Emprunt emprunt : mesEmprunts) {
-			// emprunt.setLivre(getDaoFactory().getLivreDao().getLivreById(emprunt.getIdLivre()));
-			if(emprunt.isEnCours()) {
-				mesEmpruntsEnCours.add(emprunt);
-			}
-		}
 		return mesEmpruntsEnCours;
 
 	}

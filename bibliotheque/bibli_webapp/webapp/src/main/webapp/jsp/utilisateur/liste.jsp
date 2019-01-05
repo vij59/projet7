@@ -46,7 +46,13 @@
                         <td><s:property value="auteur.nom"/>&nbsp;<s:property
                                 value="auteur.prenom"/></td>
 
-
+<td>
+    mes emprunts ID = <s:property value="livreEmprunteByUserId"/>
+   empruntable = <s:property value="empruntable"/>
+    reservable ID = <s:property value="reservable"/>
+    livreReserveByUserId= <s:property value="livreReserveByUserId"/>
+    mes emprunts ID = <s:property value="livreEmprunteByUserId"/>
+</td>
                         <td><s:property value="nbExemplaires"/></td>
                         <s:if test="#session.userMail == null">
                             <td>

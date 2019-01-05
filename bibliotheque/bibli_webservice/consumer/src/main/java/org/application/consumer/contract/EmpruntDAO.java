@@ -13,6 +13,8 @@ public interface EmpruntDAO {
 
 	List<Emprunt> getListeEmprunts();
 
+    List<Emprunt> getListeEmpruntsEnCours();
+
 	List<Emprunt> getEmpruntByUserId(int idUser);
 
 	Emprunt getEmpruntById(int idEmprunt);

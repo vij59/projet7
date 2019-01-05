@@ -58,10 +58,13 @@
 			<groupId>javax.xml.ws</groupId>
 			<artifactId>jaxws-api</artifactId>
 		</dependency>
-		
+        <dependency>
+            <groupId>com.edouard</groupId>
+            <artifactId>model</artifactId>
+        </dependency>
 
 
-	</dependencies>
+    </dependencies>
 	<build>
 		<finalName>webservice</finalName>
 		<plugins>

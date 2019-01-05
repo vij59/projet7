@@ -23,4 +23,6 @@ public interface EmpruntDAO {
     void recupererLivreByIdEmprunt(int idEmprunt);
 
 	void livreNonRecupereByIdEmprunt(int idEmprunt);
+
+	List<Emprunt>getEmpruntsEnCoursByUserId(int idUser);
 }

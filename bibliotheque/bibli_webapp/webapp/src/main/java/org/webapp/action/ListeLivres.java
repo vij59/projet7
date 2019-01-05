@@ -94,8 +94,14 @@ public class ListeLivres extends AbstractRessource {
                     if (mesIdsEmpruntsDeLivres.contains(idLivre)) {
                         livre.setLivreEmprunteByUserId(true);
                     }
+                    else {
+                        livre.setLivreEmprunteByUserId(false);
+                    }
                     if (mesIdsReservations.contains(idLivre)) {
                         livre.setLivreReserveByUserId(true);
+                    }
+                    else {
+                        livre.setLivreReserveByUserId(false);
                     }
                 }
             }

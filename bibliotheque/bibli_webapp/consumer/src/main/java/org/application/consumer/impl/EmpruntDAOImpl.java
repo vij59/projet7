@@ -63,4 +63,9 @@ public class EmpruntDAOImpl implements EmpruntDAO {
     public void livreNonRecupereByIdEmprunt(int idEmprunt) {
         empruntWebService.livreNonRecupereByIdEmprunt(idEmprunt);
     }
+
+    @Override
+    public List<Emprunt> getEmpruntsEnCoursByUserId(int idUser) {
+        return empruntWebService.getEmpruntsEnCoursByUserId(idUser);
+    }
 }

@@ -47,7 +47,7 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 		vParams.addValue("dateFin", now2, Types.DATE);
 		vParams.addValue("idLivre", empruntRM.getIdLivre(), Types.INTEGER);
 		vParams.addValue("idUtilisateur", empruntRM.getIdUtilisateur(), Types.INTEGER);
-		vParams.addValue("enCours", false, Types.BOOLEAN);
+		vParams.addValue("enCours", true, Types.BOOLEAN);
 		vParams.addValue("repousse", false, Types.BOOLEAN);
 
 		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
@@ -65,7 +65,17 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 		return vList;
 	}
 
-	@Override
+    @Override
+    public List<Emprunt> getListeEmpruntsEnCours() {
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+
+        String sql = "SELECT * FROM emprunt where en_cours=true";
+
+        List<Emprunt> vList = vJdbcTemplate.query(sql, empruntRM);
+        return vList;
+    }
+
+    @Override
 	public void empruntProlonge(int idEmprunt) {
 		String vSQL = "UPDATE emprunt SET  date_retour=:dateFin, repousse=true WHERE id=:id";
 		Date dateFin = null;
@@ -183,7 +193,7 @@ public class EmpruntDaoImpl extends AbstractDAO implements EmpruntDAO {
 	@Override
 	public List<Emprunt> getEmpruntsEnCoursByUserId(int idUser) {
 		String vSQL = "SELECT * FROM emprunt WHERE  " +
-				"id_utilisateur = :id and en_cours=true and recupere=true  ";
+				"id_utilisateur = :id and en_cours=true ";
 
 		NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
 		MapSqlParameterSource vParams = new MapSqlParameterSource("id", idUser);

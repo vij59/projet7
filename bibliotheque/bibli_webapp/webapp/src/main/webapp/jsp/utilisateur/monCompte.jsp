@@ -53,7 +53,7 @@
 
                             <%-- <td><s:property value="enCours" />&nbsp;</td> --%>
 
-                        <s:if test="%{dejaRepousse==false && repoussable==true}">
+                        <s:if test="%{dejaRepousse==false && repoussable==true && recupere==true}">
                             <td><s:url action="repousseProcess" var="helloLink">
                                 <s:param name="id_emprunt"><s:property value='id'/></s:param>
                             </s:url>
@@ -68,7 +68,7 @@
                             <td>Non prolongeable</td>
                         </s:else>
 
-                        <s:if test="%{enCours==false && recupere==false}">
+                        <s:if test="%{enCours==true && recupere==false}">
                             <td><s:url action="recupererLivre" var="helloLink">
                                 <s:param name="idLivreRecupere"><s:property value='id'/></s:param>
                             </s:url>
@@ -80,7 +80,7 @@
                         <s:if test="%{statut=='rendu'}">
                         </s:if>
                         <s:else>
-                            <s:if test="%{enCours==true}">
+                            <s:if test="%{enCours==true && recupere==true}">
                                 <td><s:url action="rendreLivre" var="helloLink">
                                     <s:param name="idLivreRecupere"><s:property value='id'/></s:param>
                                 </s:url>

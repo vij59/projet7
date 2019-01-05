@@ -29,21 +29,6 @@ public interface ReservationWebService {
      * 
      * @param arg0
      * @return
-     *     returns int
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getNombreDeReservationsPourLivreId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetNombreDeReservationsPourLivreId")
-    @ResponseWrapper(localName = "getNombreDeReservationsPourLivreIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetNombreDeReservationsPourLivreIdResponse")
-    @Action(input = "http://services.webservice.org/ReservationWebService/getNombreDeReservationsPourLivreIdRequest", output = "http://services.webservice.org/ReservationWebService/getNombreDeReservationsPourLivreIdResponse")
-    public int getNombreDeReservationsPourLivreId(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns org.webservice.services.Reservation
      */
     @WebMethod
@@ -76,6 +61,21 @@ public interface ReservationWebService {
     /**
      * 
      * @param arg0
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getNombreDeReservationsPourLivreId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetNombreDeReservationsPourLivreId")
+    @ResponseWrapper(localName = "getNombreDeReservationsPourLivreIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetNombreDeReservationsPourLivreIdResponse")
+    @Action(input = "http://services.webservice.org/ReservationWebService/getNombreDeReservationsPourLivreIdRequest", output = "http://services.webservice.org/ReservationWebService/getNombreDeReservationsPourLivreIdResponse")
+    public int getNombreDeReservationsPourLivreId(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
      */
     @WebMethod
     @RequestWrapper(localName = "creerReservation", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.CreerReservation")
@@ -84,33 +84,6 @@ public interface ReservationWebService {
     public void creerReservation(
         @WebParam(name = "arg0", targetNamespace = "")
         Reservation arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "supprimerReservation", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SupprimerReservation")
-    @ResponseWrapper(localName = "supprimerReservationResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SupprimerReservationResponse")
-    @Action(input = "http://services.webservice.org/ReservationWebService/supprimerReservationRequest", output = "http://services.webservice.org/ReservationWebService/supprimerReservationResponse")
-    public void supprimerReservation(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Reservation arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<org.webservice.services.Reservation>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getReservationsByUserId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetReservationsByUserId")
-    @ResponseWrapper(localName = "getReservationsByUserIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetReservationsByUserIdResponse")
-    @Action(input = "http://services.webservice.org/ReservationWebService/getReservationsByUserIdRequest", output = "http://services.webservice.org/ReservationWebService/getReservationsByUserIdResponse")
-    public List<Reservation> getReservationsByUserId(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
 
     /**
      * 
@@ -144,6 +117,33 @@ public interface ReservationWebService {
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         int arg1);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "supprimerReservation", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SupprimerReservation")
+    @ResponseWrapper(localName = "supprimerReservationResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.SupprimerReservationResponse")
+    @Action(input = "http://services.webservice.org/ReservationWebService/supprimerReservationRequest", output = "http://services.webservice.org/ReservationWebService/supprimerReservationResponse")
+    public void supprimerReservation(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Reservation arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<org.webservice.services.Reservation>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getReservationsByUserId", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetReservationsByUserId")
+    @ResponseWrapper(localName = "getReservationsByUserIdResponse", targetNamespace = "http://services.webservice.org/", className = "org.webservice.services.GetReservationsByUserIdResponse")
+    @Action(input = "http://services.webservice.org/ReservationWebService/getReservationsByUserIdRequest", output = "http://services.webservice.org/ReservationWebService/getReservationsByUserIdResponse")
+    public List<Reservation> getReservationsByUserId(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
     /**
      * 
