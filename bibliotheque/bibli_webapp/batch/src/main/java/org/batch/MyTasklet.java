@@ -58,7 +58,7 @@ public class MyTasklet implements Tasklet {
                     for (Utilisateur utilisateur : utilisateurs) {
                         if (utilisateur.getId() == emprunt.getIdUtilisateur()) {
                             to = utilisateur.getMail();
-                            nom = nom + utilisateur.getNom();
+                            nom =  utilisateur.getNom();
                         }
                     }
                     long daysBetween = ChronoUnit.DAYS.between(dateEmprunt, date);

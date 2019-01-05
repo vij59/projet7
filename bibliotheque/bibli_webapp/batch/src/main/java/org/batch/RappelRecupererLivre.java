@@ -44,27 +44,40 @@ public class RappelRecupererLivre implements Tasklet {
         String jour = " jours";
         String repousser = "";
         String texte = "";
-        String titreLivre ="";
+        String titreLivre = "";
 
         try {
 
             for (Emprunt emprunt : emprunts) {
+                LocalDate dateEmprunt = emprunt.getDateFin().toGregorianCalendar().toZonedDateTime().toLocalDate();
+                long daysBetween = ChronoUnit.DAYS.between(dateEmprunt, date);
+                daysBetween = 3 - daysBetween;
 
-                 if(!emprunt.isMailSent() && !emprunt.isRecupere()) {
-                Utilisateur utilisateur = UtilisateurwebSer.getUtilisateurById(emprunt.getIdUtilisateur());
-                            to = utilisateur.getMail();
-                            nom = nom + utilisateur.getNom();
-                Livre livre = LivreWebSer.getLivreById(emprunt.getIdLivre());
-                titreLivre = livre.getTitre();
-                empruntwebSer.setMailSentByEmpruntId(utilisateur.getId());
+                if (!emprunt.isMailSent() && !emprunt.isRecupere()) {
+                    Utilisateur utilisateur = UtilisateurwebSer.getUtilisateurById(emprunt.getIdUtilisateur());
+                    to = utilisateur.getMail();
+                    nom =  utilisateur.getNom();
+                    Livre livre = LivreWebSer.getLivreById(emprunt.getIdLivre());
+                    titreLivre = livre.getTitre();
+                    empruntwebSer.setMailSentByEmpruntId(emprunt.getId());
+                    texte = "Bonjour, vous pouvez venir récupérer le livre " + titreLivre + " que vous avez réservé.";
 
-                texte = "Bonjour, vous pouvez venir récupérer le livre "+titreLivre+ " que vous avez réservé.";
+                     mailMail.sendMail(to, nom, texte);
+                } else {
 
-                    mailMail.sendMail(to, nom, texte);
+
+                    Utilisateur utilisateur = UtilisateurwebSer.getUtilisateurById(emprunt.getIdUtilisateur());
+
+                    if (emprunt.isEnCours() && !emprunt.isRecupere() && daysBetween < 0) {
+                        empruntwebSer.livreNonRecupereByIdEmprunt(emprunt.getId());
+                       System.out.println("suppression de la reservation du livre à l'id : "+
+                               emprunt.getIdLivre() + " par l'utilisateur n°= "+ emprunt.getIdUtilisateur());
+
+                    }
                 }
 
 
-                }
+            }
 
         } catch (Exception e) {
             e.getMessage();
