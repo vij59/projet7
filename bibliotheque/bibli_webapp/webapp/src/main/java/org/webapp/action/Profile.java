@@ -1,9 +1,9 @@
 package org.webapp.action;
 
+import org.apache.struts2.ServletActionContext;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import org.apache.struts2.ServletActionContext;
 
 public class Profile {
 

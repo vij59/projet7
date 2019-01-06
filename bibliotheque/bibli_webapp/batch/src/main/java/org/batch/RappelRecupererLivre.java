@@ -56,13 +56,13 @@ public class RappelRecupererLivre implements Tasklet {
                 if (!emprunt.isMailSent() && !emprunt.isRecupere()) {
                     Utilisateur utilisateur = UtilisateurwebSer.getUtilisateurById(emprunt.getIdUtilisateur());
                     to = utilisateur.getMail();
-                    nom =  utilisateur.getNom();
+                    nom = utilisateur.getNom();
                     Livre livre = LivreWebSer.getLivreById(emprunt.getIdLivre());
                     titreLivre = livre.getTitre();
                     empruntwebSer.setMailSentByEmpruntId(emprunt.getId());
                     texte = "Bonjour, vous pouvez venir récupérer le livre " + titreLivre + " que vous avez réservé.";
 
-                     mailMail.sendMail(to, nom, texte);
+                    mailMail.sendMail(to, nom, texte);
                 } else {
 
 
@@ -70,8 +70,8 @@ public class RappelRecupererLivre implements Tasklet {
 
                     if (emprunt.isEnCours() && !emprunt.isRecupere() && daysBetween < 0) {
                         empruntwebSer.livreNonRecupereByIdEmprunt(emprunt.getId());
-                       System.out.println("suppression de la reservation du livre à l'id : "+
-                               emprunt.getIdLivre() + " par l'utilisateur n°= "+ emprunt.getIdUtilisateur());
+                        System.out.println("suppression de la reservation du livre à l'id : " +
+                                emprunt.getIdLivre() + " par l'utilisateur n°= " + emprunt.getIdUtilisateur());
 
                     }
                 }

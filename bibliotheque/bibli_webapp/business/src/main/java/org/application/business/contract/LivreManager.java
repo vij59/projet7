@@ -1,14 +1,14 @@
 package org.application.business.contract;
 
-import java.util.List;
-
 import org.webservice.services.Livre;
+
+import java.util.List;
 
 public interface LivreManager {
 
-	List<Livre> getLivres();
+    List<Livre> getLivres();
 
-	List<Livre> getLivreByRecherche(String titre, String nomAuteur);
+    List<Livre> getLivreByRecherche(String titre, String nomAuteur);
 
-	Livre getLivreById(int id);
+    Livre getLivreById(int id);
 }

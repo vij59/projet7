@@ -2,7 +2,6 @@ package org.application.consumer.impl;
 
 import org.application.consumer.contract.AbstractDAO;
 import org.application.consumer.contract.ReservationDAO;
-
 import org.application.consumer.rowmapper.ReservationRM;
 import org.application.model.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +11,6 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.sql.Types;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import static java.lang.System.currentTimeMillis;
@@ -43,11 +40,11 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
 //        Calendar now = Calendar.getInstance();
 //        Date dateReservation = now.getTime();
         java.util.Date date = new java.util.Date(currentTimeMillis());
-       java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
+        java.sql.Timestamp timestamp = new java.sql.Timestamp(date.getTime());
 
 
-      //  vParams.addValue("idLivre", preservation.getIdLivre(), Types.INTEGER);
-     //  vParams.addValue("idUser", preservation.getIdUser(), Types.INTEGER);
+        //  vParams.addValue("idLivre", preservation.getIdLivre(), Types.INTEGER);
+        //  vParams.addValue("idUser", preservation.getIdUser(), Types.INTEGER);
 
         vParams.addValue("idUser", reservation.getIdUser(), Types.INTEGER);
         vParams.addValue("idLivre", reservation.getIdLivre(), Types.INTEGER);
@@ -71,37 +68,14 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
 
     }
 
-        @Override
-        public List<Reservation>  getReservationsByBookId(int idLivre) {
-
-            String vSQL = "SELECT * FROM reservation WHERE id_livre = :id ";
-            NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
-            MapSqlParameterSource vParams = new MapSqlParameterSource("id", idLivre);
-            try {
-                List<Reservation> vList = vJdbcTemplate.query(vSQL,vParams, reservationRM);
-                return vList;
-            } catch (EmptyResultDataAccessException vEx) {
-                return null;
-            }
-        }
-
-        @Override
-        public void supprimerReservation (Reservation reservation){
-            String vSQL = "DELETE FROM reservation WHERE id = :id";
-            MapSqlParameterSource vParams = new MapSqlParameterSource();
-            vParams.addValue("id", reservation.getIdReservation(), Types.INTEGER);
-            NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
-            vJdbcTemplate.update(vSQL, vParams);
-        }
-
     @Override
-    public List<Reservation>  getReservationsByUserId(int idUser) {
+    public List<Reservation> getReservationsByBookId(int idLivre) {
 
-        String vSQL = "SELECT * FROM reservation WHERE id_user = :id";
+        String vSQL = "SELECT * FROM reservation WHERE id_livre = :id ";
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
-        MapSqlParameterSource vParams = new MapSqlParameterSource("id", idUser);
+        MapSqlParameterSource vParams = new MapSqlParameterSource("id", idLivre);
         try {
-            List<Reservation> vList = vJdbcTemplate.query(vSQL,vParams, reservationRM);
+            List<Reservation> vList = vJdbcTemplate.query(vSQL, vParams, reservationRM);
             return vList;
         } catch (EmptyResultDataAccessException vEx) {
             return null;
@@ -109,7 +83,30 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
     }
 
     @Override
-    public void annulerReservation(int idLivre, int idUser){
+    public void supprimerReservation(Reservation reservation) {
+        String vSQL = "DELETE FROM reservation WHERE id = :id";
+        MapSqlParameterSource vParams = new MapSqlParameterSource();
+        vParams.addValue("id", reservation.getIdReservation(), Types.INTEGER);
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+        vJdbcTemplate.update(vSQL, vParams);
+    }
+
+    @Override
+    public List<Reservation> getReservationsByUserId(int idUser) {
+
+        String vSQL = "SELECT * FROM reservation WHERE id_user = :id";
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+        MapSqlParameterSource vParams = new MapSqlParameterSource("id", idUser);
+        try {
+            List<Reservation> vList = vJdbcTemplate.query(vSQL, vParams, reservationRM);
+            return vList;
+        } catch (EmptyResultDataAccessException vEx) {
+            return null;
+        }
+    }
+
+    @Override
+    public void annulerReservation(int idLivre, int idUser) {
         String vSQL = "DELETE FROM reservation WHERE id_livre = :idLivre AND id_user = :idUser";
         MapSqlParameterSource vParams = new MapSqlParameterSource();
         vParams.addValue("idLivre", idLivre, Types.INTEGER);
@@ -120,12 +117,12 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
 
     @Override
     public int getNombreDeReservationsPourLivreId(int idLivre) {
-        int nbReservations=0;
+        int nbReservations = 0;
         String vSQL = "SELECT COUNT(*) FROM reservation WHERE id_livre = :id";
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
         MapSqlParameterSource vParams = new MapSqlParameterSource("id", idLivre);
         try {
-             nbReservations = vJdbcTemplate.queryForObject(vSQL, vParams, Integer.class );
+            nbReservations = vJdbcTemplate.queryForObject(vSQL, vParams, Integer.class);
 
         } catch (EmptyResultDataAccessException vEx) {
             return 0;
@@ -141,7 +138,7 @@ public class ReservationDaoImpl extends AbstractDAO implements ReservationDAO {
         vParams.addValue("id", pIdUser, Types.INTEGER);
         vParams.addValue("idLivre", pIdLivre, Types.INTEGER);
         try {
-            Reservation reservation = vJdbcTemplate.queryForObject(vSQL,vParams, reservationRM);
+            Reservation reservation = vJdbcTemplate.queryForObject(vSQL, vParams, reservationRM);
             return reservation;
         } catch (EmptyResultDataAccessException vEx) {
             return null;

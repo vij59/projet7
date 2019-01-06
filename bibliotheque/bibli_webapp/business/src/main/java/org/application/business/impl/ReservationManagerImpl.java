@@ -42,7 +42,7 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
 
     @Override
     public void annulerReservation(int idLivre, int idUser) {
-        getDaoFactory().getReservationDao().annulerReservation(idLivre,idUser);
+        getDaoFactory().getReservationDao().annulerReservation(idLivre, idUser);
     }
 
     @Override

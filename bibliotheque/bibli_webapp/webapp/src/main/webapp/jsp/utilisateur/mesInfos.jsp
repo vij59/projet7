@@ -14,26 +14,26 @@
 <body>
 <hr/>
 
-    <s:if test="%{utilisateur.rappelActif==true}">
-        Rappel Actif 5 jours avant la date de retour --
-        <s:url action="desactiverRappel" var="helloLink">
-            <s:param name="idUser"><s:property value='id'/></s:param>
-        </s:url>
-        <p>
-            <a href="${helloLink}">Désactiver</a>
-        </p>
+<s:if test="%{utilisateur.rappelActif==true}">
+    Rappel Actif 5 jours avant la date de retour --
+    <s:url action="desactiverRappel" var="helloLink">
+        <s:param name="idUser"><s:property value='id'/></s:param>
+    </s:url>
+    <p>
+        <a href="${helloLink}">Désactiver</a>
+    </p>
 
-    </s:if>
-    <s:else>
+</s:if>
+<s:else>
 
-        Rappel Inactif 5 jours avant la date de retour --
-        <s:url action="activerRappel" var="helloLink2">
-            <s:param name="idUser"><s:property value='id'/></s:param>
-        </s:url>
-        <p>
-            <a href="${helloLink2}">Activer</a>
-        </p>
-    </s:else>
+    Rappel Inactif 5 jours avant la date de retour --
+    <s:url action="activerRappel" var="helloLink2">
+        <s:param name="idUser"><s:property value='id'/></s:param>
+    </s:url>
+    <p>
+        <a href="${helloLink2}">Activer</a>
+    </p>
+</s:else>
 
 </body>
 </html>

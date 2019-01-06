@@ -1,13 +1,15 @@
 package org.webapp.action;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-
 import com.opensymphony.xwork2.ActionContext;
 import org.webapp.resource.AbstractRessource;
-import org.webservice.services.*;
+import org.webservice.services.Emprunt;
+import org.webservice.services.Livre;
+import org.webservice.services.Reservation;
+import org.webservice.services.Utilisateur;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class ListeLivres extends AbstractRessource {
 
@@ -37,6 +39,7 @@ public class ListeLivres extends AbstractRessource {
     public List<Emprunt> getMesEmpruntsDeLivres() {
         return mesEmpruntsDeLivres;
     }
+
     public void setMesEmpruntsDeLivres(List<Emprunt> mesEmpruntsDeLivres) {
         this.mesEmpruntsDeLivres = mesEmpruntsDeLivres;
     }
@@ -93,28 +96,23 @@ public class ListeLivres extends AbstractRessource {
                     Integer idLivre = livre.getId();
                     if (mesIdsEmpruntsDeLivres.contains(idLivre)) {
                         livre.setLivreEmprunteByUserId(true);
-                    }
-                    else {
+                    } else {
                         livre.setLivreEmprunteByUserId(false);
                     }
                     if (mesIdsReservations.contains(idLivre)) {
                         livre.setLivreReserveByUserId(true);
-                    }
-                    else {
+                    } else {
                         livre.setLivreReserveByUserId(false);
                     }
                 }
             }
-        }
-        catch
+        } catch
                 (Exception e) {
             e.getMessage();
         }
 
         return "success";
     }
-
-
 
 
 }

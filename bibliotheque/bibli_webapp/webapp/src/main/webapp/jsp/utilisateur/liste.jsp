@@ -46,13 +46,6 @@
                         <td><s:property value="auteur.nom"/>&nbsp;<s:property
                                 value="auteur.prenom"/></td>
 
-<td>
-    mes emprunts ID = <s:property value="livreEmprunteByUserId"/>
-   empruntable = <s:property value="empruntable"/>
-    reservable ID = <s:property value="reservable"/>
-    livreReserveByUserId= <s:property value="livreReserveByUserId"/>
-    mes emprunts ID = <s:property value="livreEmprunteByUserId"/>
-</td>
                         <td><s:property value="nbExemplaires"/></td>
                         <s:if test="#session.userMail == null">
                             <td>
@@ -70,12 +63,12 @@
 
                             </td>
                             <td>
-                                    <s:if test="%{nbReservations==1}">
-                                        1 Reservation
-                                    </s:if>
-                                    <s:elseif test="%{nbReservations>1}">
-                                        <s:property value="nbReservations"/> Reservations
-                                    </s:elseif>
+                                <s:if test="%{nbReservations==1}">
+                                    1 Reservation
+                                </s:if>
+                                <s:elseif test="%{nbReservations>1}">
+                                    <s:property value="nbReservations"/> Reservations
+                                </s:elseif>
                             </td>
                             <td></td>
                         </s:if>
@@ -122,12 +115,12 @@
 
                             </td>
                             <td>
-                                    <s:if test="%{nbReservations==1}">
-                                        1 Reservation
-                                    </s:if>
-                                    <s:elseif test="%{nbReservations>1}">
-                                        <s:property value="nbReservations"/> Reservations
-                                    </s:elseif>
+                                <s:if test="%{nbReservations==1}">
+                                    1 Reservation
+                                </s:if>
+                                <s:elseif test="%{nbReservations>1}">
+                                    <s:property value="nbReservations"/> Reservations
+                                </s:elseif>
 
                             </td>
                             <td>
@@ -135,11 +128,11 @@
 
                                     <s:if test="%{idLivre == id}">
                                         <s:if test="%{nbReservations==1}">
-                                           <s:property value="placeDansReservations"/>
+                                            <s:property value="placeDansReservations"/>
 
                                         </s:if>
                                         <s:elseif test="%{nbReservations>1}">
-                                          <s:property value="placeDansReservations"/>
+                                            <s:property value="placeDansReservations"/>
 
                                         </s:elseif>
 

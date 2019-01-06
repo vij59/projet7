@@ -5,20 +5,20 @@
 <struts>
     <package name="default" extends="struts-default">
         <!-- Action par défaut -->
-        <default-action-ref name="index" />
+        <default-action-ref name="index"/>
 
         <!-- Action "index" -->
         <action name="index">
             <result>/jsp/index.jsp</result>
         </action>
-        
-         <!-- Action listant les projets -->
-     <!--    <action name="projet_list"
-                class="org.example.demo.ticket.webapp.action.GestionProjetAction"
-                method="doList">
-            <result>/jsp/projet/list.jsp</result>
-        </action> -->
-        
-        
+
+        <!-- Action listant les projets -->
+        <!--    <action name="projet_list"
+                   class="org.example.demo.ticket.webapp.action.GestionProjetAction"
+                   method="doList">
+               <result>/jsp/projet/list.jsp</result>
+           </action> -->
+
+
     </package>
 </struts>

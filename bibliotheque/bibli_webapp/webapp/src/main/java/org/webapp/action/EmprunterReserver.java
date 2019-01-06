@@ -2,7 +2,6 @@ package org.webapp.action;
 
 
 import com.opensymphony.xwork2.ActionContext;
-
 import org.webapp.resource.AbstractRessource;
 import org.webservice.services.Emprunt;
 import org.webservice.services.Livre;
@@ -58,27 +57,27 @@ public class EmprunterReserver extends AbstractRessource {
         List<Reservation> listeReservations = getManagerFactory().getReservationManager().getListeReservations();
         List<Reservation> mesReservations = new ArrayList<>();
         for (Reservation reservation : listeReservations) {
-            if(reservation.getIdUser()==user.getId()) {
+            if (reservation.getIdUser() == user.getId()) {
                 mesReservations.add(reservation);
             }
         }
-        result="success";
+        result = "success";
         boolean dejaReserve = false;
-            for(Emprunt emprunt1 : mesEmprunts) {
-                if ((id_livre == emprunt1.getIdLivre()) && (emprunt1.isEnCours())) {
+        for (Emprunt emprunt1 : mesEmprunts) {
+            if ((id_livre == emprunt1.getIdLivre()) && (emprunt1.isEnCours())) {
+                dejaReserve = true;
+            }
+        }
+        if (mesReservations != null) {
+            for (Reservation reservation : mesReservations) {
+                if (id_livre == reservation.getIdLivre()) {
                     dejaReserve = true;
                 }
             }
-            if(mesReservations!= null) {
-                for (Reservation reservation : mesReservations) {
-                    if (id_livre == reservation.getIdLivre()) {
-                        dejaReserve = true;
-                    }
-                }
-            }
-            if(!dejaReserve) {
-                getManagerFactory().getEmpruntManager().creerEmprunt(emprunt);
-            }
+        }
+        if (!dejaReserve) {
+            getManagerFactory().getEmpruntManager().creerEmprunt(emprunt);
+        }
 
         return result;
 
@@ -88,12 +87,11 @@ public class EmprunterReserver extends AbstractRessource {
         Utilisateur user = (Utilisateur) ActionContext.getContext().getSession().get("user");
         String message = "error";
         try {
-            if(user.getId() != 0 && id_livre != 0) {
+            if (user.getId() != 0 && id_livre != 0) {
                 getManagerFactory().getReservationManager().annulerReservation(id_livre, user.getId());
                 message = "success";
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.getMessage();
         }
         return message;

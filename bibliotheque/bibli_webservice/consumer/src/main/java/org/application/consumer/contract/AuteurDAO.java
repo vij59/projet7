@@ -1,15 +1,15 @@
 package org.application.consumer.contract;
 
-import java.util.List;
-
 import org.application.model.Auteur;
+
+import java.util.List;
 
 public interface AuteurDAO {
 
-	public List<Auteur> getAuteurs();
+    public List<Auteur> getAuteurs();
 
-	public List<Auteur> getAuteurByNom(String nom);
+    public List<Auteur> getAuteurByNom(String nom);
 
-	public Auteur getAuteurById(int id);
+    public Auteur getAuteurById(int id);
 
 }

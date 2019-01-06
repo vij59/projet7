@@ -2,14 +2,14 @@ package org.application.business.contract;
 
 public interface ManagerFactory {
 
-	UtilisateurManager getUtilisateurManager();
-	
-	LivreManager getLivreManager();
-	
-	AuteurManager getAuteurManager();
-	
-	EmpruntManager getEmpruntManager();
+    UtilisateurManager getUtilisateurManager();
 
-	ReservationManager getReservationManager();
-	
+    LivreManager getLivreManager();
+
+    AuteurManager getAuteurManager();
+
+    EmpruntManager getEmpruntManager();
+
+    ReservationManager getReservationManager();
+
 }

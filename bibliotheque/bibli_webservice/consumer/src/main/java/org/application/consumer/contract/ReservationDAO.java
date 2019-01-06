@@ -20,5 +20,5 @@ public interface ReservationDAO {
 
     int getNombreDeReservationsPourLivreId(int idLivre);
 
-    Reservation getReservationByBookIdByUserId ( int idLivre, int idUser);
+    Reservation getReservationByBookIdByUserId(int idLivre, int idUser);
 }

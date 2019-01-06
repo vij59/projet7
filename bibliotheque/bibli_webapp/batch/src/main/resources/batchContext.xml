@@ -21,7 +21,7 @@
         <property name="host" value="smtp.gmail.com"/>
         <property name="port" value="587"/>
         <property name="username" value="jokoker59@gmail.com"/>
-        <property name="password" value="xxxxxxx"/>
+        <property name="password" value="Joker5959!"/>
 
         <property name="javaMailProperties">
             <props>
@@ -50,25 +50,25 @@
         <property name="mailSender" ref="mailSender"/>
     </bean>
 
-      <bean id="runScheduler" class="org.batch.Scheduler"/>
-      <bean id="myTasklet" class="org.batch.MyTasklet" scope="step"/>
+    <bean id="runScheduler" class="org.batch.Scheduler"/>
+    <bean id="myTasklet" class="org.batch.MyTasklet" scope="step"/>
 
 
-     <batch:job id="scheduledJob">
-         <batch:step id="jobStep">
-             <batch:tasklet ref="myTasklet" />
-         </batch:step>
-     </batch:job>
+    <batch:job id="scheduledJob">
+        <batch:step id="jobStep">
+            <batch:tasklet ref="myTasklet"/>
+        </batch:step>
+    </batch:job>
 
-    <bean id="runScheduler2" class="org.batch.Scheduler2"/>
-    <bean id="myTaskletTicket3" class="org.batch.MyTaskletTicket3" scope="step"/>
+    <bean id="runScheduler2" class="org.batch.SchedulerRappel5jours"/>
+    <bean id="myTaskletTicket3" class="org.batch.MyTaskletRendreLivre" scope="step"/>
     <batch:job id="scheduledJob2">
         <batch:step id="jobStep2">
             <batch:tasklet ref="myTaskletTicket3"/>
         </batch:step>
     </batch:job>
 
-    <bean id="runScheduler3" class="org.batch.Scheduler3"/>
+    <bean id="runScheduler3" class="org.batch.SchedulerRecupererLivre"/>
     <bean id="rappelRecupererLivre" class="org.batch.RappelRecupererLivre" scope="step"/>
     <batch:job id="scheduledJob3">
         <batch:step id="jobStep3">

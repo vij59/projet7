@@ -134,12 +134,12 @@
                                     format="dd/MM/yyyy"/>
                         </td>
                         <td>
-                        <s:url action="deleteReservationFromAccount" var="helloLink">
-                            <s:param name="id_livre"><s:property value='livre.id'/></s:param>
-                        </s:url>
-                        <p>
-                            <a href="${helloLink}">Annuler la réservation</a>
-                        </p>
+                            <s:url action="deleteReservationFromAccount" var="helloLink">
+                                <s:param name="id_livre"><s:property value='livre.id'/></s:param>
+                            </s:url>
+                            <p>
+                                <a href="${helloLink}">Annuler la réservation</a>
+                            </p>
                         </td>
 
                     </tr>

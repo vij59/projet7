@@ -1,8 +1,7 @@
 package org.webapp.resource;
 
-import org.application.business.contract.ManagerFactory;
-
 import com.opensymphony.xwork2.ActionSupport;
+import org.application.business.contract.ManagerFactory;
 
 
 public abstract class AbstractRessource extends ActionSupport {
@@ -12,6 +11,7 @@ public abstract class AbstractRessource extends ActionSupport {
     protected static ManagerFactory getManagerFactory() {
         return managerFactory;
     }
+
     public static void setManagerFactory(ManagerFactory pManagerFactory) {
         managerFactory = pManagerFactory;
     }

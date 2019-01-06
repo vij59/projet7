@@ -3,7 +3,6 @@ package org.application.business.impl;
 import org.application.business.contract.ReservationManager;
 import org.application.model.Reservation;
 
-import java.sql.Date;
 import java.util.List;
 
 public class ReservationManagerImpl extends AbstractManager implements ReservationManager {
@@ -32,8 +31,8 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
     @Override
     public List<Reservation> getReservationsByUserId(int userId) {
         List<Reservation> listeResa = getDaoFactory().getReservationDAO().getReservationsByUserId(userId);
-        for(Reservation reservation : listeResa) {
-            reservation.setPlaceDansReservations(getPlaceDansListeReservations(reservation.getIdLivre(),userId ));
+        for (Reservation reservation : listeResa) {
+            reservation.setPlaceDansReservations(getPlaceDansListeReservations(reservation.getIdLivre(), userId));
         }
         return listeResa;
     }
@@ -52,11 +51,11 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
     public int getPlaceDansListeReservations(int idLivre, int idUser) {
 
         List<Reservation> reservationsLivre = getDaoFactory().getReservationDAO().getReservationsByBookId(idLivre);
-        Reservation reservationsLivreByUserByBookId = getDaoFactory().getReservationDAO().getReservationByBookIdByUserId(idLivre,idUser);
-        int placeDansResa=1;
+        Reservation reservationsLivreByUserByBookId = getDaoFactory().getReservationDAO().getReservationByBookIdByUserId(idLivre, idUser);
+        int placeDansResa = 1;
         for (Reservation reservation : reservationsLivre) {
             if (reservation.getIdReservation() < reservationsLivreByUserByBookId.getIdReservation()) {
-               placeDansResa++;
+                placeDansResa++;
             }
 
         }
@@ -65,6 +64,6 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
 
     @Override
     public Reservation getReservationByBookIdByUserId(int pIdLivre, int pIdUser) {
-        return getDaoFactory().getReservationDAO().getReservationByBookIdByUserId(pIdLivre,pIdUser);
+        return getDaoFactory().getReservationDAO().getReservationByBookIdByUserId(pIdLivre, pIdUser);
     }
 }

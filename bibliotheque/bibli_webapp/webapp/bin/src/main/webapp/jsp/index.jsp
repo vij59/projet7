@@ -7,6 +7,6 @@
 </head>
 
 <body>
-    <h2>Bienvenue sur l'application Ticket utilisant Apache Struts !</h2>
+<h2>Bienvenue sur l'application Ticket utilisant Apache Struts !</h2>
 </body>
 </html>

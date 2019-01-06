@@ -1,11 +1,11 @@
 package org.application.consumer.impl;
 
-import java.util.List;
-
 import org.application.consumer.contract.EmpruntDAO;
 import org.webservice.services.Emprunt;
 import org.webservice.services.EmpruntWebservice;
 import org.webservice.services.Emprunt_Service;
+
+import java.util.List;
 
 public class EmpruntDAOImpl implements EmpruntDAO {
 
@@ -45,7 +45,7 @@ public class EmpruntDAOImpl implements EmpruntDAO {
     }
 
     @Override
-    public void rendreLivreDeLemprunt(int  idEmprunt) {
+    public void rendreLivreDeLemprunt(int idEmprunt) {
         empruntWebService.rendreLivreDeLemprunt(idEmprunt);
     }
 

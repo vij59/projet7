@@ -3,7 +3,6 @@ package org.application.consumer.rowmapper;
 import org.application.model.Livre;
 import org.springframework.jdbc.core.RowMapper;
 
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -20,8 +19,8 @@ public class LivreRM implements RowMapper<Livre> {
         livre.setIdAuteur(resultSet.getInt("id_auteur"));
         livre.setNbExemplaires(resultSet.getInt("nb_exemplaires"));
         livre.setDisponible(resultSet.getBoolean("disponible"));
-       
-       
+
+
         return livre;
     }
 }

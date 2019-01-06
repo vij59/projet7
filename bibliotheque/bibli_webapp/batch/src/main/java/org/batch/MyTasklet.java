@@ -1,23 +1,18 @@
 package org.batch;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
-import java.util.List;
-
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.webservice.services.Emprunt;
-import org.webservice.services.EmpruntWebservice;
-import org.webservice.services.Emprunt_Service;
-import org.webservice.services.Utilisateur;
-import org.webservice.services.UtilisateurWebservice;
-import org.webservice.services.Utilisateur_Service;
+import org.webservice.services.*;
+
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+import java.util.List;
 
 @Component
 public class MyTasklet implements Tasklet {
@@ -43,31 +38,38 @@ public class MyTasklet implements Tasklet {
         UtilisateurWebservice UtilisateurwebSer = Utilisateurweb.getUtilisateurWebservicePort();
         List<Utilisateur> utilisateurs = UtilisateurwebSer.getUtilisateurs();
 
+        Livre_Service LivreWeb = new Livre_Service();
+        LivreWebservice LivreWebSer = LivreWeb.getLivreWebservicePort();
+        List<Livre> livres = LivreWebSer.getLivres();
+
         Date input = new Date();
-        LocalDate date = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        date = date.plusDays(3);
+        LocalDate dateJour = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate dateDansTroisJours = dateJour.plusDays(3);
         String jour = " jours";
         String repousser = "";
         String texte = "";
+        String titreLivre = "";
 
         try {
 
             for (Emprunt emprunt : emprunts) {
+
+                Livre livre = LivreWebSer.getLivreById(emprunt.getIdLivre());
+                titreLivre = livre.getTitre();
+                body = "Vous devez rendre le livre suivant : Titre du livre = " + titreLivre + ".";
                 LocalDate dateEmprunt = emprunt.getDateFin().toGregorianCalendar().toZonedDateTime().toLocalDate();
-                if (dateEmprunt.compareTo(date) < 0) {
-                    for (Utilisateur utilisateur : utilisateurs) {
-                        if (utilisateur.getId() == emprunt.getIdUtilisateur()) {
-                            to = utilisateur.getMail();
-                            nom =  utilisateur.getNom();
-                        }
-                    }
-                    long daysBetween = ChronoUnit.DAYS.between(dateEmprunt, date);
-                    daysBetween = 3 - daysBetween;
-                    if (daysBetween > 1) {
-                        jour = " jours";
-                    } else {
-                        jour = " jour";
-                    }
+                long daysBetween = ChronoUnit.DAYS.between(dateEmprunt, dateJour);
+
+                if (daysBetween > 1) {
+                    jour = " jours";
+                } else {
+                    jour = " jour";
+                }
+                Utilisateur utilisateur = UtilisateurwebSer.getUtilisateurById(emprunt.getIdUtilisateur());
+                to = utilisateur.getMail();
+                nom = utilisateur.getNom();
+
+                if (dateEmprunt.compareTo(dateDansTroisJours) < 0) {
 
                     if (emprunt.isDejaRepousse() == false) {
                         repousser = ". Vous pouvez repousser votre date de retour d'un mois en vous connectant au site de la bibliotheque, dans votre accès personnalisé.";
@@ -91,6 +93,8 @@ public class MyTasklet implements Tasklet {
 
 
                     mailMail.sendMail(to, nom, texte);
+
+
                 }
             }
         } catch (Exception e) {

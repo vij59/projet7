@@ -1,14 +1,14 @@
 package org.application.consumer.contract;
 
-import java.util.List;
-
 import org.application.model.Utilisateur;
+
+import java.util.List;
 
 public interface UtilisateurDAO {
 
-	public List<Utilisateur> getUtilisateurs();
+    public List<Utilisateur> getUtilisateurs();
 
-	Utilisateur getUtilisateurByMail(String mail);
+    Utilisateur getUtilisateurByMail(String mail);
 
     void setRappelActif(int idUser);
 

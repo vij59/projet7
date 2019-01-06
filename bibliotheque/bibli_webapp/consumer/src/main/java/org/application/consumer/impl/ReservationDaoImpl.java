@@ -27,7 +27,7 @@ public class ReservationDaoImpl implements ReservationDAO {
     @Override
     public void creerReservation(Reservation reservation) {
 
-         reservationWebService.creerReservation(reservation);
+        reservationWebService.creerReservation(reservation);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class ReservationDaoImpl implements ReservationDAO {
 
     @Override
     public void annulerReservation(int idLivre, int idUser) {
-         reservationWebService.annulerReservation(idLivre,idUser);
+        reservationWebService.annulerReservation(idLivre, idUser);
     }
 
     @Override

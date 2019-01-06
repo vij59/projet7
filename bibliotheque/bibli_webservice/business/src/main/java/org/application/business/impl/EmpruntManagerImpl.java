@@ -1,12 +1,12 @@
 package org.application.business.impl;
 
-import java.util.Date;
-import java.util.List;
-
 import org.application.business.contract.EmpruntManager;
 import org.application.model.Emprunt;
 import org.application.model.Livre;
 import org.application.model.Reservation;
+
+import java.util.Date;
+import java.util.List;
 
 public class EmpruntManagerImpl extends AbstractManager implements EmpruntManager {
 
@@ -109,14 +109,13 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
 
             Livre livre = getDaoFactory().getLivreDAO().getLivreById(emprunt.getIdLivre());
             if (emprunt.getDateFin().compareTo(dateDuJour) <= 0) {
-                if(emprunt.isMailSent()) {
+                if (emprunt.isMailSent()) {
                     livreNonRecupereByIdEmprunt(emprunt.getId());
                 }
                 emprunt.setRepoussable(false);
                 if (emprunt.getStatut().equals("rendu")) {
                     emprunt.setStatut("rendu");
-                }
-                else {
+                } else {
                     emprunt.setStatut("à rendre");
                 }
 
@@ -186,15 +185,14 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
             emprunt1.setIdLivre(emprunt.getIdLivre());
             emprunt1.setIdUtilisateur(premiereReservation.getIdUser());
             emprunt1.setMailSent(false);
-            if(premiereReservation.getIdReservation()!=0) {
+            if (premiereReservation.getIdReservation() != 0) {
                 getDaoFactory().getEmpruntDAO().creerEmprunt(emprunt1);
 
                 // on supprime la réservation
                 getDaoFactory().getReservationDAO().supprimerReservation(premiereReservation);
                 // Reservation reservation = getDaoFactory().getReservationDAO().
             }
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             e.getMessage();
         }
 

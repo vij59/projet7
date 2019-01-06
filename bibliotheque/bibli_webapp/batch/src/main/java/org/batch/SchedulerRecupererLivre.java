@@ -1,9 +1,5 @@
 package org.batch;
 
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -11,16 +7,13 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-public class Scheduler2 {
-
-    //private static final Logger LOGGER = LogManager.getLogger(Scheduler.class);
-
+public class SchedulerRecupererLivre {
     @Autowired
     private JobLauncher jobLauncher;
 
 
     @Autowired
-    @Qualifier("scheduledJob2")
+    @Qualifier("scheduledJob3")
     private Job job;
 
     public void run() {

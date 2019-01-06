@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java pour getById complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="getById">
  *   &lt;complexContent>
@@ -22,12 +22,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getById", propOrder = {
-    "arg0"
+        "arg0"
 })
 public class GetById {
 
@@ -35,7 +33,6 @@ public class GetById {
 
     /**
      * Obtient la valeur de la propriété arg0.
-     * 
      */
     public long getArg0() {
         return arg0;
@@ -43,7 +40,6 @@ public class GetById {
 
     /**
      * Définit la valeur de la propriété arg0.
-     * 
      */
     public void setArg0(long value) {
         this.arg0 = value;

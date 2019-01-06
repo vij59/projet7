@@ -4,8 +4,6 @@ import com.opensymphony.xwork2.ActionContext;
 import org.webapp.resource.AbstractRessource;
 import org.webservice.services.Utilisateur;
 
-import java.util.List;
-
 public class UtilisateurInfos extends AbstractRessource {
 
     private static final long serialVersionUID = 1L;
@@ -30,22 +28,24 @@ public class UtilisateurInfos extends AbstractRessource {
 
     /**
      * Action listant les {@link Projet}
+     *
      * @return success
      */
 
-    public String execute(){
+    public String execute() {
         Utilisateur user = (Utilisateur) ActionContext.getContext().getSession().get("user");
         utilisateur = getManagerFactory().getUtilisateurManager().getUtilisateurById(user.getId());
         return "success";
     }
 
-        public String desactiverRappel() {
+    public String desactiverRappel() {
         Utilisateur user = (Utilisateur) ActionContext.getContext().getSession().get("user");
-            utilisateur = getManagerFactory().getUtilisateurManager().getUtilisateurById(user.getId());
+        utilisateur = getManagerFactory().getUtilisateurManager().getUtilisateurById(user.getId());
         getManagerFactory().getUtilisateurManager().setRappelInactifById(user.getId());
 
         return "success";
     }
+
     public String activerRappel() {
         Utilisateur user = (Utilisateur) ActionContext.getContext().getSession().get("user");
         utilisateur = getManagerFactory().getUtilisateurManager().getUtilisateurById(user.getId());

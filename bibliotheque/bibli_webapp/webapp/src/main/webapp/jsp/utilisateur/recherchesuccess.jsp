@@ -53,12 +53,12 @@
 
                             </td>
                             <td>
-                                    <s:if test="%{nbReservations==1}">
-                                        1 Reservation
-                                    </s:if>
-                                    <s:elseif test="%{nbReservations>1}">
-                                        <s:property value="nbReservations"/> Reservations
-                                    </s:elseif>
+                                <s:if test="%{nbReservations==1}">
+                                    1 Reservation
+                                </s:if>
+                                <s:elseif test="%{nbReservations>1}">
+                                    <s:property value="nbReservations"/> Reservations
+                                </s:elseif>
                             </td>
                             <td></td>
                             <td>
@@ -110,15 +110,15 @@
 
                             </td>
                             <td>
-                                    <s:if test="%{nbReservations==1}">
-                                        1 Reservation
-                                    </s:if>
-                                    <s:elseif test="%{nbReservations>1}">
-                                        <s:property value="nbReservations"/> Reservations
-                                    </s:elseif>
-                                    <s:else>
-                                        Pas de réservation
-                                    </s:else>
+                                <s:if test="%{nbReservations==1}">
+                                    1 Reservation
+                                </s:if>
+                                <s:elseif test="%{nbReservations>1}">
+                                    <s:property value="nbReservations"/> Reservations
+                                </s:elseif>
+                                <s:else>
+                                    Pas de réservation
+                                </s:else>
                             </td>
                             <td>
                                 <s:iterator var="resa" value="mesReservations">

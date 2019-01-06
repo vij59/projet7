@@ -1,28 +1,28 @@
 package org.application.consumer.contract;
 
-import java.util.List;
-
 import org.webservice.services.Emprunt;
+
+import java.util.List;
 
 public interface EmpruntDAO {
 
-	List<Emprunt> getEmprunts();
+    List<Emprunt> getEmprunts();
 
-	void prolongerEmprunt(int emprunt);
+    void prolongerEmprunt(int emprunt);
 
-	List<Emprunt>getEmpruntByUserId(int idUser);
-	
-	List<Emprunt>getEmpruntsEnCours();
+    List<Emprunt> getEmpruntByUserId(int idUser);
 
-	void creerEmprunt(Emprunt emprunt);
+    List<Emprunt> getEmpruntsEnCours();
 
-	void rendreLivreDeLemprunt(int idEmprunt);
+    void creerEmprunt(Emprunt emprunt);
 
-	Emprunt getEmpruntById(int idEmprunt) ;
+    void rendreLivreDeLemprunt(int idEmprunt);
+
+    Emprunt getEmpruntById(int idEmprunt);
 
     void recupererLivreByIdEmprunt(int idEmprunt);
 
-	void livreNonRecupereByIdEmprunt(int idEmprunt);
+    void livreNonRecupereByIdEmprunt(int idEmprunt);
 
-	List<Emprunt>getEmpruntsEnCoursByUserId(int idUser);
+    List<Emprunt> getEmpruntsEnCoursByUserId(int idUser);
 }

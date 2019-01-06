@@ -1,10 +1,9 @@
 package org.application.consumer.contract;
 
-import javax.inject.Inject;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.inject.Named;
 import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class AbstractDAO {
 
@@ -16,8 +15,9 @@ public abstract class AbstractDAO {
     protected DataSource getDataSource() {
         return dataSource;
     }
+
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-	
+
 }

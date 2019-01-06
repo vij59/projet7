@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java pour validerLogin complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="validerLogin">
  *   &lt;complexContent>
@@ -23,13 +23,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "validerLogin", propOrder = {
-    "arg0",
-    "arg1"
+        "arg0",
+        "arg1"
 })
 public class ValiderLogin {
 
@@ -38,11 +36,9 @@ public class ValiderLogin {
 
     /**
      * Obtient la valeur de la propriété arg0.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Utilisateur }
-     *     
+     *
+     * @return possible object is
+     * {@link Utilisateur }
      */
     public Utilisateur getArg0() {
         return arg0;
@@ -50,11 +46,9 @@ public class ValiderLogin {
 
     /**
      * Définit la valeur de la propriété arg0.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Utilisateur }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Utilisateur }
      */
     public void setArg0(Utilisateur value) {
         this.arg0 = value;
@@ -62,11 +56,9 @@ public class ValiderLogin {
 
     /**
      * Obtient la valeur de la propriété arg1.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getArg1() {
         return arg1;
@@ -74,11 +66,9 @@ public class ValiderLogin {
 
     /**
      * Définit la valeur de la propriété arg1.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setArg1(String value) {
         this.arg1 = value;

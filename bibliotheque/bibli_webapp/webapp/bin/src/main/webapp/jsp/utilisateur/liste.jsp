@@ -9,19 +9,19 @@
 </head>
 
 <body>
-    <h2>Liste des projets</h2>
+<h2>Liste des projets</h2>
 
-    <ul>
-        <s:iterator value="listeUtilisateurs">
-            <li>
-               
-                - Responsable :
-                <s:a action="utilisateur_detail">
-                    <s:param name="id" value="responsable.id" />
-                    <s:property value="responsable.prenom"/> <s:property value="responsable.nom"/>
-                </s:a>
-            </li>
-        </s:iterator>
-    </ul>
+<ul>
+    <s:iterator value="listeUtilisateurs">
+        <li>
+
+            - Responsable :
+            <s:a action="utilisateur_detail">
+                <s:param name="id" value="responsable.id"/>
+                <s:property value="responsable.prenom"/> <s:property value="responsable.nom"/>
+            </s:a>
+        </li>
+    </s:iterator>
+</ul>
 </body>
 </html>

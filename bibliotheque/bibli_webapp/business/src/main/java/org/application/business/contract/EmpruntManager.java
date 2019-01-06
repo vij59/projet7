@@ -1,28 +1,28 @@
 package org.application.business.contract;
 
-import java.util.List;
-
 import org.webservice.services.Emprunt;
+
+import java.util.List;
 
 public interface EmpruntManager {
 
-	List<Emprunt> getEmprunts();
+    List<Emprunt> getEmprunts();
 
-	void prolongerEmprunt(int emprunt);
+    void prolongerEmprunt(int emprunt);
 
-	List<Emprunt>getEmpruntByUserId(int idUser);
+    List<Emprunt> getEmpruntByUserId(int idUser);
 
-	List<Emprunt> getEmpruntsEnCours();
+    List<Emprunt> getEmpruntsEnCours();
 
-	void creerEmprunt(Emprunt emprunt);
+    void creerEmprunt(Emprunt emprunt);
 
-	void rendreLivreDeLemprunt(int idEmprunt);
+    void rendreLivreDeLemprunt(int idEmprunt);
 
-	Emprunt getEmpruntById(int idEmprunt) ;
+    Emprunt getEmpruntById(int idEmprunt);
 
-	List<Emprunt>  getMesEmpruntsEnCours(int idUser);
+    List<Emprunt> getMesEmpruntsEnCours(int idUser);
 
     void recupererLivreByIdEmprunt(int idEmprunt);
 
-	void livreNonRecupereByIdEmprunt(int idEmprunt);
+    void livreNonRecupereByIdEmprunt(int idEmprunt);
 }
