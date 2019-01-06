@@ -117,7 +117,7 @@
                                     <s:property value="nbReservations"/> Reservations
                                 </s:elseif>
                                 <s:else>
-                                    
+
                                 </s:else>
                             </td>
                             <td>
