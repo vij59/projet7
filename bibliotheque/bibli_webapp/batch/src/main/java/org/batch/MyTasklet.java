@@ -14,6 +14,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+
 @Component
 public class MyTasklet implements Tasklet {
 
@@ -58,7 +60,7 @@ public class MyTasklet implements Tasklet {
                 titreLivre = livre.getTitre();
                 body = "Vous devez rendre le livre suivant : Titre du livre = " + titreLivre + ".";
                 LocalDate dateEmprunt = emprunt.getDateFin().toGregorianCalendar().toZonedDateTime().toLocalDate();
-                long daysBetween = ChronoUnit.DAYS.between(dateEmprunt, dateJour);
+                long daysBetween = - DAYS.between(dateEmprunt, dateJour);
 
                 if (daysBetween > 1) {
                     jour = " jours";
