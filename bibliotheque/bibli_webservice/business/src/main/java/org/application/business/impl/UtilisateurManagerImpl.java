@@ -20,11 +20,7 @@ public class UtilisateurManagerImpl extends AbstractManager implements Utilisate
 
         for (Utilisateur user : listeUtilisateurs) {
             if (user.getMail().equals(mail)) {
-                if (user.getMdp().equals(mdp)) {
-                    res = true;
-                } else {
-                    res = false;
-                }
+                res = user.getMdp().equals(mdp);
             }
         }
         return res;

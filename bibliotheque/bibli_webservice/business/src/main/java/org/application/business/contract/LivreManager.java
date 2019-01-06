@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 public interface LivreManager {
-    public List<Livre> getLivres();
+    List<Livre> getLivres();
 
     void creerLivre(Livre livre);
 

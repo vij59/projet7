@@ -41,11 +41,7 @@ public class LivreDaoImpl extends AbstractDAO implements LivreDAO {
         vParams.addValue("date_publication", livre.getAnneeSortie(), Types.DATE);
         vParams.addValue("nb_exemplaires", livre.getNbExemplaires(), Types.INTEGER);
         boolean disponibility = true;
-        if (livre.getNbExemplaires() > 0) {
-            disponibility = true;
-        } else {
-            disponibility = false;
-        }
+        disponibility = livre.getNbExemplaires() > 0;
         vParams.addValue("disponible", disponibility, Types.BOOLEAN);
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
         vJdbcTemplate.update(vSQL, vParams);

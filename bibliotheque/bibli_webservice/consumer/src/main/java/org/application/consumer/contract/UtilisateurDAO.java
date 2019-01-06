@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UtilisateurDAO {
 
-    public List<Utilisateur> getUtilisateurs();
+    List<Utilisateur> getUtilisateurs();
 
     Utilisateur getUtilisateurByMail(String mail);
 

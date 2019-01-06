@@ -8,7 +8,7 @@ public interface AuteurManager {
 
     List<Auteur> getAuteurByNom(String nom);
 
-    public List<Auteur> getAuteurs();
+    List<Auteur> getAuteurs();
 
     Auteur getAuteurById(int i);
 

@@ -10,9 +10,7 @@ import org.webservice.services.*;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 import static java.time.temporal.ChronoUnit.DAYS;
@@ -59,8 +57,8 @@ public class MyTaskletRendreLivre implements Tasklet {
 
             for (Utilisateur utilisateur : utilisateurs) {
                 String listeTitreLivres = "";
-               int x = 0;
-               // nom = utilisateur.getNom();
+                int x = 0;
+                // nom = utilisateur.getNom();
                 List<Emprunt> emprunts = empruntwebSer.getEmpruntsEnCoursByUserId(utilisateur.getId());
                 for (Emprunt emprunt : emprunts) {
 
@@ -70,7 +68,7 @@ public class MyTaskletRendreLivre implements Tasklet {
                         Livre livre = LivreWebSer.getLivreById(emprunt.getIdLivre());
                         //  listeTitreLivres.add(livre.getTitre() + " Date de retour normalement prévu =" + emprunt.getDateFin());
 
-                        long daysBetween = - DAYS.between(dateEmprunt, dateJour);
+                        long daysBetween = -DAYS.between(dateEmprunt, dateJour);
 
                         if (daysBetween > 1) {
                             jour = " jours";
@@ -78,13 +76,13 @@ public class MyTaskletRendreLivre implements Tasklet {
                             jour = " jour";
                         }
 
-                        System.out.print(" days between  emprunt " + emprunt.getId()+" = " +daysBetween);
+                        System.out.print(" days between  emprunt " + emprunt.getId() + " = " + daysBetween);
                         if (daysBetween < 6 && rappelActif == true) {
                             nom = utilisateur.getNom();
                             to = utilisateur.getMail();
                             //  SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
                             // String  DateToStr = format.format(emprunt.getDateFin().toGregorianCalendar().toZonedDateTime().toLocalDate());
-                            body= "Vous devez retourner certains ouvrages sous " + daysBetween+" jours.";
+                            body = "Vous devez retourner certains ouvrages sous " + daysBetween + " jours.";
                             listeTitreLivres = listeTitreLivres + " \n" + livre.getTitre() + " - date de retour" +
                                     " prévue = " + dateEmprunt;
                             x++;
@@ -95,7 +93,7 @@ public class MyTaskletRendreLivre implements Tasklet {
                     if (x > 0) {
 
                         mailMail.sendMail(to, nom, body + listeTitreLivres);
-                        System.out.println("task Rendrec livre " +to + " " + listeTitreLivres + " nom = " +nom );
+                        System.out.println("task Rendrec livre " + to + " " + listeTitreLivres + " nom = " + nom);
                         // System.out.println("task Rendrec livre " +to + " " + livresArendre + " nom = " +nom);
                     }
                     //   utilisateursLivres.put(utilisateur, empruntwebSer.getEmpruntsEnCoursByUserId(utilisateur.getId()));

@@ -19,7 +19,7 @@ public class RappelRecupererLivre implements Tasklet {
     private MailMail mailMail;
 
     @Override
-    public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
+    public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) {
         String from = "jokoker59@gmail.com";
         String nom = "Monsieur ";
         String to = "ed.vigier@gmail.com";

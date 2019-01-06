@@ -78,11 +78,7 @@ public class EmpruntManagerImpl extends AbstractManager implements EmpruntManage
                 }
             }
 
-            if (livre.getNbRestant() <= 0) {
-                dispo = false;
-            } else {
-                dispo = true;
-            }
+            dispo = livre.getNbRestant() > 0;
         } else {
             if (livre.getNbExemplaires() >= 1) {
                 dispo = true;

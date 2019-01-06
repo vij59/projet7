@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UtilisateurManager {
 
-    public List<Utilisateur> getUtilisateurs();
+    List<Utilisateur> getUtilisateurs();
 
     boolean validerLogin(String mail, String mdp);
 
