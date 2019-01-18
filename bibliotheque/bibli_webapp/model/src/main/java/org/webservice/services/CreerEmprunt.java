@@ -1,4 +1,3 @@
-
 package org.webservice.services;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java pour creerEmprunt complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="creerEmprunt">
  *   &lt;complexContent>
@@ -22,12 +21,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "creerEmprunt", propOrder = {
-    "arg0"
+        "arg0"
 })
 public class CreerEmprunt {
 
@@ -35,11 +32,9 @@ public class CreerEmprunt {
 
     /**
      * Obtient la valeur de la propriété arg0.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Emprunt }
-     *     
+     *
+     * @return possible object is
+     * {@link Emprunt }
      */
     public Emprunt getArg0() {
         return arg0;
@@ -47,11 +42,9 @@ public class CreerEmprunt {
 
     /**
      * Définit la valeur de la propriété arg0.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Emprunt }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Emprunt }
      */
     public void setArg0(Emprunt value) {
         this.arg0 = value;

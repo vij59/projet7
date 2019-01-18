@@ -1,4 +1,3 @@
-
 package org.webservice.services;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java pour getEmpruntByIdResponse complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="getEmpruntByIdResponse">
  *   &lt;complexContent>
@@ -23,12 +22,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getEmpruntByIdResponse", propOrder = {
-    "_return"
+        "_return"
 })
 public class GetEmpruntByIdResponse {
 
@@ -37,11 +34,9 @@ public class GetEmpruntByIdResponse {
 
     /**
      * Obtient la valeur de la propriété return.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Emprunt }
-     *     
+     *
+     * @return possible object is
+     * {@link Emprunt }
      */
     public Emprunt getReturn() {
         return _return;
@@ -49,11 +44,9 @@ public class GetEmpruntByIdResponse {
 
     /**
      * Définit la valeur de la propriété return.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Emprunt }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Emprunt }
      */
     public void setReturn(Emprunt value) {
         this._return = value;

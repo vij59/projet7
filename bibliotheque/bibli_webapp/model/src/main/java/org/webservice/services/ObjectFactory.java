@@ -1,4 +1,3 @@
-
 package org.webservice.services;
 
 import javax.xml.bind.JAXBElement;
@@ -8,18 +7,17 @@ import javax.xml.namespace.QName;
 
 
 /**
- * This object contains factory methods for each 
- * Java content interface and Java element interface 
- * generated in the org.webservice.services package. 
- * <p>An ObjectFactory allows you to programatically 
- * construct new instances of the Java representation 
- * for XML content. The Java representation of XML 
- * content can consist of schema derived interfaces 
- * and classes representing the binding of schema 
- * type definitions, element declarations and model 
- * groups.  Factory methods for each of these are 
+ * This object contains factory methods for each
+ * Java content interface and Java element interface
+ * generated in the org.webservice.services package.
+ * <p>An ObjectFactory allows you to programatically
+ * construct new instances of the Java representation
+ * for XML content. The Java representation of XML
+ * content can consist of schema derived interfaces
+ * and classes representing the binding of schema
+ * type definitions, element declarations and model
+ * groups.  Factory methods for each of these are
  * provided in this class.
- * 
  */
 @XmlRegistry
 public class ObjectFactory {
@@ -47,14 +45,12 @@ public class ObjectFactory {
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.webservice.services
-     * 
      */
     public ObjectFactory() {
     }
 
     /**
      * Create an instance of {@link GetNombreDeReservationsPourLivreIdResponse }
-     * 
      */
     public GetNombreDeReservationsPourLivreIdResponse createGetNombreDeReservationsPourLivreIdResponse() {
         return new GetNombreDeReservationsPourLivreIdResponse();
@@ -62,7 +58,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link CreerReservation }
-     * 
      */
     public CreerReservation createCreerReservation() {
         return new CreerReservation();
@@ -70,7 +65,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetReservationsByUserIdResponse }
-     * 
      */
     public GetReservationsByUserIdResponse createGetReservationsByUserIdResponse() {
         return new GetReservationsByUserIdResponse();
@@ -78,7 +72,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetNombreDeReservationsPourLivreId }
-     * 
      */
     public GetNombreDeReservationsPourLivreId createGetNombreDeReservationsPourLivreId() {
         return new GetNombreDeReservationsPourLivreId();
@@ -86,7 +79,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link CreerReservationResponse }
-     * 
      */
     public CreerReservationResponse createCreerReservationResponse() {
         return new CreerReservationResponse();
@@ -94,7 +86,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetListeReservationsByBookIdResponse }
-     * 
      */
     public GetListeReservationsByBookIdResponse createGetListeReservationsByBookIdResponse() {
         return new GetListeReservationsByBookIdResponse();
@@ -102,7 +93,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetPlaceDansListeReservationsBookUser }
-     * 
      */
     public GetPlaceDansListeReservationsBookUser createGetPlaceDansListeReservationsBookUser() {
         return new GetPlaceDansListeReservationsBookUser();
@@ -110,7 +100,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetReservationByBookIdByUserId }
-     * 
      */
     public GetReservationByBookIdByUserId createGetReservationByBookIdByUserId() {
         return new GetReservationByBookIdByUserId();
@@ -118,7 +107,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetListeReservations }
-     * 
      */
     public GetListeReservations createGetListeReservations() {
         return new GetListeReservations();
@@ -126,7 +114,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link SupprimerReservation }
-     * 
      */
     public SupprimerReservation createSupprimerReservation() {
         return new SupprimerReservation();
@@ -134,7 +121,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link AnnulerReservation }
-     * 
      */
     public AnnulerReservation createAnnulerReservation() {
         return new AnnulerReservation();
@@ -142,7 +128,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link SupprimerReservationResponse }
-     * 
      */
     public SupprimerReservationResponse createSupprimerReservationResponse() {
         return new SupprimerReservationResponse();
@@ -150,7 +135,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetListeReservationsByBookId }
-     * 
      */
     public GetListeReservationsByBookId createGetListeReservationsByBookId() {
         return new GetListeReservationsByBookId();
@@ -158,7 +142,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetPremiereReservationDuLivreByIdResponse }
-     * 
      */
     public GetPremiereReservationDuLivreByIdResponse createGetPremiereReservationDuLivreByIdResponse() {
         return new GetPremiereReservationDuLivreByIdResponse();
@@ -166,7 +149,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetPlaceDansListeReservationsBookUserResponse }
-     * 
      */
     public GetPlaceDansListeReservationsBookUserResponse createGetPlaceDansListeReservationsBookUserResponse() {
         return new GetPlaceDansListeReservationsBookUserResponse();
@@ -174,7 +156,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetPremiereReservationDuLivreById }
-     * 
      */
     public GetPremiereReservationDuLivreById createGetPremiereReservationDuLivreById() {
         return new GetPremiereReservationDuLivreById();
@@ -182,7 +163,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetListeReservationsResponse }
-     * 
      */
     public GetListeReservationsResponse createGetListeReservationsResponse() {
         return new GetListeReservationsResponse();
@@ -190,7 +170,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link AnnulerReservationResponse }
-     * 
      */
     public AnnulerReservationResponse createAnnulerReservationResponse() {
         return new AnnulerReservationResponse();
@@ -198,7 +177,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetReservationByBookIdByUserIdResponse }
-     * 
      */
     public GetReservationByBookIdByUserIdResponse createGetReservationByBookIdByUserIdResponse() {
         return new GetReservationByBookIdByUserIdResponse();
@@ -206,7 +184,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link GetReservationsByUserId }
-     * 
      */
     public GetReservationsByUserId createGetReservationsByUserId() {
         return new GetReservationsByUserId();
@@ -214,7 +191,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Livre }
-     * 
      */
     public Livre createLivre() {
         return new Livre();
@@ -222,7 +198,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Auteur }
-     * 
      */
     public Auteur createAuteur() {
         return new Auteur();
@@ -230,7 +205,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Reservation }
-     * 
      */
     public Reservation createReservation() {
         return new Reservation();
@@ -238,7 +212,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AnnulerReservation }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "annulerReservation")
     public JAXBElement<AnnulerReservation> createAnnulerReservation(AnnulerReservation value) {
@@ -247,7 +220,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SupprimerReservationResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "supprimerReservationResponse")
     public JAXBElement<SupprimerReservationResponse> createSupprimerReservationResponse(SupprimerReservationResponse value) {
@@ -256,7 +228,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetListeReservationsByBookId }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getListeReservationsByBookId")
     public JAXBElement<GetListeReservationsByBookId> createGetListeReservationsByBookId(GetListeReservationsByBookId value) {
@@ -265,7 +236,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetPremiereReservationDuLivreByIdResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getPremiereReservationDuLivreByIdResponse")
     public JAXBElement<GetPremiereReservationDuLivreByIdResponse> createGetPremiereReservationDuLivreByIdResponse(GetPremiereReservationDuLivreByIdResponse value) {
@@ -274,7 +244,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetPlaceDansListeReservationsBookUserResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getPlaceDansListeReservationsBookUserResponse")
     public JAXBElement<GetPlaceDansListeReservationsBookUserResponse> createGetPlaceDansListeReservationsBookUserResponse(GetPlaceDansListeReservationsBookUserResponse value) {
@@ -283,7 +252,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetPremiereReservationDuLivreById }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getPremiereReservationDuLivreById")
     public JAXBElement<GetPremiereReservationDuLivreById> createGetPremiereReservationDuLivreById(GetPremiereReservationDuLivreById value) {
@@ -292,7 +260,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetListeReservationsResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getListeReservationsResponse")
     public JAXBElement<GetListeReservationsResponse> createGetListeReservationsResponse(GetListeReservationsResponse value) {
@@ -301,7 +268,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AnnulerReservationResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "annulerReservationResponse")
     public JAXBElement<AnnulerReservationResponse> createAnnulerReservationResponse(AnnulerReservationResponse value) {
@@ -310,7 +276,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetReservationByBookIdByUserIdResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getReservationByBookIdByUserIdResponse")
     public JAXBElement<GetReservationByBookIdByUserIdResponse> createGetReservationByBookIdByUserIdResponse(GetReservationByBookIdByUserIdResponse value) {
@@ -319,7 +284,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetReservationsByUserId }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getReservationsByUserId")
     public JAXBElement<GetReservationsByUserId> createGetReservationsByUserId(GetReservationsByUserId value) {
@@ -328,7 +292,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetNombreDeReservationsPourLivreIdResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getNombreDeReservationsPourLivreIdResponse")
     public JAXBElement<GetNombreDeReservationsPourLivreIdResponse> createGetNombreDeReservationsPourLivreIdResponse(GetNombreDeReservationsPourLivreIdResponse value) {
@@ -337,7 +300,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CreerReservation }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "creerReservation")
     public JAXBElement<CreerReservation> createCreerReservation(CreerReservation value) {
@@ -346,7 +308,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetReservationsByUserIdResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getReservationsByUserIdResponse")
     public JAXBElement<GetReservationsByUserIdResponse> createGetReservationsByUserIdResponse(GetReservationsByUserIdResponse value) {
@@ -355,7 +316,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CreerReservationResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "creerReservationResponse")
     public JAXBElement<CreerReservationResponse> createCreerReservationResponse(CreerReservationResponse value) {
@@ -364,7 +324,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetListeReservationsByBookIdResponse }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getListeReservationsByBookIdResponse")
     public JAXBElement<GetListeReservationsByBookIdResponse> createGetListeReservationsByBookIdResponse(GetListeReservationsByBookIdResponse value) {
@@ -373,7 +332,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetPlaceDansListeReservationsBookUser }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getPlaceDansListeReservationsBookUser")
     public JAXBElement<GetPlaceDansListeReservationsBookUser> createGetPlaceDansListeReservationsBookUser(GetPlaceDansListeReservationsBookUser value) {
@@ -382,7 +340,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetNombreDeReservationsPourLivreId }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getNombreDeReservationsPourLivreId")
     public JAXBElement<GetNombreDeReservationsPourLivreId> createGetNombreDeReservationsPourLivreId(GetNombreDeReservationsPourLivreId value) {
@@ -391,7 +348,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetReservationByBookIdByUserId }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getReservationByBookIdByUserId")
     public JAXBElement<GetReservationByBookIdByUserId> createGetReservationByBookIdByUserId(GetReservationByBookIdByUserId value) {
@@ -400,7 +356,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetListeReservations }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "getListeReservations")
     public JAXBElement<GetListeReservations> createGetListeReservations(GetListeReservations value) {
@@ -409,7 +364,6 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SupprimerReservation }{@code >}}
-     * 
      */
     @XmlElementDecl(namespace = "http://services.webservice.org/", name = "supprimerReservation")
     public JAXBElement<SupprimerReservation> createSupprimerReservation(SupprimerReservation value) {

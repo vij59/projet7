@@ -1,4 +1,3 @@
-
 package org.webservice.services;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java pour getNombreDeReservationsPourLivreIdResponse complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="getNombreDeReservationsPourLivreIdResponse">
  *   &lt;complexContent>
@@ -23,12 +22,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getNombreDeReservationsPourLivreIdResponse", propOrder = {
-    "_return"
+        "_return"
 })
 public class GetNombreDeReservationsPourLivreIdResponse {
 
@@ -37,7 +34,6 @@ public class GetNombreDeReservationsPourLivreIdResponse {
 
     /**
      * Obtient la valeur de la propriété return.
-     * 
      */
     public int getReturn() {
         return _return;
@@ -45,7 +41,6 @@ public class GetNombreDeReservationsPourLivreIdResponse {
 
     /**
      * Définit la valeur de la propriété return.
-     * 
      */
     public void setReturn(int value) {
         this._return = value;

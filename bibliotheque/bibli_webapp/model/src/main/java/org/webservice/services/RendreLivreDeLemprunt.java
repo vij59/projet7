@@ -1,4 +1,3 @@
-
 package org.webservice.services;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java pour rendreLivreDeLemprunt complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="rendreLivreDeLemprunt">
  *   &lt;complexContent>
@@ -22,12 +21,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "rendreLivreDeLemprunt", propOrder = {
-    "arg0"
+        "arg0"
 })
 public class RendreLivreDeLemprunt {
 
@@ -35,7 +32,6 @@ public class RendreLivreDeLemprunt {
 
     /**
      * Obtient la valeur de la propriété arg0.
-     * 
      */
     public int getArg0() {
         return arg0;
@@ -43,7 +39,6 @@ public class RendreLivreDeLemprunt {
 
     /**
      * Définit la valeur de la propriété arg0.
-     * 
      */
     public void setArg0(int value) {
         this.arg0 = value;

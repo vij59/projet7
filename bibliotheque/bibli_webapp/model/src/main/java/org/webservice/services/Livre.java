@@ -1,4 +1,3 @@
-
 package org.webservice.services;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Classe Java pour livre complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="livre">
  *   &lt;complexContent>
@@ -37,25 +36,23 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "livre", propOrder = {
-    "anneeSortie",
-    "auteur",
-    "dateRetourProche",
-    "disponible",
-    "empruntable",
-    "id",
-    "idAuteur",
-    "livreEmprunteByUserId",
-    "livreReserveByUserId",
-    "nbExemplaires",
-    "nbReservations",
-    "nbRestant",
-    "reservable",
-    "titre"
+        "anneeSortie",
+        "auteur",
+        "dateRetourProche",
+        "disponible",
+        "empruntable",
+        "id",
+        "idAuteur",
+        "livreEmprunteByUserId",
+        "livreReserveByUserId",
+        "nbExemplaires",
+        "nbReservations",
+        "nbRestant",
+        "reservable",
+        "titre"
 })
 public class Livre {
 
@@ -78,11 +75,9 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété anneeSortie.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is
+     * {@link XMLGregorianCalendar }
      */
     public XMLGregorianCalendar getAnneeSortie() {
         return anneeSortie;
@@ -90,11 +85,9 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété anneeSortie.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link XMLGregorianCalendar }
      */
     public void setAnneeSortie(XMLGregorianCalendar value) {
         this.anneeSortie = value;
@@ -102,11 +95,9 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété auteur.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Auteur }
-     *     
+     *
+     * @return possible object is
+     * {@link Auteur }
      */
     public Auteur getAuteur() {
         return auteur;
@@ -114,11 +105,9 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété auteur.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Auteur }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Auteur }
      */
     public void setAuteur(Auteur value) {
         this.auteur = value;
@@ -126,11 +115,9 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété dateRetourProche.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is
+     * {@link XMLGregorianCalendar }
      */
     public XMLGregorianCalendar getDateRetourProche() {
         return dateRetourProche;
@@ -138,11 +125,9 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété dateRetourProche.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link XMLGregorianCalendar }
      */
     public void setDateRetourProche(XMLGregorianCalendar value) {
         this.dateRetourProche = value;
@@ -150,7 +135,6 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété disponible.
-     * 
      */
     public boolean isDisponible() {
         return disponible;
@@ -158,7 +142,6 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété disponible.
-     * 
      */
     public void setDisponible(boolean value) {
         this.disponible = value;
@@ -166,7 +149,6 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété empruntable.
-     * 
      */
     public boolean isEmpruntable() {
         return empruntable;
@@ -174,7 +156,6 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété empruntable.
-     * 
      */
     public void setEmpruntable(boolean value) {
         this.empruntable = value;
@@ -182,7 +163,6 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété id.
-     * 
      */
     public int getId() {
         return id;
@@ -190,7 +170,6 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété id.
-     * 
      */
     public void setId(int value) {
         this.id = value;
@@ -198,7 +177,6 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété idAuteur.
-     * 
      */
     public int getIdAuteur() {
         return idAuteur;
@@ -206,7 +184,6 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété idAuteur.
-     * 
      */
     public void setIdAuteur(int value) {
         this.idAuteur = value;
@@ -214,7 +191,6 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété livreEmprunteByUserId.
-     * 
      */
     public boolean isLivreEmprunteByUserId() {
         return livreEmprunteByUserId;
@@ -222,7 +198,6 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété livreEmprunteByUserId.
-     * 
      */
     public void setLivreEmprunteByUserId(boolean value) {
         this.livreEmprunteByUserId = value;
@@ -230,7 +205,6 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété livreReserveByUserId.
-     * 
      */
     public boolean isLivreReserveByUserId() {
         return livreReserveByUserId;
@@ -238,7 +212,6 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété livreReserveByUserId.
-     * 
      */
     public void setLivreReserveByUserId(boolean value) {
         this.livreReserveByUserId = value;
@@ -246,7 +219,6 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété nbExemplaires.
-     * 
      */
     public int getNbExemplaires() {
         return nbExemplaires;
@@ -254,7 +226,6 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété nbExemplaires.
-     * 
      */
     public void setNbExemplaires(int value) {
         this.nbExemplaires = value;
@@ -262,7 +233,6 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété nbReservations.
-     * 
      */
     public int getNbReservations() {
         return nbReservations;
@@ -270,7 +240,6 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété nbReservations.
-     * 
      */
     public void setNbReservations(int value) {
         this.nbReservations = value;
@@ -278,7 +247,6 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété nbRestant.
-     * 
      */
     public int getNbRestant() {
         return nbRestant;
@@ -286,7 +254,6 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété nbRestant.
-     * 
      */
     public void setNbRestant(int value) {
         this.nbRestant = value;
@@ -294,7 +261,6 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété reservable.
-     * 
      */
     public boolean isReservable() {
         return reservable;
@@ -302,7 +268,6 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété reservable.
-     * 
      */
     public void setReservable(boolean value) {
         this.reservable = value;
@@ -310,11 +275,9 @@ public class Livre {
 
     /**
      * Obtient la valeur de la propriété titre.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTitre() {
         return titre;
@@ -322,11 +285,9 @@ public class Livre {
 
     /**
      * Définit la valeur de la propriété titre.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTitre(String value) {
         this.titre = value;

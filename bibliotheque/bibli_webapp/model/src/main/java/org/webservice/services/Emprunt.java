@@ -1,4 +1,3 @@
-
 package org.webservice.services;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Classe Java pour emprunt complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="emprunt">
  *   &lt;complexContent>
@@ -35,23 +34,21 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "emprunt", propOrder = {
-    "dateDebut",
-    "dateFin",
-    "dejaRepousse",
-    "enCours",
-    "id",
-    "idLivre",
-    "idUtilisateur",
-    "livre",
-    "mailSent",
-    "recupere",
-    "repoussable",
-    "statut"
+        "dateDebut",
+        "dateFin",
+        "dejaRepousse",
+        "enCours",
+        "id",
+        "idLivre",
+        "idUtilisateur",
+        "livre",
+        "mailSent",
+        "recupere",
+        "repoussable",
+        "statut"
 })
 public class Emprunt {
 
@@ -72,11 +69,9 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété dateDebut.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is
+     * {@link XMLGregorianCalendar }
      */
     public XMLGregorianCalendar getDateDebut() {
         return dateDebut;
@@ -84,11 +79,9 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété dateDebut.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link XMLGregorianCalendar }
      */
     public void setDateDebut(XMLGregorianCalendar value) {
         this.dateDebut = value;
@@ -96,11 +89,9 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété dateFin.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is
+     * {@link XMLGregorianCalendar }
      */
     public XMLGregorianCalendar getDateFin() {
         return dateFin;
@@ -108,11 +99,9 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété dateFin.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link XMLGregorianCalendar }
      */
     public void setDateFin(XMLGregorianCalendar value) {
         this.dateFin = value;
@@ -120,7 +109,6 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété dejaRepousse.
-     * 
      */
     public boolean isDejaRepousse() {
         return dejaRepousse;
@@ -128,7 +116,6 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété dejaRepousse.
-     * 
      */
     public void setDejaRepousse(boolean value) {
         this.dejaRepousse = value;
@@ -136,7 +123,6 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété enCours.
-     * 
      */
     public boolean isEnCours() {
         return enCours;
@@ -144,7 +130,6 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété enCours.
-     * 
      */
     public void setEnCours(boolean value) {
         this.enCours = value;
@@ -152,11 +137,9 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété id.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is
+     * {@link Integer }
      */
     public Integer getId() {
         return id;
@@ -164,11 +147,9 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété id.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Integer }
      */
     public void setId(Integer value) {
         this.id = value;
@@ -176,7 +157,6 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété idLivre.
-     * 
      */
     public int getIdLivre() {
         return idLivre;
@@ -184,7 +164,6 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété idLivre.
-     * 
      */
     public void setIdLivre(int value) {
         this.idLivre = value;
@@ -192,7 +171,6 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété idUtilisateur.
-     * 
      */
     public int getIdUtilisateur() {
         return idUtilisateur;
@@ -200,7 +178,6 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété idUtilisateur.
-     * 
      */
     public void setIdUtilisateur(int value) {
         this.idUtilisateur = value;
@@ -208,11 +185,9 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété livre.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Livre }
-     *     
+     *
+     * @return possible object is
+     * {@link Livre }
      */
     public Livre getLivre() {
         return livre;
@@ -220,11 +195,9 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété livre.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Livre }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Livre }
      */
     public void setLivre(Livre value) {
         this.livre = value;
@@ -232,7 +205,6 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété mailSent.
-     * 
      */
     public boolean isMailSent() {
         return mailSent;
@@ -240,7 +212,6 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété mailSent.
-     * 
      */
     public void setMailSent(boolean value) {
         this.mailSent = value;
@@ -248,7 +219,6 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété recupere.
-     * 
      */
     public boolean isRecupere() {
         return recupere;
@@ -256,7 +226,6 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété recupere.
-     * 
      */
     public void setRecupere(boolean value) {
         this.recupere = value;
@@ -264,7 +233,6 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété repoussable.
-     * 
      */
     public boolean isRepoussable() {
         return repoussable;
@@ -272,7 +240,6 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété repoussable.
-     * 
      */
     public void setRepoussable(boolean value) {
         this.repoussable = value;
@@ -280,11 +247,9 @@ public class Emprunt {
 
     /**
      * Obtient la valeur de la propriété statut.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getStatut() {
         return statut;
@@ -292,11 +257,9 @@ public class Emprunt {
 
     /**
      * Définit la valeur de la propriété statut.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setStatut(String value) {
         this.statut = value;

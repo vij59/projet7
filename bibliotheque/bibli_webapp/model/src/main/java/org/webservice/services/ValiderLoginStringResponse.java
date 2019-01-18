@@ -1,4 +1,3 @@
-
 package org.webservice.services;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java pour validerLoginStringResponse complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="validerLoginStringResponse">
  *   &lt;complexContent>
@@ -23,12 +22,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "validerLoginStringResponse", propOrder = {
-    "_return"
+        "_return"
 })
 public class ValiderLoginStringResponse {
 
@@ -37,7 +34,6 @@ public class ValiderLoginStringResponse {
 
     /**
      * Obtient la valeur de la propriété return.
-     * 
      */
     public boolean isReturn() {
         return _return;
@@ -45,7 +41,6 @@ public class ValiderLoginStringResponse {
 
     /**
      * Définit la valeur de la propriété return.
-     * 
      */
     public void setReturn(boolean value) {
         this._return = value;

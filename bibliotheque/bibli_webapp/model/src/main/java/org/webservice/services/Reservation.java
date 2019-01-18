@@ -1,4 +1,3 @@
-
 package org.webservice.services;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Classe Java pour reservation complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="reservation">
  *   &lt;complexContent>
@@ -29,17 +28,15 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "reservation", propOrder = {
-    "dateReservation",
-    "idLivre",
-    "idReservation",
-    "idUser",
-    "livre",
-    "placeDansReservations"
+        "dateReservation",
+        "idLivre",
+        "idReservation",
+        "idUser",
+        "livre",
+        "placeDansReservations"
 })
 public class Reservation {
 
@@ -53,11 +50,9 @@ public class Reservation {
 
     /**
      * Obtient la valeur de la propriété dateReservation.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is
+     * {@link XMLGregorianCalendar }
      */
     public XMLGregorianCalendar getDateReservation() {
         return dateReservation;
@@ -65,11 +60,9 @@ public class Reservation {
 
     /**
      * Définit la valeur de la propriété dateReservation.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link XMLGregorianCalendar }
      */
     public void setDateReservation(XMLGregorianCalendar value) {
         this.dateReservation = value;
@@ -77,7 +70,6 @@ public class Reservation {
 
     /**
      * Obtient la valeur de la propriété idLivre.
-     * 
      */
     public int getIdLivre() {
         return idLivre;
@@ -85,7 +77,6 @@ public class Reservation {
 
     /**
      * Définit la valeur de la propriété idLivre.
-     * 
      */
     public void setIdLivre(int value) {
         this.idLivre = value;
@@ -93,7 +84,6 @@ public class Reservation {
 
     /**
      * Obtient la valeur de la propriété idReservation.
-     * 
      */
     public int getIdReservation() {
         return idReservation;
@@ -101,7 +91,6 @@ public class Reservation {
 
     /**
      * Définit la valeur de la propriété idReservation.
-     * 
      */
     public void setIdReservation(int value) {
         this.idReservation = value;
@@ -109,7 +98,6 @@ public class Reservation {
 
     /**
      * Obtient la valeur de la propriété idUser.
-     * 
      */
     public int getIdUser() {
         return idUser;
@@ -117,7 +105,6 @@ public class Reservation {
 
     /**
      * Définit la valeur de la propriété idUser.
-     * 
      */
     public void setIdUser(int value) {
         this.idUser = value;
@@ -125,11 +112,9 @@ public class Reservation {
 
     /**
      * Obtient la valeur de la propriété livre.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Livre }
-     *     
+     *
+     * @return possible object is
+     * {@link Livre }
      */
     public Livre getLivre() {
         return livre;
@@ -137,11 +122,9 @@ public class Reservation {
 
     /**
      * Définit la valeur de la propriété livre.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Livre }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Livre }
      */
     public void setLivre(Livre value) {
         this.livre = value;
@@ -149,7 +132,6 @@ public class Reservation {
 
     /**
      * Obtient la valeur de la propriété placeDansReservations.
-     * 
      */
     public int getPlaceDansReservations() {
         return placeDansReservations;
@@ -157,7 +139,6 @@ public class Reservation {
 
     /**
      * Définit la valeur de la propriété placeDansReservations.
-     * 
      */
     public void setPlaceDansReservations(int value) {
         this.placeDansReservations = value;

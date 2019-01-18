@@ -1,19 +1,18 @@
-
 package org.webservice.services;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * <p>Classe Java pour auteur complex type.
- * 
+ *
  * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
  * <pre>
  * &lt;complexType name="auteur">
  *   &lt;complexContent>
@@ -28,15 +27,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "auteur", propOrder = {
-    "id",
-    "livres",
-    "nom",
-    "prenom"
+        "id",
+        "livres",
+        "nom",
+        "prenom"
 })
 public class Auteur {
 
@@ -48,7 +45,6 @@ public class Auteur {
 
     /**
      * Obtient la valeur de la propriété id.
-     * 
      */
     public int getId() {
         return id;
@@ -56,7 +52,6 @@ public class Auteur {
 
     /**
      * Définit la valeur de la propriété id.
-     * 
      */
     public void setId(int value) {
         this.id = value;
@@ -64,25 +59,23 @@ public class Auteur {
 
     /**
      * Gets the value of the livres property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the livres property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getLivres().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Livre }
-     * 
-     * 
      */
     public List<Livre> getLivres() {
         if (livres == null) {
@@ -93,11 +86,9 @@ public class Auteur {
 
     /**
      * Obtient la valeur de la propriété nom.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getNom() {
         return nom;
@@ -105,11 +96,9 @@ public class Auteur {
 
     /**
      * Définit la valeur de la propriété nom.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setNom(String value) {
         this.nom = value;
@@ -117,11 +106,9 @@ public class Auteur {
 
     /**
      * Obtient la valeur de la propriété prenom.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPrenom() {
         return prenom;
@@ -129,11 +116,9 @@ public class Auteur {
 
     /**
      * Définit la valeur de la propriété prenom.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPrenom(String value) {
         this.prenom = value;
